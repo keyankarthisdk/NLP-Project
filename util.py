@@ -9,6 +9,8 @@ nltk.download('stopwords')
 nltk.download('universal_tagset')
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
+from textblob import TextBlob
+
 # Add any utility functions here
 # Inflection Reduction
 def GetWordNetPOS(tag):
@@ -149,3 +151,20 @@ def AveragePrecision(relevant_docs, retrieved_docs):
             for i in range(len(retrieved_docs))
         ]
     return sum(precisions) / (sum(found) + 1)
+
+# Spelling Correction
+def SpellCorrect(word):
+    '''
+    Spell Correction
+    '''
+    return str(TextBlob.correct(str(word)))
+
+# Title Inclusion
+def IncludeTitleInDoc(doc, title, weightage=1):
+    '''
+    Include the title in the document with weightage
+    '''
+    titleStr = " ".join([title] * weightage)
+    return titleStr + " " + doc
+
+# Main Vars

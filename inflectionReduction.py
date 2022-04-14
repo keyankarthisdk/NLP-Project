@@ -41,5 +41,8 @@ class InflectionReduction:
 			reducedText = [[lemmatizer.lemmatize(token, pos_tag) 
 				for token, pos_tag in zip(sentence, pos_tags)] 
 				for sentence, pos_tags in zip(text, pos_tags_sentences)]
+
+		# Spell Correction
+		reducedText = [[SpellCorrect(token) for token in sentence] for sentence in reducedText]
 		
 		return reducedText
