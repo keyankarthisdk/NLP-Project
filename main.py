@@ -14,6 +14,7 @@ import matplotlib.pyplot as plt
 
 # Main Vars
 TITLE_WEIGHTAGE = 1
+PRINT_OBJ = print
 
 # Input compatibility for Python 2 and Python 3
 if version_info.major == 3:
@@ -186,7 +187,7 @@ class SearchEngine:
 			fscore = self.evaluator.meanFscore(
 				doc_IDs_ordered, query_ids, qrels, k)
 			fscores.append(fscore)
-			self.args.printObj("Precision, Recall and F-score @ " +  
+			PRINT_OBJ("Precision, Recall and F-score @ " +  
 				str(k) + " : " + str(precision) + ", " + str(recall) + 
 				", " + str(fscore))
 			MAP = self.evaluator.meanAveragePrecision(
@@ -195,7 +196,7 @@ class SearchEngine:
 			nDCG = self.evaluator.meanNDCG(
 				doc_IDs_ordered, query_ids, qrels, k)
 			nDCGs.append(nDCG)
-			self.args.printObj("MAP, nDCG @ " +  
+			PRINT_OBJ("MAP, nDCG @ " +  
 				str(k) + " : " + str(MAP) + ", " + str(nDCG))
 
 		# Plot the metrics and save plot 
@@ -239,9 +240,9 @@ class SearchEngine:
 		doc_IDs_ordered = self.informationRetriever.rank([processedQuery])[0]
 
 		# Print the IDs of first five documents
-		self.args.printObj("\nTop five document IDs : ")
+		PRINT_OBJ("\nTop five document IDs : ")
 		for id_ in doc_IDs_ordered[:5]:
-			self.args.printObj(id_)
+			PRINT_OBJ(id_)
 
 
 
