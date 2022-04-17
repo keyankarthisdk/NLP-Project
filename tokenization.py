@@ -15,7 +15,7 @@ class Tokenization():
 		Parameters
 		----------
 		arg1 : list
-			A list of strings where each string is a single sentence
+			A list of strinself, textgs where each string is a single sentence
 
 		Returns
 		-------
@@ -58,3 +58,33 @@ class Tokenization():
 			tokenizedText.append(sentence_tokens)
 
 		return tokenizedText
+
+
+		def ngram_tokenizer(self, text, ngram):
+			"""
+			Tokenization using ngram method
+			
+			Parameters
+			----------
+			arg1 : list
+				A list of strinself, textgs where each string is a single sentence
+
+			arg2: integer
+				The ngram size
+
+			Returns
+			-------
+			list
+				A list of lists where each sub-list is a sequence of ngram tokens
+			"""
+			
+			tokenizedText = []
+			
+			#Fill in code here
+			for sentence in text:
+				sentence_tokens = sentence.split()
+				tmp= zip(*[sentence_tokens[i:] for i in range(0,ngram)])
+				result=[' '.join(ngram) for ngram in tmp]
+				tokenizedText.append(result)
+
+			return tokenizedText
