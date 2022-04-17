@@ -149,14 +149,14 @@ class SearchEngine:
 		"""
 
 		# Read queries
-		queries_json = json.load(open(args.dataset + "cran_queries.json", 'r'))[:]
+		queries_json = json.load(open(self.args.dataset + "cran_queries.json", 'r'))[:]
 		query_ids, queries = [item["query number"] for item in queries_json], \
 								[item["query"] for item in queries_json]
 		# Process queries 
 		processedQueries = self.preprocessQueries(queries)
 
 		# Read documents
-		docs_json = json.load(open(args.dataset + "cran_docs.json", 'r'))[:]
+		docs_json = json.load(open(self.args.dataset + "cran_docs.json", 'r'))[:]
 		doc_ids = [item["id"] for item in docs_json]
 		docs = [item["body"] for item in docs_json]
 		docTitles = [item["title"] for item in docs_json]
@@ -172,7 +172,7 @@ class SearchEngine:
 		doc_IDs_ordered = self.informationRetriever.rank(processedQueries)
 
 		# Read relevance judements
-		qrels = json.load(open(args.dataset + "cran_qrels.json", 'r'))[:]
+		qrels = json.load(open(self.args.dataset + "cran_qrels.json", 'r'))[:]
 
 		# Calculate precision, recall, f-score, MAP and nDCG for k = 1 to 10
 		precisions, recalls, fscores, MAPs, nDCGs = [], [], [], [], []
@@ -186,7 +186,7 @@ class SearchEngine:
 			fscore = self.evaluator.meanFscore(
 				doc_IDs_ordered, query_ids, qrels, k)
 			fscores.append(fscore)
-			print("Precision, Recall and F-score @ " +  
+			self.args.printObj("Precision, Recall and F-score @ " +  
 				str(k) + " : " + str(precision) + ", " + str(recall) + 
 				", " + str(fscore))
 			MAP = self.evaluator.meanAveragePrecision(
@@ -195,7 +195,7 @@ class SearchEngine:
 			nDCG = self.evaluator.meanNDCG(
 				doc_IDs_ordered, query_ids, qrels, k)
 			nDCGs.append(nDCG)
-			print("MAP, nDCG @ " +  
+			self.args.printObj("MAP, nDCG @ " +  
 				str(k) + " : " + str(MAP) + ", " + str(nDCG))
 
 		# Plot the metrics and save plot 
@@ -207,22 +207,23 @@ class SearchEngine:
 		plt.legend()
 		plt.title("Evaluation Metrics - Cranfield Dataset")
 		plt.xlabel("k")
-		plt.savefig(args.out_folder + "eval_plot.png")
+		plt.savefig(self.args.out_folder + "eval_plot.png")
 
 		
-	def handleCustomQuery(self):
+	def handleCustomQuery(self, query=None):
 		"""
 		Take a custom query as input and return top five relevant documents
 		"""
 
 		#Get query
-		print("Enter query below")
-		query = input()
+		if query is None:
+			print("Enter query below")
+			query = input()
 		# Process documents
 		processedQuery = self.preprocessQueries([query])[0]
 
 		# Read documents
-		docs_json = json.load(open(args.dataset + "cran_docs.json", 'r'))[:]
+		docs_json = json.load(open(self.args.dataset + "cran_docs.json", 'r'))[:]
 		doc_ids = [item["id"] for item in docs_json]
 		docs = [item["body"] for item in docs_json]
 		docTitles = [item["title"] for item in docs_json]
@@ -238,9 +239,9 @@ class SearchEngine:
 		doc_IDs_ordered = self.informationRetriever.rank([processedQuery])[0]
 
 		# Print the IDs of first five documents
-		print("\nTop five document IDs : ")
+		self.args.printObj("\nTop five document IDs : ")
 		for id_ in doc_IDs_ordered[:5]:
-			print(id_)
+			self.args.printObj(id_)
 
 
 

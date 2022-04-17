@@ -157,7 +157,7 @@ def SpellCorrect(word):
     '''
     Spell Correction
     '''
-    return str(TextBlob.correct(str(word)))
+    return str(TextBlob(str(word)).correct())
 
 # Title Inclusion
 def IncludeTitleInDoc(doc, title, weightage=1):

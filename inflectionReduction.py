@@ -43,6 +43,6 @@ class InflectionReduction:
 				for sentence, pos_tags in zip(text, pos_tags_sentences)]
 
 		# Spell Correction
-		reducedText = [[SpellCorrect(token) for token in sentence] for sentence in reducedText]
+		# reducedText = [[SpellCorrect(token) for token in sentence] for sentence in reducedText]
 		
 		return reducedText
