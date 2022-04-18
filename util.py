@@ -10,6 +10,7 @@ nltk.download('universal_tagset')
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 from textblob import TextBlob
+from tqdm import tqdm
 
 # Add any utility functions here
 # Inflection Reduction

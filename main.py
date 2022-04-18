@@ -15,6 +15,7 @@ import matplotlib.pyplot as plt
 # Main Vars
 TITLE_WEIGHTAGE = 1
 PRINT_OBJ = print
+PROGRESS_OBJ = None
 
 # Input compatibility for Python 2 and Python 3
 if version_info.major == 3:
@@ -59,6 +60,8 @@ class SearchEngine:
 			return self.tokenizer.naive(text)
 		elif self.args.tokenizer == "ptb":
 			return self.tokenizer.pennTreeBank(text)
+		elif self.args.tokenizer == "ngram":
+			return self.tokenizer.ngram_tokenizer(text, self.args.params["ngram_n"])
 
 	def reduceInflection(self, text):
 		"""
@@ -77,30 +80,45 @@ class SearchEngine:
 		"""
 		Preprocess the queries - segment, tokenize, stem/lemmatize and remove stopwords
 		"""
+		global PROGRESS_OBJ
 
 		# Segment queries
 		segmentedQueries = []
+		i = 0
 		for query in queries:
 			segmentedQuery = self.segmentSentences(query)
+			# Spell Correction
+			segmentedQuery = [SpellCorrect(sentence) for sentence in segmentedQuery]
 			segmentedQueries.append(segmentedQuery)
+			i += 1
+			if PROGRESS_OBJ is not None: PROGRESS_OBJ("Query: Sentence Segmentation", i / len(queries))
 		json.dump(segmentedQueries, open(self.args.out_folder + "segmented_queries.txt", 'w'), indent=4)
 		# Tokenize queries
 		tokenizedQueries = []
+		i = 0
 		for query in segmentedQueries:
 			tokenizedQuery = self.tokenize(query)
 			tokenizedQueries.append(tokenizedQuery)
+			i += 1
+			if PROGRESS_OBJ is not None: PROGRESS_OBJ("Query: Tokenization", i / len(segmentedQueries))
 		json.dump(tokenizedQueries, open(self.args.out_folder + "tokenized_queries.txt", 'w'), indent=4)
 		# Stem/Lemmatize queries
 		reducedQueries = []
+		i = 0
 		for query in tokenizedQueries:
 			reducedQuery = self.reduceInflection(query)
 			reducedQueries.append(reducedQuery)
+			i += 1
+			if PROGRESS_OBJ is not None: PROGRESS_OBJ("Query: Inflection Reduction", i / len(tokenizedQueries))
 		json.dump(reducedQueries, open(self.args.out_folder + "reduced_queries.txt", 'w'), indent=4)
 		# Remove stopwords from queries
 		stopwordRemovedQueries = []
+		i = 0
 		for query in reducedQueries:
 			stopwordRemovedQuery = self.removeStopwords(query)
 			stopwordRemovedQueries.append(stopwordRemovedQuery)
+			i += 1
+			if PROGRESS_OBJ is not None: PROGRESS_OBJ("Query: Stopword Removal", i / len(reducedQueries))
 		json.dump(stopwordRemovedQueries, open(self.args.out_folder + "stopword_removed_queries.txt", 'w'), indent=4)
 
 		preprocessedQueries = stopwordRemovedQueries
@@ -110,30 +128,43 @@ class SearchEngine:
 		"""
 		Preprocess the documents
 		"""
+		global PROGRESS_OBJ
 		
 		# Segment docs
 		segmentedDocs = []
+		i = 0
 		for doc in docs:
 			segmentedDoc = self.segmentSentences(doc)
 			segmentedDocs.append(segmentedDoc)
+			i += 1
+			if PROGRESS_OBJ is not None: PROGRESS_OBJ("Doc: Sentence Segmentation", i / len(docs))
 		json.dump(segmentedDocs, open(self.args.out_folder + "segmented_docs.txt", 'w'), indent=4)
 		# Tokenize docs
 		tokenizedDocs = []
+		i = 0
 		for doc in segmentedDocs:
 			tokenizedDoc = self.tokenize(doc)
 			tokenizedDocs.append(tokenizedDoc)
+			i += 1
+			if PROGRESS_OBJ is not None: PROGRESS_OBJ("Doc: Tokenization", i / len(segmentedDocs))
 		json.dump(tokenizedDocs, open(self.args.out_folder + "tokenized_docs.txt", 'w'), indent=4)
 		# Stem/Lemmatize docs
 		reducedDocs = []
+		i = 0
 		for doc in tokenizedDocs:
 			reducedDoc = self.reduceInflection(doc)
 			reducedDocs.append(reducedDoc)
+			i += 1
+			if PROGRESS_OBJ is not None: PROGRESS_OBJ("Doc: Inflection Reduction", i / len(tokenizedDocs))
 		json.dump(reducedDocs, open(self.args.out_folder + "reduced_docs.txt", 'w'), indent=4)
 		# Remove stopwords from docs
 		stopwordRemovedDocs = []
+		i = 0
 		for doc in reducedDocs:
 			stopwordRemovedDoc = self.removeStopwords(doc)
 			stopwordRemovedDocs.append(stopwordRemovedDoc)
+			i += 1
+			if PROGRESS_OBJ is not None: PROGRESS_OBJ("Doc: Stopword Removal", i / len(reducedDocs))
 		json.dump(stopwordRemovedDocs, open(self.args.out_folder + "stopword_removed_docs.txt", 'w'), indent=4)
 
 		preprocessedDocs = stopwordRemovedDocs
