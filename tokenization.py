@@ -81,8 +81,9 @@ class Tokenization():
 		tokenizedText = []
 		
 		#Fill in code here
+		tokenizer = TreebankWordTokenizer()
 		for sentence in text:
-			sentence_tokens = sentence.split()
+			sentence_tokens = tokenizer.tokenize(sentence)
 			tmp= zip(*[sentence_tokens[i:] for i in range(0, ngram)])
 			result=[" ".join(ngram) for ngram in tmp]
 			tokenizedText.append(result)
