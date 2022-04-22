@@ -75,6 +75,14 @@ class SearchEngine:
 		"""
 		return self.stopwordRemover.fromList(text)
 
+	def additionalPreprocessing(self, text):
+		"""
+		Call any additional preprocessing
+		"""
+		# NGram
+		if self.args.params["ngram_n"] > 1:
+			text = self.tokenizer.ngram_tokenizer(text, self.args.params["ngram_n"])
+		return text
 
 	def preprocessQueries(self, queries):
 		"""
@@ -120,8 +128,17 @@ class SearchEngine:
 			i += 1
 			if PROGRESS_OBJ is not None: PROGRESS_OBJ("Query: Stopword Removal", i / len(reducedQueries))
 		json.dump(stopwordRemovedQueries, open(self.args.out_folder + "stopword_removed_queries.txt", 'w'), indent=4)
+		# Form Final queries
+		finalQueries = []
+		i = 0
+		for query in stopwordRemovedQueries:
+			finalQuery = self.additionalPreprocessing(query)
+			finalQueries.append(finalQuery)
+			i += 1
+			if PROGRESS_OBJ is not None: PROGRESS_OBJ("Query: Additional (NGram)", i / len(stopwordRemovedQueries))
+		json.dump(finalQueries, open(self.args.out_folder + "final_queries.txt", 'w'), indent=4)
 
-		preprocessedQueries = stopwordRemovedQueries
+		preprocessedQueries = finalQueries
 		return preprocessedQueries
 
 	def preprocessDocs(self, docs):
@@ -166,8 +183,17 @@ class SearchEngine:
 			i += 1
 			if PROGRESS_OBJ is not None: PROGRESS_OBJ("Doc: Stopword Removal", i / len(reducedDocs))
 		json.dump(stopwordRemovedDocs, open(self.args.out_folder + "stopword_removed_docs.txt", 'w'), indent=4)
+		# Form Final docs
+		finalDocs = []
+		i = 0
+		for doc in stopwordRemovedDocs:
+			finalDoc = self.additionalPreprocessing(doc)
+			finalDocs.append(finalDoc)
+			i += 1
+			if PROGRESS_OBJ is not None: PROGRESS_OBJ("Doc: Additional (NGram)", i / len(stopwordRemovedDocs))
+		json.dump(finalDocs, open(self.args.out_folder + "final_docs.txt", 'w'), indent=4)
 
-		preprocessedDocs = stopwordRemovedDocs
+		preprocessedDocs = finalDocs
 		return preprocessedDocs
 
 

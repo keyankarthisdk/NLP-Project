@@ -67,7 +67,8 @@ class Tokenization():
 		Parameters
 		----------
 		arg1 : list
-			A list of strinself, textgs where each string is a single sentence
+			A list of lists where each sub-list is a sequence of tokens
+			representing a sentence
 
 		arg2: integer
 			The ngram size
@@ -81,9 +82,7 @@ class Tokenization():
 		tokenizedText = []
 		
 		#Fill in code here
-		tokenizer = TreebankWordTokenizer()
-		for sentence in text:
-			sentence_tokens = tokenizer.tokenize(sentence)
+		for sentence_tokens in text:
 			tmp= zip(*[sentence_tokens[i:] for i in range(0, ngram)])
 			result=[" ".join(ngram) for ngram in tmp]
 			tokenizedText.append(result)
