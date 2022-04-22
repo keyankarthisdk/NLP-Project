@@ -143,5 +143,5 @@ class InformationRetrieval():
 
 		"""
 		# generate LSA model
-		lsa_model = LsiModel(doc_term_matrix, num_topics=2, id2word = dictionary)
+		lsa_model = LsiModel(doc_term_matrix, num_topics=2, id2word=dictionary)
 		return lsa_model

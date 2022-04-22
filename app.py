@@ -53,10 +53,10 @@ def UI_Segmenter():
     return segmenter
 
 def UI_Tokenizer():
-    tokenizer = st.selectbox("Choose Tokenizer", ["naive", "ptb", "ngram"])
-    params = {}
-    if tokenizer == "ngram":
-        params["ngram_n"] = st.number_input("Ngram N", min_value=1, max_value=3, value=2, step=1)
+    tokenizer = st.selectbox("Choose Tokenizer", ["naive", "ptb"])
+    params = {
+        "ngram_n": st.number_input("Ngram N (1 for default unigram)", min_value=1, max_value=3, value=2, step=1)
+    }
     return tokenizer, params
 
 def UI_CustomQuery():

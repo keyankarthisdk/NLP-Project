@@ -3,6 +3,7 @@ import re
 import math
 import numpy as np
 import nltk
+from nltk.tokenize import TreebankWordTokenizer
 from nltk.tokenize.punkt import PunktSentenceTokenizer, PunktParameters
 from nltk.corpus import wordnet, stopwords
 nltk.download('stopwords')

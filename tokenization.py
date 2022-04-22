@@ -1,11 +1,6 @@
 from util import *
 
 # Add your import statements here
-import nltk
-from nltk.tokenize import TreebankWordTokenizer
-
-
-
 class Tokenization():
 
 	def naive(self, text):

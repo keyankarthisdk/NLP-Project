@@ -81,7 +81,7 @@ class SearchEngine:
 		"""
 		# NGram
 		if self.args.params["ngram_n"] > 1:
-			text = self.tokenizer.ngram_tokenizer(text, self.args.params["ngram_n"])
+			text = self.tokenizer.ngram_tokenizer(text, ngram=self.args.params["ngram_n"])
 		return text
 
 	def preprocessQueries(self, queries):
@@ -100,7 +100,7 @@ class SearchEngine:
 			segmentedQueries.append(segmentedQuery)
 			i += 1
 			if PROGRESS_OBJ is not None: PROGRESS_OBJ("Query: Sentence Segmentation", i / len(queries))
-		json.dump(segmentedQueries, open(self.args.out_folder + "segmented_queries.txt", 'w'), indent=4)
+		json.dump(segmentedQueries, open(self.args.out_folder + "segmented_queries.json", 'w'), indent=4)
 		# Tokenize queries
 		tokenizedQueries = []
 		i = 0
@@ -109,7 +109,7 @@ class SearchEngine:
 			tokenizedQueries.append(tokenizedQuery)
 			i += 1
 			if PROGRESS_OBJ is not None: PROGRESS_OBJ("Query: Tokenization", i / len(segmentedQueries))
-		json.dump(tokenizedQueries, open(self.args.out_folder + "tokenized_queries.txt", 'w'), indent=4)
+		json.dump(tokenizedQueries, open(self.args.out_folder + "tokenized_queries.json", 'w'), indent=4)
 		# Stem/Lemmatize queries
 		reducedQueries = []
 		i = 0
@@ -118,7 +118,7 @@ class SearchEngine:
 			reducedQueries.append(reducedQuery)
 			i += 1
 			if PROGRESS_OBJ is not None: PROGRESS_OBJ("Query: Inflection Reduction", i / len(tokenizedQueries))
-		json.dump(reducedQueries, open(self.args.out_folder + "reduced_queries.txt", 'w'), indent=4)
+		json.dump(reducedQueries, open(self.args.out_folder + "reduced_queries.json", 'w'), indent=4)
 		# Remove stopwords from queries
 		stopwordRemovedQueries = []
 		i = 0
@@ -127,7 +127,7 @@ class SearchEngine:
 			stopwordRemovedQueries.append(stopwordRemovedQuery)
 			i += 1
 			if PROGRESS_OBJ is not None: PROGRESS_OBJ("Query: Stopword Removal", i / len(reducedQueries))
-		json.dump(stopwordRemovedQueries, open(self.args.out_folder + "stopword_removed_queries.txt", 'w'), indent=4)
+		json.dump(stopwordRemovedQueries, open(self.args.out_folder + "stopword_removed_queries.json", 'w'), indent=4)
 		# Form Final queries
 		finalQueries = []
 		i = 0
@@ -136,7 +136,7 @@ class SearchEngine:
 			finalQueries.append(finalQuery)
 			i += 1
 			if PROGRESS_OBJ is not None: PROGRESS_OBJ("Query: Additional (NGram)", i / len(stopwordRemovedQueries))
-		json.dump(finalQueries, open(self.args.out_folder + "final_queries.txt", 'w'), indent=4)
+		json.dump(finalQueries, open(self.args.out_folder + "final_queries.json", 'w'), indent=4)
 
 		preprocessedQueries = finalQueries
 		return preprocessedQueries
@@ -155,7 +155,7 @@ class SearchEngine:
 			segmentedDocs.append(segmentedDoc)
 			i += 1
 			if PROGRESS_OBJ is not None: PROGRESS_OBJ("Doc: Sentence Segmentation", i / len(docs))
-		json.dump(segmentedDocs, open(self.args.out_folder + "segmented_docs.txt", 'w'), indent=4)
+		json.dump(segmentedDocs, open(self.args.out_folder + "segmented_docs.json", 'w'), indent=4)
 		# Tokenize docs
 		tokenizedDocs = []
 		i = 0
@@ -164,7 +164,7 @@ class SearchEngine:
 			tokenizedDocs.append(tokenizedDoc)
 			i += 1
 			if PROGRESS_OBJ is not None: PROGRESS_OBJ("Doc: Tokenization", i / len(segmentedDocs))
-		json.dump(tokenizedDocs, open(self.args.out_folder + "tokenized_docs.txt", 'w'), indent=4)
+		json.dump(tokenizedDocs, open(self.args.out_folder + "tokenized_docs.json", 'w'), indent=4)
 		# Stem/Lemmatize docs
 		reducedDocs = []
 		i = 0
@@ -173,7 +173,7 @@ class SearchEngine:
 			reducedDocs.append(reducedDoc)
 			i += 1
 			if PROGRESS_OBJ is not None: PROGRESS_OBJ("Doc: Inflection Reduction", i / len(tokenizedDocs))
-		json.dump(reducedDocs, open(self.args.out_folder + "reduced_docs.txt", 'w'), indent=4)
+		json.dump(reducedDocs, open(self.args.out_folder + "reduced_docs.json", 'w'), indent=4)
 		# Remove stopwords from docs
 		stopwordRemovedDocs = []
 		i = 0
@@ -182,7 +182,7 @@ class SearchEngine:
 			stopwordRemovedDocs.append(stopwordRemovedDoc)
 			i += 1
 			if PROGRESS_OBJ is not None: PROGRESS_OBJ("Doc: Stopword Removal", i / len(reducedDocs))
-		json.dump(stopwordRemovedDocs, open(self.args.out_folder + "stopword_removed_docs.txt", 'w'), indent=4)
+		json.dump(stopwordRemovedDocs, open(self.args.out_folder + "stopword_removed_docs.json", 'w'), indent=4)
 		# Form Final docs
 		finalDocs = []
 		i = 0
@@ -191,7 +191,7 @@ class SearchEngine:
 			finalDocs.append(finalDoc)
 			i += 1
 			if PROGRESS_OBJ is not None: PROGRESS_OBJ("Doc: Additional (NGram)", i / len(stopwordRemovedDocs))
-		json.dump(finalDocs, open(self.args.out_folder + "final_docs.txt", 'w'), indent=4)
+		json.dump(finalDocs, open(self.args.out_folder + "final_docs.json", 'w'), indent=4)
 
 		preprocessedDocs = finalDocs
 		return preprocessedDocs
