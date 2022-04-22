@@ -12,6 +12,10 @@ from sklearn.metrics.pairwise import cosine_similarity
 from textblob import TextBlob
 from tqdm import tqdm
 
+from gensim import corpora
+from gensim.models import LsiModel
+from gensim.models.coherencemodel import CoherenceModel
+
 # Add any utility functions here
 # Inflection Reduction
 def GetWordNetPOS(tag):

@@ -106,5 +106,42 @@ class InformationRetrieval():
 		return doc_IDs_ordered
 
 
+	def doc_term_mat(data):
+		"""
+		Generating term dictinoary of the dataset and document term matrix
+
+		Parameters
+		----------
+		arg1 : 
+		
+
+		Returns
+		-------
+		Term dictionary and document term matrix
+		"""
+		# generate term dictionary
+		_dict = corpora.Dictionary(data)
+		# convert tokenized documents into a document corpus
+		doc_term_matrix = [dictionary.doc2bow(doc) for doc in data]
+
+		return _dict, doc_term_matrix
 
 
+
+	def LSA(doc_term_matrix):
+		"""
+		Applying LSA on the document term matrix
+
+		Parameters
+		----------
+		arg1 : 
+		
+
+		Returns
+		-------
+		LSA model
+
+		"""
+		# generate LSA model
+		lsa_model = LsiModel(doc_term_matrix, num_topics=2, id2word = dictionary)
+		return lsa_model
