@@ -13,9 +13,19 @@ import json
 import matplotlib.pyplot as plt
 
 # Main Vars
-TITLE_WEIGHTAGE = 1
 PRINT_OBJ = print
 PROGRESS_OBJ = None
+
+TITLE_WEIGHTAGE = 1
+QUERY_EXPAND_N = 0
+# 0 - Sentence Segmentation
+# 1 - Tokenization
+# 2 - Inflection Reduction
+# 3 - Stopword Removal
+# 4 - NGram
+# 5 - Query Expansion
+QUERY_LOAD_POINT = 10
+DOC_LOAD_POINT = 10
 
 # Input compatibility for Python 2 and Python 3
 if version_info.major == 3:
@@ -63,11 +73,14 @@ class SearchEngine:
 		elif self.args.tokenizer == "ngram":
 			return self.tokenizer.ngram_tokenizer(text, self.args.params["ngram_n"])
 
-	def reduceInflection(self, text):
+	def reduceInflection(self, text, ReduceMethod="lemmatization"):
 		"""
 		Call the required stemmer/lemmatizer
 		"""
-		return self.inflectionReducer.reduce(text)
+		if self.args.reducer == "stemming":
+			return self.inflectionReducer.reduce(text, "stemming")
+		elif self.args.reducer == "lemmatization":
+			return self.inflectionReducer.reduce(text, "lemmatization")
 
 	def removeStopwords(self, text):
 		"""
@@ -84,62 +97,98 @@ class SearchEngine:
 			text = self.tokenizer.ngram_tokenizer(text, ngram=self.args.params["ngram_n"])
 		return text
 
-	def preprocessQueries(self, queries):
+	def preprocessQueries(self, queries, **params):
 		"""
 		Preprocess the queries - segment, tokenize, stem/lemmatize and remove stopwords
 		"""
 		global PROGRESS_OBJ
 
+		# LOAD
+		LOAD_POINT = QUERY_LOAD_POINT
 		# Segment queries
-		segmentedQueries = []
-		i = 0
-		for query in queries:
-			segmentedQuery = self.segmentSentences(query)
-			# Spell Correction
-			segmentedQuery = [SpellCorrect(sentence) for sentence in segmentedQuery]
-			segmentedQueries.append(segmentedQuery)
-			i += 1
-			if PROGRESS_OBJ is not None: PROGRESS_OBJ("Query: Sentence Segmentation", i / len(queries))
-		json.dump(segmentedQueries, open(self.args.out_folder + "segmented_queries.json", 'w'), indent=4)
+		if LOAD_POINT <= 0:
+			segmentedQueries = []
+			i = 0
+			for query in queries:
+				segmentedQuery = self.segmentSentences(query)
+				# Spell Correction
+				segmentedQuery = [SpellCorrect(sentence) for sentence in segmentedQuery]
+				segmentedQueries.append(segmentedQuery)
+				i += 1
+				if PROGRESS_OBJ is not None: PROGRESS_OBJ("Query: Sentence Segmentation", i / len(queries))
+			json.dump(segmentedQueries, open(self.args.out_folder + "segmented_queries.json", 'w'), indent=4)
+		elif LOAD_POINT == 1:
+			segmentedQueries = json.load(open(self.args.out_folder + "segmented_queries.json", 'r'))
 		# Tokenize queries
-		tokenizedQueries = []
-		i = 0
-		for query in segmentedQueries:
-			tokenizedQuery = self.tokenize(query)
-			tokenizedQueries.append(tokenizedQuery)
-			i += 1
-			if PROGRESS_OBJ is not None: PROGRESS_OBJ("Query: Tokenization", i / len(segmentedQueries))
-		json.dump(tokenizedQueries, open(self.args.out_folder + "tokenized_queries.json", 'w'), indent=4)
+		if LOAD_POINT <= 1:
+			tokenizedQueries = []
+			i = 0
+			for query in segmentedQueries:
+				tokenizedQuery = self.tokenize(query)
+				tokenizedQueries.append(tokenizedQuery)
+				i += 1
+				if PROGRESS_OBJ is not None: PROGRESS_OBJ("Query: Tokenization", i / len(segmentedQueries))
+			json.dump(tokenizedQueries, open(self.args.out_folder + "tokenized_queries.json", 'w'), indent=4)
+		elif LOAD_POINT == 2:
+			tokenizedQueries = json.load(open(self.args.out_folder + "tokenized_queries.json", 'r'))
 		# Stem/Lemmatize queries
-		reducedQueries = []
-		i = 0
-		for query in tokenizedQueries:
-			reducedQuery = self.reduceInflection(query)
-			reducedQueries.append(reducedQuery)
-			i += 1
-			if PROGRESS_OBJ is not None: PROGRESS_OBJ("Query: Inflection Reduction", i / len(tokenizedQueries))
-		json.dump(reducedQueries, open(self.args.out_folder + "reduced_queries.json", 'w'), indent=4)
+		if LOAD_POINT <= 2:
+			reducedQueries = []
+			i = 0
+			for query in tokenizedQueries:
+				reducedQuery = self.reduceInflection(query)
+				reducedQueries.append(reducedQuery)
+				i += 1
+				if PROGRESS_OBJ is not None: PROGRESS_OBJ("Query: Inflection Reduction", i / len(tokenizedQueries))
+			json.dump(reducedQueries, open(self.args.out_folder + "reduced_queries.json", 'w'), indent=4)
+		elif LOAD_POINT == 3:
+			reducedQueries = json.load(open(self.args.out_folder + "reduced_queries.json", 'r'))
 		# Remove stopwords from queries
-		stopwordRemovedQueries = []
-		i = 0
-		for query in reducedQueries:
-			stopwordRemovedQuery = self.removeStopwords(query)
-			stopwordRemovedQueries.append(stopwordRemovedQuery)
-			i += 1
-			if PROGRESS_OBJ is not None: PROGRESS_OBJ("Query: Stopword Removal", i / len(reducedQueries))
-		json.dump(stopwordRemovedQueries, open(self.args.out_folder + "stopword_removed_queries.json", 'w'), indent=4)
+		if LOAD_POINT <= 3:
+			stopwordRemovedQueries = []
+			i = 0
+			for query in reducedQueries:
+				stopwordRemovedQuery = self.removeStopwords(query)
+				stopwordRemovedQueries.append(stopwordRemovedQuery)
+				i += 1
+				if PROGRESS_OBJ is not None: PROGRESS_OBJ("Query: Stopword Removal", i / len(reducedQueries))
+			json.dump(stopwordRemovedQueries, open(self.args.out_folder + "stopword_removed_queries.json", 'w'), indent=4)
+		elif LOAD_POINT == 4:
+			stopwordRemovedQueries = json.load(open(self.args.out_folder + "stopword_removed_queries.json", 'r'))
 		# Form Final queries
-		finalQueries = []
-		i = 0
-		for query in stopwordRemovedQueries:
-			finalQuery = self.additionalPreprocessing(query)
-			finalQueries.append(finalQuery)
-			i += 1
-			if PROGRESS_OBJ is not None: PROGRESS_OBJ("Query: Additional (NGram)", i / len(stopwordRemovedQueries))
-		json.dump(finalQueries, open(self.args.out_folder + "final_queries.json", 'w'), indent=4)
+		if LOAD_POINT <= 4:
+			finalQueries = []
+			i = 0
+			for query in stopwordRemovedQueries:
+				finalQuery = self.additionalPreprocessing(query)
+				finalQueries.append(finalQuery)
+				i += 1
+				if PROGRESS_OBJ is not None: PROGRESS_OBJ("Query: Additional (NGram)", i / len(stopwordRemovedQueries))
+			json.dump(finalQueries, open(self.args.out_folder + "final_queries.json", 'w'), indent=4)
+		elif LOAD_POINT == 5:
+			finalQueries = json.load(open(self.args.out_folder + "final_queries.json", 'r'))
+		# Expand Queries
+		if LOAD_POINT <= 5:
+			expandedQueries = []
+			expandedWeights = []
+			i = 0
+			for query in finalQueries:
+				expandedQuery, sim = QueryExpansion(params["Word2Vec_MODEL"], query, 0.1, n=QUERY_EXPAND_N)
+				expandedQueries.append(expandedQuery)
+				expandedWeights.append(sim)
+				i += 1
+				if PROGRESS_OBJ is not None: PROGRESS_OBJ("Query: Expansion", i / len(finalQueries))
+			json.dump(expandedQueries, open(self.args.out_folder + "final_expanded_queries.json", 'w'), indent=4)
+			json.dump(expandedWeights, open(self.args.out_folder + "final_expanded_queries_weights.json", 'w'), indent=4)
+		else:
+			expandedQueries = json.load(open(self.args.out_folder + "final_expanded_queries.json", 'r'))
+			expandedWeights = json.load(open(self.args.out_folder + "final_expanded_queries_weights.json", 'r'))
 
-		preprocessedQueries = finalQueries
-		return preprocessedQueries
+		preprocessedQueries = expandedQueries
+		out = {
+			"weights": expandedWeights
+		}
+		return preprocessedQueries, out
 
 	def preprocessDocs(self, docs):
 		"""
@@ -147,51 +196,68 @@ class SearchEngine:
 		"""
 		global PROGRESS_OBJ
 		
+		# LOAD
+		LOAD_POINT = DOC_LOAD_POINT
 		# Segment docs
-		segmentedDocs = []
-		i = 0
-		for doc in docs:
-			segmentedDoc = self.segmentSentences(doc)
-			segmentedDocs.append(segmentedDoc)
-			i += 1
-			if PROGRESS_OBJ is not None: PROGRESS_OBJ("Doc: Sentence Segmentation", i / len(docs))
-		json.dump(segmentedDocs, open(self.args.out_folder + "segmented_docs.json", 'w'), indent=4)
+		if LOAD_POINT <= 0:
+			segmentedDocs = []
+			i = 0
+			for doc in docs:
+				segmentedDoc = self.segmentSentences(doc)
+				segmentedDocs.append(segmentedDoc)
+				i += 1
+				if PROGRESS_OBJ is not None: PROGRESS_OBJ("Doc: Sentence Segmentation", i / len(docs))
+			json.dump(segmentedDocs, open(self.args.out_folder + "segmented_docs.json", 'w'), indent=4)
+		elif LOAD_POINT == 1:
+			segmentedDocs = json.load(open(self.args.out_folder + "segmented_docs.json", 'r'))
 		# Tokenize docs
-		tokenizedDocs = []
-		i = 0
-		for doc in segmentedDocs:
-			tokenizedDoc = self.tokenize(doc)
-			tokenizedDocs.append(tokenizedDoc)
-			i += 1
-			if PROGRESS_OBJ is not None: PROGRESS_OBJ("Doc: Tokenization", i / len(segmentedDocs))
-		json.dump(tokenizedDocs, open(self.args.out_folder + "tokenized_docs.json", 'w'), indent=4)
+		if LOAD_POINT <= 1:
+			tokenizedDocs = []
+			i = 0
+			for doc in segmentedDocs:
+				tokenizedDoc = self.tokenize(doc)
+				tokenizedDocs.append(tokenizedDoc)
+				i += 1
+				if PROGRESS_OBJ is not None: PROGRESS_OBJ("Doc: Tokenization", i / len(segmentedDocs))
+			json.dump(tokenizedDocs, open(self.args.out_folder + "tokenized_docs.json", 'w'), indent=4)
+		elif LOAD_POINT == 2:
+			tokenizedDocs = json.load(open(self.args.out_folder + "tokenized_docs.json", 'r'))
 		# Stem/Lemmatize docs
-		reducedDocs = []
-		i = 0
-		for doc in tokenizedDocs:
-			reducedDoc = self.reduceInflection(doc)
-			reducedDocs.append(reducedDoc)
-			i += 1
-			if PROGRESS_OBJ is not None: PROGRESS_OBJ("Doc: Inflection Reduction", i / len(tokenizedDocs))
-		json.dump(reducedDocs, open(self.args.out_folder + "reduced_docs.json", 'w'), indent=4)
+		if LOAD_POINT <= 2:
+			reducedDocs = []
+			i = 0
+			for doc in tokenizedDocs:
+				reducedDoc = self.reduceInflection(doc)
+				reducedDocs.append(reducedDoc)
+				i += 1
+				if PROGRESS_OBJ is not None: PROGRESS_OBJ("Doc: Inflection Reduction", i / len(tokenizedDocs))
+			json.dump(reducedDocs, open(self.args.out_folder + "reduced_docs.json", 'w'), indent=4)
+		elif LOAD_POINT == 3:
+			reducedDocs = json.load(open(self.args.out_folder + "reduced_docs.json", 'r'))
 		# Remove stopwords from docs
-		stopwordRemovedDocs = []
-		i = 0
-		for doc in reducedDocs:
-			stopwordRemovedDoc = self.removeStopwords(doc)
-			stopwordRemovedDocs.append(stopwordRemovedDoc)
-			i += 1
-			if PROGRESS_OBJ is not None: PROGRESS_OBJ("Doc: Stopword Removal", i / len(reducedDocs))
-		json.dump(stopwordRemovedDocs, open(self.args.out_folder + "stopword_removed_docs.json", 'w'), indent=4)
+		if LOAD_POINT <= 3:
+			stopwordRemovedDocs = []
+			i = 0
+			for doc in reducedDocs:
+				stopwordRemovedDoc = self.removeStopwords(doc)
+				stopwordRemovedDocs.append(stopwordRemovedDoc)
+				i += 1
+				if PROGRESS_OBJ is not None: PROGRESS_OBJ("Doc: Stopword Removal", i / len(reducedDocs))
+			json.dump(stopwordRemovedDocs, open(self.args.out_folder + "stopword_removed_docs.json", 'w'), indent=4)
+		elif LOAD_POINT == 4:
+			stopwordRemovedDocs = json.load(open(self.args.out_folder + "stopword_removed_docs.json", 'r'))
 		# Form Final docs
-		finalDocs = []
-		i = 0
-		for doc in stopwordRemovedDocs:
-			finalDoc = self.additionalPreprocessing(doc)
-			finalDocs.append(finalDoc)
-			i += 1
-			if PROGRESS_OBJ is not None: PROGRESS_OBJ("Doc: Additional (NGram)", i / len(stopwordRemovedDocs))
-		json.dump(finalDocs, open(self.args.out_folder + "final_docs.json", 'w'), indent=4)
+		if LOAD_POINT <= 4:
+			finalDocs = []
+			i = 0
+			for doc in stopwordRemovedDocs:
+				finalDoc = self.additionalPreprocessing(doc)
+				finalDocs.append(finalDoc)
+				i += 1
+				if PROGRESS_OBJ is not None: PROGRESS_OBJ("Doc: Additional (NGram)", i / len(stopwordRemovedDocs))
+			json.dump(finalDocs, open(self.args.out_folder + "final_docs.json", 'w'), indent=4)
+		else:
+			finalDocs = json.load(open(self.args.out_folder + "final_docs.json", 'r'))
 
 		preprocessedDocs = finalDocs
 		return preprocessedDocs
@@ -205,14 +271,6 @@ class SearchEngine:
 		  for all queries in the Cranfield dataset
 		- produces graphs of the evaluation metrics in the output folder
 		"""
-
-		# Read queries
-		queries_json = json.load(open(self.args.dataset + "cran_queries.json", 'r'))[:]
-		query_ids, queries = [item["query number"] for item in queries_json], \
-								[item["query"] for item in queries_json]
-		# Process queries 
-		processedQueries = self.preprocessQueries(queries)
-
 		# Read documents
 		docs_json = json.load(open(self.args.dataset + "cran_docs.json", 'r'))[:]
 		doc_ids = [item["id"] for item in docs_json]
@@ -220,14 +278,22 @@ class SearchEngine:
 		docTitles = [item["title"] for item in docs_json]
 		# Include Titles
 		docs = [IncludeTitleInDoc(doc, title, TITLE_WEIGHTAGE) for doc, title in zip(docs, docTitles)]
-
 		# Process documents
 		processedDocs = self.preprocessDocs(docs)
+
+		# Read queries
+		queries_json = json.load(open(self.args.dataset + "cran_queries.json", 'r'))[:]
+		query_ids, queries = [item["query number"] for item in queries_json], \
+								[item["query"] for item in queries_json]
+		# Build Word2Vec Model
+		Word2Vec_MODEL = Word2Vec_BuildModel(processedDocs)
+		# Process queries 
+		processedQueries, queryData = self.preprocessQueries(queries, Word2Vec_MODEL=Word2Vec_MODEL)
 
 		# Build document index
 		self.informationRetriever.buildIndex(processedDocs, doc_ids)
 		# Rank the documents for each query
-		doc_IDs_ordered = self.informationRetriever.rank(processedQueries)
+		doc_IDs_ordered = self.informationRetriever.rank(processedQueries, sim_weights=queryData["weights"])
 
 		# Read relevance judements
 		qrels = json.load(open(self.args.dataset + "cran_qrels.json", 'r'))[:]
@@ -272,14 +338,6 @@ class SearchEngine:
 		"""
 		Take a custom query as input and return top five relevant documents
 		"""
-
-		#Get query
-		if query is None:
-			print("Enter query below")
-			query = input()
-		# Process documents
-		processedQuery = self.preprocessQueries([query])[0]
-
 		# Read documents
 		docs_json = json.load(open(self.args.dataset + "cran_docs.json", 'r'))[:]
 		doc_ids = [item["id"] for item in docs_json]
@@ -287,14 +345,22 @@ class SearchEngine:
 		docTitles = [item["title"] for item in docs_json]
 		# Include Titles
 		docs = [IncludeTitleInDoc(doc, title, TITLE_WEIGHTAGE) for doc, title in zip(docs, docTitles)]
-
 		# Process documents
 		processedDocs = self.preprocessDocs(docs)
+
+		#Get query
+		if query is None:
+			print("Enter query below")
+			query = input()
+		# Build Word2Vec Model
+		Word2Vec_MODEL = Word2Vec_BuildModel(processedDocs)
+		# Process query
+		processedQuery, queryData = self.preprocessQueries([query], Word2Vec_MODEL=Word2Vec_MODEL)[0]
 
 		# Build document index
 		self.informationRetriever.buildIndex(processedDocs, doc_ids)
 		# Rank the documents for the query
-		doc_IDs_ordered = self.informationRetriever.rank([processedQuery])[0]
+		doc_IDs_ordered = self.informationRetriever.rank([processedQuery], sim_weights=queryData["weights"])[0]
 
 		# Print the IDs of first five documents
 		PRINT_OBJ("\nTop five document IDs : ")
@@ -317,6 +383,8 @@ if __name__ == "__main__":
 	                    help = "Sentence Segmenter Type [naive|punkt]")
 	parser.add_argument('-tokenizer',  default = "ptb",
 	                    help = "Tokenizer Type [naive|ptb]")
+	parser.add_argument('-reducer',  default = "stemming",
+	                    help = "Reducer Type [stemming|lemmatization]")
 	parser.add_argument('-custom', action = "store_true", 
 						help = "Take custom query as input")
 	

@@ -49,7 +49,7 @@ class InformationRetrieval():
 		
 
 
-	def rank(self, queries):
+	def rank(self, queries, **params):
 		"""
 		Rank the documents according to relevance for each query
 
@@ -71,7 +71,8 @@ class InformationRetrieval():
 		doc_IDs_ordered = []
 
 		#Fill in code here
-		for query in queries:
+		for i in range(len(queries)):
+			query = queries[i]
 			terms = []
 			merged_sentences = ""
 			for sentence in query:
@@ -97,8 +98,25 @@ class InformationRetrieval():
 			if len(list(doc_id_map.keys())) >= 1:
 				vectorizer, doc_vector_matrix = Vectorise_Docs(docs)
 				query_vect_matrix = Vectorise_Query(vectorizer, merged_sentences)
+
+				query_vect_matrix = query_vect_matrix.toarray()
+				doc_vector_matrix = doc_vector_matrix.toarray()
+
+				# Apply Weights
+				feature_names = vectorizer.get_feature_names()
+				weights = params["sim_weights"][i]
+				weightsArray = []
+				for f in feature_names: weightsArray.append(weights[f] if f in weights.keys() else 1.0)
+				weightsArray = np.array(weightsArray)
+				# print(feature_names[np.logical_and(weightsArray == 0.0, query_vect_matrix[0] != 0.0)[0]])
+				# print(query_vect_matrix.shape, weightsArray.shape, len(feature_names))
+				query_vect_matrix2 = np.multiply(query_vect_matrix[0], weightsArray)
+				# print(np.sum(query_vect_matrix2 - query_vect_matrix[0]))
+				query_vect_matrix = query_vect_matrix2.reshape(1, -1)
+				# print(query_vect_matrix.shape)
+
 				cosine_similarities = GetSimilarity(query_vect_matrix, doc_vector_matrix)
-				query_rank = [x for _, x in sorted(zip(cosine_similarities[0], doc_IDs), reverse=True)]
+				query_rank = [x for _, x in sorted(zip(cosine_similarities, doc_IDs), reverse=True)]
 				doc_IDs_ordered.append(query_rank)
 			else:
 				doc_IDs_ordered.append([])

@@ -27,7 +27,7 @@ class StopwordRemoval():
 		stopwordRemovedText = None
 
 		#Fill in code here
-		stop_words = set(stopwords.words('english'))
-		stopwordRemovedText = [[token for token in sentence if not token.lower() in stop_words] for sentence in text]
+		ignoreTokens = set(stopwords.words('english')).union(set(string.punctuation)).union(set(string.octdigits))
+		stopwordRemovedText = [[token for token in sentence if not token.lower() in ignoreTokens] for sentence in text]
 
 		return stopwordRemovedText

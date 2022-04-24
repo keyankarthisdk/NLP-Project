@@ -7,7 +7,7 @@ from util import *
 
 class InflectionReduction:
 
-	def reduce(self, text):
+	def reduce(self, text, ReduceMethod="lemmatization"):
 		"""
 		Stemming/Lemmatization
 
@@ -27,12 +27,11 @@ class InflectionReduction:
 		reducedText = None
 
 		#Fill in code here
-		ReduceMethod = "lemmatization" # "stemming" or "lemmatization"
-
 		if ReduceMethod == "stemming":
 			# Stemming
-			stemmer = nltk.stem.PorterStemmer()
-			reducedText = [[stemmer.stem(token, to_lowercase=True) for token in sentence] for sentence in text]
+			# stemmer = nltk.stem.PorterStemmer()
+			stemmer = nltk.stem.SnowballStemmer("english")
+			reducedText = [[stemmer.stem(token.lower()) for token in sentence] for sentence in text]
 		else:
 			# Lemmatization
 			pos_tags_sentences = [nltk.pos_tag(sentence) for sentence in text]

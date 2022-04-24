@@ -20,11 +20,12 @@ ProgressWidget = {
 
 # Main Classes
 class NLP_ARGS:
-    def __init__(self, dataset, out_folder, segmenter, tokenizer, custom, params={}, printObj=print):
+    def __init__(self, dataset, out_folder, segmenter, tokenizer, reducer, custom, params={}, printObj=print):
         self.dataset = dataset
         self.out_folder = out_folder
         self.segmenter = segmenter
         self.tokenizer = tokenizer
+        self.reducer = reducer
         self.custom = custom
         self.params = params
         self.printObj = printObj
@@ -55,7 +56,7 @@ def UI_Segmenter():
 def UI_Tokenizer():
     tokenizer = st.selectbox("Choose Tokenizer", ["naive", "ptb"])
     params = {
-        "ngram_n": st.number_input("Ngram N (1 for default unigram)", min_value=1, max_value=3, value=2, step=1)
+        "ngram_n": st.number_input("Ngram N (1 for default unigram)", min_value=1, max_value=3, value=1, step=1)
     }
     return tokenizer, params
 
@@ -76,9 +77,19 @@ def app_main():
     st.markdown("## Group 10")
     
     # Inputs
+    Steps = ["Sentence Segmentation", "Tokenization", "Inflection Reduction", "Stopword Removal", "NGram", "Query Expansion", "Search"]
+    Query_LoadStep = st.sidebar.selectbox("Load Query Step", Steps)
+    Doc_LoadStep = st.sidebar.selectbox("Load Document Step", Steps)
+    main.QUERY_LOAD_POINT = Steps.index(Query_LoadStep)
+    main.DOC_LOAD_POINT = Steps.index(Doc_LoadStep)
+
     dataset, out_folder = UI_Paths()
+    col1, col2 = st.columns(2)
+    main.TITLE_WEIGHTAGE = col1.number_input("Title Weightage", min_value=0, max_value=3, value=1, step=1)
+    main.QUERY_EXPAND_N = col2.number_input("Query Expansion N", min_value=0, max_value=5, value=1, step=1)
     segmenter = UI_Segmenter()
     tokenizer, tokenizer_params = UI_Tokenizer()
+    reducer = st.selectbox("Choose Reducer", ["lemmatization", "stemming"])
     custom, query = UI_CustomQuery()
 
     # Print Obj
@@ -96,7 +107,7 @@ def app_main():
         # Form args
         params = {}
         for p in [tokenizer_params]: params.update(p)
-        args = NLP_ARGS(dataset, out_folder, segmenter, tokenizer, custom, params, printObj=printObj)
+        args = NLP_ARGS(dataset, out_folder, segmenter, tokenizer, reducer, custom, params, printObj=printObj)
         searchEngine = main.SearchEngine(args)
         # Either handle query from user or evaluate on the complete dataset
         if args.custom:

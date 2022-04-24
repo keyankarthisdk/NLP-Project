@@ -148,7 +148,6 @@
             "possible",
             "find",
             "analytical",
-            ",",
             "similar",
             "solution",
             "strong",
@@ -260,11 +259,9 @@
             "influence",
             "would",
             "heat",
-            ",",
             "produce",
             "induced",
             "current",
-            ",",
             "magnetohydrodynamic",
             "free",
             "convention",
@@ -437,12 +434,10 @@
             "longitudinal",
             "stability",
             "measurement",
-            "(",
             "make",
             "use",
             "free-flight",
             "model",
-            ")",
             "compare",
             "similar",
             "measurement",
@@ -584,10 +579,8 @@
             "gas"
         ],
         [
-            "(",
             "campan-enskog",
-            "theory",
-            ")"
+            "theory"
         ]
     ],
     [
@@ -645,11 +638,9 @@
             "equation",
             "integrate",
             "numerically",
-            ",",
             "use",
             "suitable",
             "transformation",
-            ",",
             "without",
             "operation",
             "boundary",
@@ -683,12 +674,9 @@
             "revolution",
             "continued",
             "flow",
-            "(",
-            "?",
             "transverse",
             "curvature",
-            "effect",
-            ")"
+            "effect"
         ]
     ],
     [
@@ -702,13 +690,10 @@
             "boundary",
             "layer",
             "flow",
-            "(",
-            "?",
             "slip"
         ],
         [
-            "effect",
-            ")"
+            "effect"
         ]
     ],
     [
@@ -720,7 +705,6 @@
             "body",
             "move",
             "rarefied",
-            ",",
             "partially",
             "idolize",
             "gas",
@@ -800,13 +784,10 @@
             "cylinder",
             "non-circular",
             "cross-section",
-            ",",
-            "(",
             "fluid",
             "flow",
             "along",
-            "generation",
-            ")"
+            "generation"
         ]
     ],
     [
@@ -824,15 +805,12 @@
     [
         [
             "simple",
-            ",",
             "practical",
-            ",",
             "method",
             "numerical",
             "integration",
             "mixing",
             "problem",
-            "(",
             "i.e"
         ],
         [
@@ -840,8 +818,7 @@
             "problem",
             "three-point",
             "boundary",
-            "condition",
-            ")"
+            "condition"
         ]
     ],
     [
@@ -864,8 +841,6 @@
             "cylinder",
             "condition",
             "flow",
-            ",",
-            ",",
             "velocity",
             "outside",
             "boundary",
@@ -902,7 +877,6 @@
             "shape"
         ],
         [
-            ",",
             "provide",
             "justification",
             "mean",
@@ -1006,7 +980,6 @@
             "reynolds",
             "number",
             "flow",
-            ",",
             "particularly",
             "high",
             "much",
@@ -1019,10 +992,8 @@
             "effect",
             "chemical",
             "reaction",
-            "(",
             "particularly",
             "equilibrium",
-            ")",
             "play",
             "similitude",
             "law",
@@ -1101,9 +1072,7 @@
             "low",
             "reynolds",
             "number",
-            "(",
             "merged-layer",
-            ")",
             "regime"
         ]
     ],
@@ -1247,7 +1216,6 @@
             "flow",
             "behind",
             "shock",
-            ",",
             "neglect",
             "effect",
             "lead",
@@ -1309,7 +1277,6 @@
             "freedom",
             "design",
             "airplane",
-            ",",
             "procedure",
             "would",
             "use",
@@ -1318,7 +1285,6 @@
             "tonic",
             "boom",
             "intensity",
-            ",",
             "limit",
             "degree",
             "minimize",
@@ -1335,11 +1301,9 @@
             "test",
             "medium",
             "predict",
-            ",",
             "within",
             "experimental",
             "accuracy",
-            ",",
             "result",
             "obtain",
             "air"
@@ -1417,7 +1381,6 @@
             "tumble",
             "enter",
             "atmosphere",
-            ",",
             "possible",
             "predict",
             "stop",
@@ -1578,11 +1541,9 @@
             "clamped",
             "plate",
             "problem",
-            ",",
             "classical",
             "theory",
             "bending",
-            ",",
             "reduce",
             "two",
             "successive",
@@ -1628,7 +1589,6 @@
             "single",
             "particular",
             "platform",
-            ",",
             "rectangular",
             "one",
             "method"
@@ -1697,9 +1657,7 @@
             "circularity",
             "non",
             "linear",
-            "(",
             "large-deflection",
-            ")",
             "load-deflection",
             "response",
             "cylinder",
@@ -1772,13 +1730,11 @@
     [
         [
             "area",
-            ",",
             "low",
             "density",
             "wind",
             "tunnel",
             "flow",
-            ",",
             "viscous",
             "compressible",
             "flow",
@@ -1833,9 +1789,7 @@
             "heat",
             "equation",
             "exponential",
-            "(",
             "time",
-            ")",
             "heat",
             "input"
         ]
@@ -1984,13 +1938,11 @@
             "effect",
             "initial",
             "tress",
-            ",",
             "frequency",
             "vibration",
             "circular",
             "cylindrical",
             "shell",
-            ",",
             "investigate"
         ]
     ],
@@ -2002,7 +1954,6 @@
             "pressure",
             "due",
             "reformation",
-            ",",
             "frequency",
             "vibration",
             "circular",
@@ -2178,7 +2129,6 @@
             "wing",
             "pressure",
             "calculate",
-            ",",
             "magnitude"
         ]
     ],
@@ -2414,7 +2364,6 @@
             "flow",
             "throat",
             "noble",
-            ",",
             "i.e"
         ],
         [
@@ -2435,7 +2384,6 @@
             "flow",
             "throat",
             "noble",
-            ",",
             "i.e"
         ],
         [
@@ -2456,21 +2404,14 @@
             "often",
             "find",
             "celebration",
-            "appear",
-            ","
+            "appear"
         ],
         [
-            "-",
-            "(",
-            ")",
             "significantly",
             "different",
             "formerly",
             "specify",
-            ",",
-            "(",
             "b",
-            ")",
             "wildly",
             "variable",
             "low",
@@ -2583,21 +2524,17 @@
             "quasi-conical",
             "flow",
             "develop",
-            ",",
             "supersonic",
             "linearised",
             "theory",
-            ",",
             "wash",
             "distribution",
             "lifting",
             "surface",
-            ",",
             "apart",
             "homogeneous",
             "function",
             "co-ordinated",
-            ",",
             "permit",
             "quite",
             "general",
@@ -2670,7 +2607,6 @@
     [
         [
             "wing-body",
-            ",",
             "flow",
             "field",
             "interference",
@@ -2735,8 +2671,6 @@
             "reformation",
             "prove",
             "satisfactory",
-            ",",
-            ",",
             "minimum",
             "number",
             "mode",
@@ -2750,7 +2684,6 @@
             "true",
             "panel",
             "flutter",
-            ",",
             "oppose",
             "small",
             "aptitude",
@@ -2808,7 +2741,6 @@
             "load",
             "animal",
             "compression",
-            ",",
             "linear",
             "solution",
             "help",
@@ -2879,7 +2811,6 @@
             "tress",
             "torispherical",
             "shell",
-            ",",
             "must",
             "resort",
             "numerical",
@@ -2911,7 +2842,6 @@
             "distribution",
             "bone",
             "incidence",
-            ",",
             "hypersonic",
             "speed"
         ]
@@ -3177,7 +3107,6 @@
             "paper",
             "applicable",
             "problem",
-            "(",
             "calculation",
             "procedure",
             "lamina",
@@ -3185,8 +3114,7 @@
             "flow",
             "arbitrary",
             "pressure",
-            "radiant",
-            ")"
+            "radiant"
         ]
     ],
     [
@@ -3213,7 +3141,6 @@
     [
         [
             "practice",
-            ",",
             "close",
             "reality",
             "assumption",
@@ -3237,8 +3164,7 @@
             "lift-drag",
             "ratio",
             "much",
-            "number",
-            "5"
+            "number"
         ]
     ]
 ]

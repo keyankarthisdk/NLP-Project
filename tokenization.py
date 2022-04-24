@@ -17,7 +17,7 @@ class Tokenization():
 		list
 			A list of lists where each sub-list is a sequence of tokens
 		"""
-
+		
 		tokenizedText = []
 
 		#Fill in code here
@@ -43,7 +43,7 @@ class Tokenization():
 		list
 			A list of lists where each sub-list is a sequence of tokens
 		"""
-
+		
 		tokenizedText = []
 		
 		#Fill in code here

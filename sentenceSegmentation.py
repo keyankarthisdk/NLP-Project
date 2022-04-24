@@ -19,9 +19,9 @@ class SentenceSegmentation():
 		list
 			A list of strings where each string is a single sentence
 		"""
-
+		
 		segmentedText = None
-
+		
 		#Fill in code here
 		sentences = re.split(r' *[\.\?!][\'"\)\]]* *', text)
 
@@ -48,7 +48,7 @@ class SentenceSegmentation():
 		list
 			A list of strings where each string is a single sentence
 		"""
-
+		
 		segmentedText = None
 		
 		#Fill in code here

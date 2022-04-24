@@ -1,6 +1,7 @@
 # Add your import statements here
 import re
 import math
+import string
 import numpy as np
 import nltk
 from nltk.tokenize import TreebankWordTokenizer
@@ -13,6 +14,7 @@ from sklearn.metrics.pairwise import cosine_similarity
 from textblob import TextBlob
 from tqdm import tqdm
 
+from gensim.models import Word2Vec
 from gensim import corpora
 from gensim.models import LsiModel
 from gensim.models.coherencemodel import CoherenceModel
@@ -41,7 +43,7 @@ def Vectorise_Docs(docs):
     """
     tfidf_vectorizer = TfidfVectorizer()
     tfidf_matrix = tfidf_vectorizer.fit_transform(docs)
-    return tfidf_vectorizer,tfidf_matrix
+    return tfidf_vectorizer, tfidf_matrix
 
 def Vectorise_Query(vectorizer, merged_sentences):
     """
@@ -54,7 +56,16 @@ def GetSimilarity(query_vector, doc_vector):
     """
     Computes the cosine similarity between query and doc vectors
     """
-    cosine_similarities = cosine_similarity(query_vector, doc_vector)
+    # cosine_similarities = cosine_similarity(query_vector, doc_vector)
+    cosine_similarities = []
+    for doc in doc_vector:
+        norm = np.linalg.norm(query_vector) * np.linalg.norm(doc)
+        sim = 0.0
+        if norm != 0.0:
+            sim = np.dot(query_vector, doc.T) / norm
+        cosine_similarities.append(sim)
+    cosine_similarities = np.array(cosine_similarities)
+
     return cosine_similarities
 
 # Evaluation
@@ -116,7 +127,8 @@ def DCG(scores):
     """
     dcg = 0.0
     for i in range(len(scores)):
-        dcg += (((2**scores[i]) - 1) / (np.log2(i+2)))
+        # dcg += (((2**scores[i]) - 1) / (np.log2(i+2)))
+        dcg += ((scores[i]) / (np.log2(i+2)))
     return dcg
 
 def NDCG(relevant_docs_data, retrieved_docs, k):
@@ -138,6 +150,8 @@ def NDCG(relevant_docs_data, retrieved_docs, k):
     ideal_scores = sorted(ideal_scores, reverse=True)
     if not (ideal_scores[0] == 0):
         nDCG = DCG(query_scores) / DCG(ideal_scores[:k])
+    else:
+        print()
 
     return nDCG
 
@@ -156,7 +170,7 @@ def AveragePrecision(relevant_docs, retrieved_docs):
         Precision(relevant_docs, retrieved_docs[:i+1]) * found[i]
             for i in range(len(retrieved_docs))
         ]
-    return sum(precisions) / (sum(found) + 1)
+    return sum(precisions) / len(relevant_docs)
 
 # Spelling Correction
 def SpellCorrect(word):
@@ -171,6 +185,58 @@ def IncludeTitleInDoc(doc, title, weightage=1):
     Include the title in the document with weightage
     '''
     titleStr = " ".join([title] * weightage)
-    return titleStr + " " + doc
+    return titleStr + ". " + doc
+
+# Word 2 Vec
+class Word2Vec_Corpus:
+    def __init__(self, processedDocs):
+        self.processedDocs = processedDocs
+
+    def __iter__(self):
+        for doc in self.processedDocs:
+            yield doc
+
+def Word2Vec_BuildModel(processedDocs):
+    '''
+    Build Word2Vec Model
+    '''
+    # corpus = Word2Vec_Corpus(processedDocs)
+    corpus = []
+    for doc in processedDocs: corpus.extend(doc)
+    model = Word2Vec(corpus, min_count=5, vector_size=1024, workers=1, window=3, sg=0)
+    return model
+
+def Word2Vec_GetSimilarWords(model, word, n=5):
+    '''
+    Get Similar Words using Word 2 Vec
+    '''
+    if n <= 0: return []
+    return model.wv.most_similar(word, topn=n)
+
+# Query Expansion
+def QueryExpansion(model, query, simWeight=0.1, n=5):
+    '''
+    Expand Query using Word2Vec similarities
+    '''
+    # Combine query sentences
+    query_merged = []
+    for sentence in query: query_merged.extend(sentence)
+    # Get Similar Words
+    sim = {}
+    query_exp = query_merged.copy()
+    for q in query_merged:       
+        sim[q] = 1
+        try:
+            sim_words = Word2Vec_GetSimilarWords(model, q, n)
+            for w in sim_words:
+                if w[0] not in query_exp:
+                    query_exp.append(w[0])
+                    # sim[w[0]] = w[1]
+                    sim[w[0]] = simWeight
+        except KeyError:
+            pass
+    query_exp = [query_exp]
+
+    return query_exp, sim
 
 # Main Vars
