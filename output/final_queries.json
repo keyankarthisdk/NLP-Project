@@ -1,14 +1,14 @@
 [
     [
         [
-            "similarity",
+            "similar",
             "law",
             "must",
             "obey",
             "construct",
-            "aeroelastic",
+            "aeroelast",
             "model",
-            "heated",
+            "heat",
             "high",
             "speed",
             "aircraft"
@@ -16,10 +16,10 @@
     ],
     [
         [
-            "structural",
-            "aeroelastic",
+            "structur",
+            "aeroelast",
             "problem",
-            "associate",
+            "associ",
             "flight",
             "high",
             "speed",
@@ -30,10 +30,10 @@
         [
             "problem",
             "heat",
-            "condition",
-            "composite",
+            "conduct",
+            "composit",
             "slab",
-            "solve",
+            "solv",
             "far"
         ]
     ],
@@ -42,139 +42,140 @@
             "criterion",
             "develop",
             "show",
-            "empirically",
-            "validity",
+            "empir",
+            "valid",
             "flow",
-            "solution",
-            "chemically",
+            "solut",
+            "chemic",
             "react",
             "gas",
-            "mixture",
+            "mixtur",
             "base",
-            "simplify",
-            "assumption",
-            "instantaneously",
+            "simplifi",
+            "assumpt",
+            "instantan",
             "local",
-            "chemical",
+            "chemic",
             "equilibrium"
         ]
     ],
     [
         [
-            "chemical",
-            "kinetic",
+            "chemic",
+            "kinet",
             "system",
-            "applicable",
-            "hypersonic",
-            "aerodynamic",
+            "applic",
+            "hyperson",
+            "aerodynam",
             "problem"
         ]
     ],
     [
         [
-            "theoretical",
-            "experimental",
-            "guide",
-            "turbulent",
-            "coquette",
+            "theoret",
+            "experiment",
+            "guid",
+            "turbul",
+            "couett",
             "flow",
             "behaviour"
         ]
     ],
     [
         [
-            "possible",
-            "relate",
-            "available",
-            "pressure",
-            "distribution",
-            "give",
-            "somebody",
+            "possibl",
+            "relat",
+            "avail",
+            "pressur",
+            "distribut",
+            "ogiv",
+            "forebodi",
             "zero",
-            "angle",
+            "angl",
             "attack",
             "low",
-            "surface",
-            "pressure",
-            "equivalent",
-            "give",
-            "somebody",
-            "angle",
+            "surfac",
+            "pressur",
+            "equival",
+            "ogiv",
+            "forebodi",
+            "angl",
             "attack"
         ]
     ],
     [
         [
-            "methods",
-            "-dash",
+            "method",
+            "dash",
             "exact",
-            "approximate",
-            "-dash",
-            "presently",
-            "available",
-            "prediction",
-            "body",
-            "pressure",
-            "angle",
+            "approxim",
+            "dash",
+            "present",
+            "avail",
+            "predict",
+            "bodi",
+            "pressur",
+            "angl",
             "attack"
         ]
     ],
     [
         [
             "paper",
-            "internal",
-            "/slip",
-            "flow/",
+            "intern",
+            "slip",
+            "flow",
             "heat",
             "transfer",
-            "study"
+            "studi"
         ]
     ],
     [
         [
-            "real-gas",
+            "real",
+            "ga",
             "transport",
-            "property",
+            "properti",
             "air",
-            "available",
+            "avail",
             "wide",
-            "range",
-            "enthalpy",
-            "enmity"
+            "rang",
+            "enthalpi",
+            "densiti"
         ]
     ],
     [
         [
-            "possible",
+            "possibl",
             "find",
             "analytical",
             "similar",
-            "solution",
+            "solut",
             "strong",
             "blast",
             "wave",
             "problem",
             "newtonian",
-            "approximation"
+            "approxim"
         ]
     ],
     [
         [
-            "aerodynamic",
-            "performance",
+            "aerodynam",
+            "perform",
             "channel",
             "flow",
             "ground",
             "effect",
-            "machine",
-            "calculate"
+            "machin",
+            "calcul"
         ]
     ],
     [
         [
             "basic",
-            "mechanism",
-            "transonic",
+            "mechan",
+            "transon",
             "aileron",
             "buzz"
         ]
@@ -182,56 +183,59 @@
     [
         [
             "paper",
-            "shock-sound",
+            "shock",
+            "sound",
             "wave",
-            "interaction"
+            "interact"
         ]
     ],
     [
         [
-            "material",
-            "property",
-            "photoelastic",
-            "material"
+            "materi",
+            "properti",
+            "photoelast",
+            "materi"
         ]
     ],
     [
         [
-            "transverse",
-            "potential",
+            "transvers",
+            "potenti",
             "flow",
-            "body",
-            "revolution",
-            "calculate",
-            "efficiently",
-            "electronic",
-            "computer"
+            "bodi",
+            "revolut",
+            "calcul",
+            "effici",
+            "electron",
+            "comput"
         ]
     ],
     [
         [
-            "three-dimensions",
+            "three",
+            "dimension",
             "problem",
-            "transverse",
-            "potential",
+            "transvers",
+            "potenti",
             "flow",
-            "body",
-            "revolution",
-            "reduce",
-            "two-dimensions",
+            "bodi",
+            "revolut",
+            "reduc",
+            "two",
+            "dimension",
             "problem"
         ]
     ],
     [
         [
-            "experimental",
-            "pressure",
-            "distribution",
-            "body",
-            "revolution",
-            "angle",
+            "experiment",
+            "pressur",
+            "distribut",
+            "bodi",
+            "revolut",
+            "angl",
             "attack",
-            "available"
+            "avail"
         ]
     ],
     [
@@ -240,62 +244,63 @@
             "good",
             "basic",
             "treatment",
-            "dynamic",
-            "re-entry",
-            "combine",
-            "consideration",
-            "realistic",
+            "dynam",
+            "entri",
+            "combin",
+            "consider",
+            "realist",
             "effect",
-            "relative",
-            "simplicity",
+            "relat",
+            "simplic",
             "result"
         ]
     ],
     [
         [
-            "anyone",
-            "formally",
-            "determine",
-            "influence",
-            "would",
-            "heat",
-            "produce",
-            "induced",
+            "anyon",
+            "formal",
+            "determin",
+            "influenc",
+            "joul",
+            "heating",
+            "produc",
+            "induc",
             "current",
-            "magnetohydrodynamic",
+            "magnetohydrodynam",
             "free",
-            "convention",
+            "convect",
             "flow",
             "general",
-            "condition"
+            "condit"
         ]
     ],
     [
         [
-            "compressibility",
-            "transformation",
+            "whi",
+            "compress",
+            "transform",
             "fail",
-            "correlate",
+            "correl",
             "high",
             "speed",
             "data",
-            "medium",
+            "helium",
             "air"
         ]
     ],
     [
         [
-            "anyone",
-            "else",
-            "discover",
-            "turbulent",
+            "anyon",
+            "els",
+            "discov",
+            "turbul",
             "skin",
             "friction",
-            "sensitive",
-            "nature",
-            "variation",
-            "viscosity",
-            "temperature"
+            "sensit",
+            "natur",
+            "variat",
+            "viscos",
+            "temperatur"
         ]
     ],
     [
@@ -303,48 +308,48 @@
             "progress",
             "make",
             "research",
-            "unsteady",
-            "aerodynamics"
+            "unsteadi",
+            "aerodynam"
         ]
     ],
     [
         [
             "factor",
-            "influence",
+            "influenc",
             "time",
-            "require",
-            "invent",
-            "large",
-            "structural",
-            "marine"
+            "requir",
+            "invert",
+            "larg",
+            "structur",
+            "matrix"
         ]
     ],
     [
         [
-            "practical",
+            "practic",
             "flow",
             "follow",
-            "theoretical",
+            "theoret",
             "concept",
-            "interaction",
-            "adjacent",
+            "interact",
+            "adjac",
             "blade",
             "row",
-            "supersonic",
-            "cascade"
+            "superson",
+            "cascad"
         ]
     ],
     [
         [
-            "single",
-            "approximate",
+            "singl",
+            "approxim",
             "formula",
-            "displacement",
-            "thickness",
-            "lamina",
-            "boundary",
+            "displac",
+            "thick",
+            "laminar",
+            "boundari",
             "layer",
-            "compressible",
+            "compress",
             "flow",
             "flat",
             "plate"
@@ -358,18 +363,18 @@
             "ring",
             "wing",
             "linear",
-            "theory",
+            "theori",
             "affect",
-            "thickness"
+            "thick"
         ]
     ],
     [
         [
-            "application",
+            "applic",
             "linear",
-            "theory",
+            "theori",
             "design",
-            "curved",
+            "curv",
             "wing"
         ]
     ],
@@ -377,24 +382,24 @@
         [
             "effect",
             "cross",
-            "sectional",
+            "section",
             "shape",
             "flow",
-            "simple",
-            "felt",
+            "simpl",
+            "delta",
             "wing",
             "sharp",
-            "leading",
-            "edge"
+            "lead",
+            "edg"
         ]
     ],
     [
         [
             "paper",
             "flow",
-            "visualization",
+            "visual",
             "slender",
-            "conical",
+            "conic",
             "wing"
         ]
     ],
@@ -403,16 +408,17 @@
             "size",
             "end",
             "plate",
-            "safely",
+            "safe",
             "use",
-            "simulate",
-            "two-dimensions",
+            "simul",
+            "two",
+            "dimension",
             "flow",
-            "condition",
+            "condit",
             "bluff",
-            "cylindrical",
-            "body",
-            "finite",
+            "cylindr",
+            "bodi",
+            "finit",
             "aspect",
             "ratio"
         ]
@@ -420,29 +426,33 @@
     [
         [
             "find",
-            "approximate",
-            "correction",
-            "thickness",
+            "approxim",
+            "correct",
+            "thick",
             "slender",
-            "thin-wing",
-            "theory"
+            "thin",
+            "w",
+            "theori"
         ]
     ],
     [
         [
-            "interference-free",
-            "longitudinal",
-            "stability",
-            "measurement",
-            "make",
+            "interference",
+            "fre",
+            "longitudin",
+            "stabil",
+            "measur",
+            "made",
             "use",
-            "free-flight",
-            "model",
-            "compare",
+            "free",
+            "flight",
+            "models",
+            "compar",
             "similar",
-            "measurement",
+            "measur",
             "make",
-            "low-blockade",
+            "low",
+            "blockag",
             "wind",
             "tunnel"
         ]
@@ -451,55 +461,57 @@
         [
             "wind",
             "tunnel",
-            "interference",
+            "interfer",
             "effect",
-            "investigate",
-            "systematic",
-            "basis"
+            "investig",
+            "systemat",
+            "basi"
         ]
     ],
     [
         [
+            "ani",
             "paper",
             "deal",
-            "caustic",
+            "acoust",
             "wave",
-            "propagation",
+            "propag",
             "react",
             "gas"
         ]
     ],
     [
         [
-            "anyone",
-            "investigate",
-            "relaxation",
+            "anyon",
+            "investig",
+            "relax",
             "effect",
             "gaseous",
             "heat",
             "transfer",
-            "suddenly",
+            "sudden",
             "heat",
             "wall"
         ]
     ],
     [
         [
-            "theoretical",
+            "ani",
+            "theoret",
             "method",
-            "prediction",
+            "predict",
             "base",
-            "pressure"
+            "pressur"
         ]
     ],
     [
         [
-            "transition",
-            "hypersonic",
+            "transit",
+            "hyperson",
             "wake",
             "depend",
-            "body",
-            "geometry",
+            "bodi",
+            "geometri",
             "size"
         ]
     ],
@@ -507,9 +519,9 @@
         [
             "one",
             "detect",
-            "transition",
+            "transit",
             "phenomenon",
-            "boundary",
+            "boundari",
             "layer"
         ]
     ],
@@ -517,18 +529,18 @@
         [
             "one",
             "detect",
-            "transition",
+            "transit",
             "phenomenon",
-            "hypersonic",
+            "hyperson",
             "wake"
         ]
     ],
     [
         [
-            "anyone",
-            "investigate",
+            "anyon",
+            "investig",
             "develop",
-            "simple",
+            "simpl",
             "model",
             "vortex",
             "wake",
@@ -540,82 +552,83 @@
     [
         [
             "criterion",
-            "transonic",
+            "transon",
             "flow",
             "around",
             "airfoil",
             "round",
             "lead",
-            "edge",
-            "rapidly",
-            "analyze",
-            "linearized",
-            "transonic",
+            "edg",
+            "valid",
+            "analyz",
+            "linear",
+            "transon",
             "flow",
-            "theory"
+            "theori"
         ]
     ],
     [
         [
-            "transonic",
+            "transon",
             "flow",
             "around",
-            "arbitrary",
+            "arbitrari",
             "smooth",
             "thin",
             "airfoil",
-            "analyze",
-            "simple",
-            "approximate",
+            "analys",
+            "simpl",
+            "approxim",
             "way"
         ]
     ],
     [
         [
             "detail",
-            "vigorous",
-            "kinetic",
-            "theory",
+            "rigor",
+            "kinet",
+            "theori",
             "gas"
         ],
         [
-            "campan-enskog",
+            "chapman",
+            "enskog",
             "theory"
         ]
     ],
     [
         [
-            "anyone",
-            "investigate",
+            "anyon",
+            "investig",
             "effect",
-            "surface",
+            "surfac",
             "mass",
             "transfer",
-            "hypersonic",
+            "hyperson",
             "viscous",
-            "interaction"
+            "interact"
         ]
     ],
     [
         [
-            "combined",
+            "combin",
             "effect",
-            "surface",
+            "surfac",
             "heat",
             "mass",
             "transfer",
-            "hypersonic",
+            "hyperson",
             "flow"
         ]
     ],
     [
         [
             "exist",
-            "solution",
-            "hypersonic",
+            "solut",
+            "hyperson",
             "viscous",
-            "interaction",
-            "insulated",
+            "interact",
+            "insul",
             "flat",
             "plate"
         ]
@@ -623,28 +636,31 @@
     [
         [
             "control",
-            "leading-edge",
-            "attachment",
-            "transonic",
+            "leading",
+            "edg",
+            "attach",
+            "transon",
             "speed"
         ]
     ],
     [
         [
-            "three-point",
-            "boundary-value",
+            "three",
+            "point",
+            "boundary",
+            "valu",
             "problem",
             "blasius",
-            "equation",
-            "integrate",
+            "equat",
+            "integr",
             "numerically",
             "use",
-            "suitable",
-            "transformation",
+            "suitabl",
+            "transformations",
             "without",
-            "operation",
-            "boundary",
-            "condition"
+            "iter",
+            "boundari",
+            "condit"
         ]
     ],
     [
@@ -653,43 +669,48 @@
             "small",
             "amount",
             "gas",
-            "rarefaction",
-            "characteristic",
-            "boundary",
+            "rarefact",
+            "characterist",
+            "boundari",
             "layer",
             "slender",
-            "body",
-            "revolution"
+            "bodi",
+            "revolut"
         ]
     ],
     [
         [
-            "available",
-            "information",
+            "avail",
+            "inform",
             "pertain",
-            "boundary",
+            "boundari",
             "layer",
+            "veri",
             "slender",
-            "body",
-            "revolution",
-            "continued",
-            "flow",
-            "transverse",
-            "curvature",
+            "bodi",
+            "revolut",
+            "continuum",
+            "flow"
+        ],
+        [
+            "transvers",
+            "curvatur",
             "effect"
         ]
     ],
     [
         [
-            "available",
-            "information",
+            "avail",
+            "inform",
             "pertain",
             "effect",
             "slight",
-            "rarefaction",
-            "boundary",
+            "rarefact",
+            "boundari",
             "layer",
-            "flow",
+            "flow"
+        ],
+        [
             "slip"
         ],
         [
@@ -698,17 +719,17 @@
     ],
     [
         [
-            "investigation",
+            "investig",
             "make",
             "flow",
             "field",
-            "body",
+            "bodi",
             "move",
             "rarefied",
-            "partially",
-            "idolize",
+            "partial",
+            "ioniz",
             "gas",
-            "presence",
+            "presenc",
             "magneticfield"
         ]
     ],
@@ -724,265 +745,274 @@
             "mass",
             "transfer",
             "nose",
-            "blunted",
+            "blunt",
             "cone"
         ]
     ],
     [
         [
             "extent",
-            "available",
-            "information",
-            "compressible",
-            "boundary",
+            "avail",
+            "inform",
+            "incompress",
+            "boundari",
             "layer",
-            "apply",
+            "appli",
             "problem",
-            "involve",
-            "compressible",
-            "boundary",
+            "involv",
+            "compress",
+            "boundari",
             "layer"
         ]
     ],
     [
         [
             "extent",
-            "readily",
-            "available",
-            "steady-state",
-            "aerodynamic",
+            "readili",
+            "avail",
+            "steady",
+            "st",
+            "aerodynam",
             "data",
-            "utilize",
+            "util",
             "predict",
-            "lifting-surface",
+            "lifting",
+            "surfac",
             "flutter",
-            "characteristic"
+            "characterist"
         ]
     ],
     [
         [
-            "significant",
-            "steady",
-            "non-steady",
+            "signific",
+            "steadi",
+            "non",
+            "steadi",
             "flow",
-            "characteristic",
+            "characterist",
             "affect",
             "flutter",
-            "mechanism"
+            "mechan"
         ]
     ],
     [
         [
-            "possible",
-            "determine",
+            "possibl",
+            "determin",
             "rate",
-            "forced",
-            "connective",
+            "forc",
+            "convect",
             "heat",
             "transfer",
-            "heated",
-            "cylinder",
-            "non-circular",
-            "cross-section",
+            "heat",
+            "cylind",
+            "non",
+            "circular",
+            "cross",
+            "section",
             "fluid",
             "flow",
             "along",
-            "generation"
+            "generators"
         ]
     ],
     [
         [
             "much",
             "know",
-            "boundary",
+            "boundari",
             "layer",
             "flow",
             "along",
-            "non-circular",
-            "cylinder"
+            "non",
+            "circular",
+            "cylind"
         ]
     ],
     [
         [
+            "ani",
             "simple",
             "practical",
             "method",
-            "numerical",
-            "integration",
-            "mixing",
-            "problem",
-            "i.e"
+            "numer",
+            "integr",
+            "mix",
+            "problem"
+        ],
+        [
+            "e"
         ],
         [
             "blasius",
             "problem",
-            "three-point",
-            "boundary",
-            "condition"
+            "three",
+            "point",
+            "boundari",
+            "conditions"
         ]
     ],
     [
         [
             "exist",
-            "closed-form",
-            "expression",
+            "closed",
+            "form",
+            "express",
             "local",
             "heat",
             "transfer",
             "around",
-            "awed",
-            "cylinder"
+            "yaw",
+            "cylind"
         ]
     ],
     [
         [
             "far",
             "around",
-            "cylinder",
-            "condition",
+            "cylind",
+            "condit",
             "flow",
-            "velocity",
-            "outside",
-            "boundary",
+            "veloc",
+            "outsid",
+            "boundari",
             "layer",
             "linear",
             "function",
-            "distance",
+            "distanc",
             "around",
-            "cylinder"
+            "cylind"
         ]
     ],
     [
         [
             "find",
-            "pressure",
+            "pressur",
             "data",
-            "surface",
+            "surfac",
             "swept",
-            "cylinder"
+            "cylind"
         ]
     ],
     [
         [
-            "ca",
-            "n't",
             "static",
-            "deflection",
+            "deflect",
             "shape",
             "use",
-            "prediction",
+            "predict",
             "flutter",
             "place",
-            "irrational",
+            "vibrat",
             "shape"
         ],
         [
-            "provide",
-            "justification",
+            "provid",
+            "justif",
             "mean",
-            "example"
+            "exampl"
         ]
     ],
     [
         [
-            "boundary",
+            "boundari",
             "layer",
             "flat",
             "plate",
-            "hear",
+            "shear",
             "flow",
-            "induce",
-            "pressure",
-            "radiant"
+            "induc",
+            "pressur",
+            "gradient"
         ]
     ],
     [
         [
-            "procedure",
-            "watch",
+            "procedur",
+            "match",
             "inner",
-            "solution",
+            "solut",
             "viscous",
             "flow",
             "problem",
-            "apply",
+            "appli",
             "main",
             "stream",
-            "hear",
+            "shear",
             "flow"
         ]
     ],
     [
         [
-            "series",
-            "expansion",
+            "seri",
+            "expans",
             "find",
-            "boundary",
+            "boundari",
             "layer",
             "flat",
             "plate",
-            "hear",
+            "shear",
             "flow"
         ]
     ],
     [
         [
-            "possible",
-            "technique",
-            "available",
-            "compute",
-            "injection",
-            "distribution",
+            "possibl",
+            "techniqu",
+            "avail",
+            "comput",
+            "inject",
+            "distribut",
             "correspond",
-            "isothermal",
-            "transportation",
+            "isotherm",
+            "transpir",
             "cool",
-            "hemisphere"
+            "hemispher"
         ]
     ],
     [
         [
             "know",
             "regard",
-            "asymptotic",
-            "solution",
+            "asymptot",
+            "solut",
             "exact",
-            "boundary",
+            "boundari",
             "layer",
-            "equation"
+            "equat"
         ]
     ],
     [
         [
             "previous",
-            "solution",
-            "boundary",
+            "solut",
+            "boundari",
             "layer",
-            "similarity",
-            "equation"
+            "similar",
+            "equat"
         ]
     ],
     [
         [
-            "experimental",
+            "experiment",
             "result",
-            "hypersonic",
+            "hyperson",
             "viscous",
-            "interaction"
+            "interact"
         ]
     ],
     [
         [
             "viscous",
-            "interaction",
-            "relatively",
+            "interact",
+            "relat",
             "low",
-            "reynolds",
+            "reynold",
             "number",
-            "flow",
-            "particularly",
+            "flows",
+            "particular",
             "high",
-            "much",
+            "mach",
             "number"
         ]
     ],
@@ -990,56 +1020,58 @@
         [
             "role",
             "effect",
-            "chemical",
+            "chemic",
             "reaction",
-            "particularly",
+            "particular",
             "equilibrium",
             "play",
-            "similitude",
+            "similitud",
             "law",
             "govern",
-            "hypersonic",
+            "hyperson",
             "flow",
             "slender",
-            "aerodynamic",
-            "body"
+            "aerodynam",
+            "bodi"
         ]
     ],
     [
         [
-            "significant",
-            "possible",
-            "pressure",
-            "dissociated",
+            "signific",
+            "possibl",
+            "pressur",
+            "dissoci",
             "free",
             "stream",
             "respect",
-            "realization",
-            "hypersonic",
-            "stimulation",
+            "realize",
+            "hyperson",
+            "simul",
             "high",
-            "enthalpy",
+            "enthalpi",
             "wind",
             "tunnel"
         ]
     ],
     [
         [
-            "discrepancy",
+            "discrep",
             "among",
             "current",
-            "analysis",
-            "vorticity",
+            "analysi",
+            "vortic",
             "effect",
-            "stagnation-point",
+            "stagnation",
+            "point",
             "heat",
             "transfer",
             "result",
-            "primarily",
-            "difference",
-            "viscosity-temperature",
+            "primarili",
+            "differ",
+            "viscosity",
+            "temperatur",
             "law",
-            "assume"
+            "assum"
         ]
     ],
     [
@@ -1048,15 +1080,16 @@
             "one",
             "trust",
             "linear",
-            "viscosity-temperature",
-            "solution",
-            "assume",
-            "analysis",
-            "hypersonic",
+            "viscosity",
+            "temperatur",
+            "solut",
+            "assum",
+            "analysi",
+            "hyperson",
             "shock",
             "layer",
             "low",
-            "reynolds",
+            "reynold",
             "number"
         ]
     ],
@@ -1066,122 +1099,126 @@
             "comparison",
             "shock",
             "layer",
-            "theory",
+            "theori",
             "exist",
-            "experiment",
+            "experi",
             "low",
-            "reynolds",
+            "reynold",
             "number",
-            "merged-layer",
-            "regime"
+            "merged",
+            "layer",
+            "regim"
         ]
     ],
     [
         [
-            "anyone",
+            "anyon",
             "explain",
-            "king",
-            "surge",
+            "kink",
+            "surg",
             "line",
-            "multi-stage",
-            "animal",
-            "compression"
+            "multi",
+            "stag",
+            "axial",
+            "compressor"
         ]
     ],
     [
         [
-            "aerodynamic",
-            "derivative",
-            "measure",
-            "hypersonic",
-            "much",
+            "ani",
+            "aerodynam",
+            "deriv",
+            "measur",
+            "hyperson",
+            "mach",
             "number",
             "comparison",
             "make",
-            "theoretical",
+            "theoret",
             "work"
         ]
     ],
     [
         [
             "method",
-            "measure",
-            "aerodynamic",
-            "derivative",
-            "available",
+            "measur",
+            "aerodynam",
+            "deriv",
+            "avail",
             "could",
             "adopt",
             "use",
             "short",
-            "running",
+            "run",
             "time",
-            "facility"
+            "facil"
         ]
     ],
     [
         [
-            "wind-tunnel",
-            "correction",
-            "two-dimensions",
+            "wind",
+            "tunnel",
+            "correct",
+            "two",
+            "dimension",
             "aerofoil",
             "mount",
-            "off-centre",
+            "centr",
             "tunnel"
         ]
     ],
     [
         [
             "kuchemann",
-            "'s",
             "multhopp",
-            "'s",
             "method",
-            "calculate",
+            "calcul",
             "lift",
-            "distribution",
+            "distribut",
             "swept",
             "wing",
-            "bubonic",
+            "subson",
             "flow",
-            "compare",
-            "experiment"
+            "compar",
+            "experi"
         ]
     ],
     [
         [
             "present",
             "state",
-            "theory",
-            "quasi-conical",
+            "theori",
+            "quasi",
+            "con",
             "flow"
         ]
     ],
     [
         [
-            "reference",
+            "refer",
             "method",
-            "available",
-            "accurately",
-            "estimate",
-            "aerodynamic",
+            "avail",
+            "accur",
+            "estim",
+            "aerodynam",
             "heat",
             "transfer",
-            "conical",
-            "body",
-            "lamina",
-            "turbulent",
+            "conic",
+            "bodi",
+            "laminar",
+            "turbul",
             "flow"
         ]
     ],
     [
         [
-            "parameter",
-            "seriously",
-            "influence",
-            "natural",
-            "transition",
-            "lamina",
-            "turbulent",
+            "paramet",
+            "serious",
+            "influenc",
+            "natur",
+            "transit",
+            "laminar",
+            "turbul",
             "flow",
             "model",
             "wind",
@@ -1190,17 +1227,18 @@
     ],
     [
         [
-            "satisfactory",
-            "experimental",
-            "technique",
+            "satisfactori",
+            "experiment",
+            "techniqu",
             "develop",
-            "measure",
-            "oscillatory",
-            "derivative",
+            "measur",
+            "oscillatori",
+            "deriv",
             "slender",
-            "sting-mounted",
+            "sting",
+            "mount",
             "model",
-            "supersonic",
+            "superson",
             "wind",
             "tunnel"
         ]
@@ -1208,46 +1246,47 @@
     [
         [
             "effect",
-            "boundary",
+            "boundari",
             "layer",
-            "edify",
+            "modifi",
             "basic",
-            "viscid",
+            "inviscid",
             "flow",
             "behind",
             "shock",
             "neglect",
             "effect",
             "lead",
-            "edge",
+            "edg",
             "corner"
         ]
     ],
     [
         [
-            "satellite",
+            "satellit",
             "orbit",
             "contract",
             "action",
             "air",
             "drag",
-            "atmosphere",
+            "atmospher",
             "scale",
             "height",
-            "varies",
-            "attitude"
+            "vari",
+            "altitud"
         ]
     ],
     [
         [
             "flow",
-            "transonic",
+            "transon",
             "speed",
-            "felt",
+            "delta",
             "wing",
-            "different",
-            "closely-related",
-            "capered",
+            "differ",
+            "closely",
+            "rel",
+            "taper",
             "sweptback",
             "wing"
         ]
@@ -1256,54 +1295,57 @@
         [
             "recent",
             "data",
-            "shock-induced",
-            "boundary-layer",
-            "separation"
+            "shock",
+            "induc",
+            "boundary",
+            "lay",
+            "separ"
         ]
     ],
     [
         [
-            "interference",
+            "interfer",
             "effect",
-            "likely",
-            "transonic",
+            "like",
+            "transon",
             "speed"
         ]
     ],
     [
         [
             "give",
-            "complete",
+            "complet",
             "freedom",
             "design",
             "airplane",
-            "procedure",
+            "procedur",
             "would",
             "use",
             "order",
-            "minimize",
-            "tonic",
+            "minim",
+            "sonic",
             "boom",
             "intensity",
             "limit",
-            "degree",
-            "minimize",
+            "degre",
+            "minim",
             "accomplish"
         ]
     ],
     [
         [
-            "methode-air",
-            "combustion",
+            "methane",
+            "air",
+            "combust",
             "product",
             "use",
-            "hypersonic",
+            "hyperson",
             "test",
             "medium",
             "predict",
             "within",
-            "experimental",
-            "accuracy",
+            "experiment",
+            "accuracies",
             "result",
             "obtain",
             "air"
@@ -1311,224 +1353,227 @@
     ],
     [
         [
-            "theoretical",
+            "theoret",
             "heat",
             "transfer",
             "rate",
-            "stagnation",
+            "stagnat",
             "point",
             "blunt",
-            "body"
+            "bodi"
         ]
     ],
     [
         [
-            "theoretical",
+            "theoret",
             "heat",
             "transfer",
-            "distribution",
+            "distribut",
             "around",
-            "hemisphere"
+            "hemispher"
         ]
     ],
     [
         [
-            "anyone",
-            "investigate",
-            "unsteady",
+            "anyon",
+            "investig",
+            "unsteadi",
             "lift",
-            "distribution",
-            "finite",
+            "distribut",
+            "finit",
             "wing",
-            "bubonic",
+            "subson",
             "flow"
         ]
     ],
     [
         [
-            "information",
-            "available",
-            "dynamic",
-            "response",
-            "airplane",
-            "guest",
+            "inform",
+            "avail",
+            "dynam",
+            "respons",
+            "airplan",
+            "gust",
             "blast",
-            "bubonic",
-            "regime"
+            "subson",
+            "regim"
         ]
     ],
     [
         [
             "forward",
             "apex",
-            "locate",
+            "locat",
             "control",
-            "effective",
+            "effect",
             "low",
-            "bubonic",
+            "subson",
             "speed",
-            "compare",
-            "conventional",
-            "trailing-edge",
+            "compar",
+            "convent",
+            "trailing",
+            "edg",
             "flap"
         ]
     ],
     [
         [
             "give",
-            "uncontrolled",
-            "vehicle",
-            "tumble",
+            "uncontrol",
+            "vehicl",
+            "tumbl",
             "enter",
             "atmosphere",
-            "possible",
+            "possibl",
             "predict",
             "stop",
-            "tumbling",
-            "subsequent",
+            "tumbl",
+            "subsequ",
             "motion"
         ]
     ],
     [
         [
             "effect",
-            "initial",
-            "imperfection",
-            "elastic",
-            "suckling",
-            "cylindrical",
+            "initi",
+            "imperfect",
+            "elast",
+            "buckl",
+            "cylindr",
             "shell",
-            "animal",
-            "compression"
+            "axial",
+            "compress"
         ]
     ],
     [
         [
-            "incremental",
-            "theory",
-            "reformation",
-            "theory",
+            "whi",
+            "increment",
+            "theori",
+            "deform",
+            "theori",
             "plastic",
-            "stress-strain",
+            "stress",
+            "strain",
             "relationship",
             "differ",
-            "greatly",
-            "apply",
-            "stabilityproblems"
+            "great",
+            "appli",
+            "stabilityproblem"
         ]
     ],
     [
         [
             "basic",
-            "dynamic",
-            "characteristic",
-            "structure",
-            "continuous",
-            "many",
+            "dynam",
+            "characterist",
+            "structur",
+            "continu",
+            "mani",
             "span"
         ]
     ],
     [
         [
-            "information",
-            "suckling",
+            "inform",
+            "buckl",
             "sandwich",
             "sphere",
-            "available"
+            "avail"
         ]
     ],
     [
         [
             "load",
-            "reformation",
-            "characteristic",
+            "deform",
+            "characterist",
             "beam",
             "obtain",
-            "material",
-            "elastic",
+            "materi",
+            "inelast",
             "non",
             "uniform",
-            "temperature",
+            "temperatur",
             "present"
         ]
     ],
     [
         [
             "effect",
-            "internal",
+            "intern",
             "liquid",
             "column",
-            "breathe",
-            "vibration",
-            "cylindrical",
+            "breath",
+            "vibrat",
+            "cylindr",
             "shell"
         ]
     ],
     [
         [
-            "experimental",
-            "technique",
+            "experiment",
+            "techniqu",
             "shell",
-            "vibration"
+            "vibrat"
         ]
     ],
     [
         [
-            "summarize",
-            "theoretical",
-            "experimental",
+            "summar",
+            "theoret",
+            "experiment",
             "work",
             "behaviour",
-            "typical",
+            "typic",
             "aircraft",
-            "structure",
-            "noise",
-            "environment",
-            "possible",
+            "structur",
+            "nois",
+            "environ",
+            "possibl",
             "develop",
             "design",
-            "procedure"
+            "procedur"
         ]
     ],
     [
         [
             "data",
-            "fatigue",
-            "structure",
-            "caustic",
-            "loading"
+            "fatigu",
+            "structur",
+            "acoust",
+            "load"
         ]
     ],
     [
         [
             "panel",
             "subject",
-            "aerodynamic",
-            "heating"
+            "aerodynam",
+            "heat"
         ]
     ],
     [
         [
-            "increase",
-            "edge",
-            "loading",
+            "increas",
+            "edg",
+            "load",
             "plate",
             "beyond",
-            "critical",
-            "value",
-            "suckle",
-            "change",
-            "suckling",
+            "critic",
+            "valu",
+            "buckl",
+            "chang",
+            "buckl",
             "mode"
         ]
     ],
     [
         [
             "effect",
-            "elastic",
-            "edge",
+            "elast",
+            "edg",
             "restraint",
-            "consider",
+            "consid",
             "previous",
             "paper",
             "panel",
@@ -1537,58 +1582,58 @@
     ],
     [
         [
-            "solution",
-            "clamped",
+            "solut",
+            "clamp",
             "plate",
             "problem",
-            "classical",
-            "theory",
+            "classic",
+            "theori",
             "bending",
-            "reduce",
+            "reduc",
             "two",
-            "successive",
-            "membrane",
-            "boundary",
-            "value",
+            "success",
+            "membran",
+            "boundari",
+            "valu",
             "problem"
         ]
     ],
     [
         [
             "data",
-            "exists",
-            "oscillatory",
-            "aerodynamic",
-            "force",
+            "exist",
+            "oscillatori",
+            "aerodynam",
+            "forc",
             "control",
-            "surface",
-            "transonic",
-            "much",
+            "surfac",
+            "transon",
+            "mach",
             "number"
         ]
     ],
     [
         [
-            "likely",
-            "airforce",
+            "like",
+            "airforc",
             "wing",
             "general",
-            "platform",
-            "oscillating",
-            "transonic",
+            "planform",
+            "oscil",
+            "transon",
             "flow",
-            "determine",
-            "purely",
-            "analytical",
+            "determin",
+            "pure",
+            "analyt",
             "method"
         ],
         [
-            "possible",
-            "determine",
-            "airforce",
-            "single",
+            "possibl",
+            "determin",
+            "airforc",
+            "singl",
             "particular",
-            "platform",
+            "planform",
             "rectangular",
             "one",
             "method"
@@ -1597,92 +1642,99 @@
     [
         [
             "problem",
-            "similarity",
-            "representative",
-            "investigation",
-            "aeroelastic",
+            "similar",
+            "repres",
+            "investig",
+            "aeroelast",
             "effect",
-            "heated",
+            "heat",
             "flow",
-            "intractable",
+            "intract",
             "previous",
-            "investigation",
-            "imply"
+            "investig",
+            "impli"
         ]
     ],
     [
         [
-            "magnitude",
-            "distribution",
+            "magnitud",
+            "distribut",
             "lift",
             "cone",
-            "cylindrical",
+            "cylindr",
             "portion",
-            "cone-cylinder",
-            "configuration"
+            "cone",
+            "cylind",
+            "configur"
         ]
     ],
     [
         [
-            "information",
-            "addition",
-            "/boat-tail/",
+            "ani",
+            "inform",
+            "addit",
+            "boat",
+            "tail",
             "affect",
             "normal",
-            "force",
-            "body",
+            "forc",
+            "bodi",
             "various",
-            "angle",
-            "incidence"
+            "angl",
+            "incid"
         ]
     ],
     [
         [
-            "aerodynamic",
-            "interference",
+            "aerodynam",
+            "interfer",
             "effect",
+            "fin",
             "lift",
-            "body",
+            "bodi",
             "lift",
-            "in-body",
-            "combination"
+            "fin",
+            "bodi",
+            "combin"
         ]
     ],
     [
         [
             "effect",
-            "initial",
-            "axisymmetric",
-            "deviation",
-            "circularity",
+            "initi",
+            "axisymmetr",
+            "deviat",
+            "circular",
             "non",
             "linear",
-            "large-deflection",
-            "load-deflection",
-            "response",
-            "cylinder",
-            "hydrostatic",
-            "pressure"
+            "large",
+            "deflection",
+            "load",
+            "deflect",
+            "respons",
+            "cylind",
+            "hydrostat",
+            "pressur"
         ]
     ],
     [
         [
             "previous",
-            "analysis",
-            "circumferential",
+            "analysi",
+            "circumferenti",
             "thermal",
-            "suckling",
+            "buckl",
             "circular",
-            "cylindrical",
+            "cylindr",
             "shell",
-            "unnecessarily",
-            "involve",
+            "unnecessarili",
+            "involv",
             "even",
-            "inaccurate",
+            "inaccur",
             "due",
-            "assumed",
+            "assum",
             "form",
-            "suckle",
+            "buckl",
             "mode"
         ]
     ],
@@ -1690,37 +1742,38 @@
         [
             "paper",
             "deal",
-            "circumferential",
-            "suckle",
+            "circumferenti",
+            "buckl",
             "either",
             "thermal",
-            "suckling",
+            "buckl",
             "due",
-            "mechanical",
-            "loading"
+            "mechan",
+            "load"
         ]
     ],
     [
         [
-            "analytical",
-            "investigation",
+            "analyt",
+            "investig",
             "make",
-            "stability",
-            "conical",
+            "stabil",
+            "conic",
             "shell"
         ],
         [
             "result",
-            "compare",
-            "experiment"
+            "compar",
+            "experi"
         ]
     ],
     [
         [
+            "ani",
             "work",
-            "determine",
-            "nature",
-            "compressible",
+            "determin",
+            "natur",
+            "compress",
             "viscous",
             "flow",
             "straight",
@@ -1729,41 +1782,41 @@
     ],
     [
         [
-            "area",
+            "areas",
             "low",
-            "density",
+            "densiti",
             "wind",
             "tunnel",
-            "flow",
+            "flows",
             "viscous",
-            "compressible",
+            "compress",
             "flow",
             "slender",
             "channel",
             "problem"
         ],
         [
-            "analytical",
-            "investigation",
+            "analyt",
+            "investig",
             "make",
-            "stability",
-            "conical",
+            "stabil",
+            "conic",
             "shell"
         ],
         [
             "result",
-            "compare",
-            "experiment"
+            "compar",
+            "experi"
         ]
     ],
     [
         [
             "jet",
-            "interference",
-            "supersonic",
+            "interfer",
+            "superson",
             "flow",
-            "-dash",
-            "experimental",
+            "dash",
+            "experiment",
             "paper"
         ]
     ],
@@ -1773,22 +1826,22 @@
             "vector",
             "control",
             "fluid",
-            "injection",
-            "-dash",
+            "inject",
+            "dash",
             "paper"
         ]
     ],
     [
         [
-            "possible",
+            "possibl",
             "obtain",
-            "reasonably",
-            "simple",
-            "analytical",
-            "solution",
+            "reason",
+            "simpl",
+            "analyt",
+            "solut",
             "heat",
-            "equation",
-            "exponential",
+            "equat",
+            "exponenti",
             "time",
             "heat",
             "input"
@@ -1796,102 +1849,104 @@
     ],
     [
         [
-            "anyone",
-            "programme",
+            "anyon",
+            "program",
             "pump",
             "design",
             "method",
-            "high-speed",
-            "digital",
-            "computer"
+            "high",
+            "spe",
+            "digit",
+            "comput"
         ]
     ],
     [
         [
-            "anyone",
-            "derive",
-            "simplifies",
+            "anyon",
+            "deriv",
+            "simplifi",
             "pump",
             "design",
-            "equation",
-            "fundamental",
-            "three-dimensions",
-            "equation",
-            "compressible",
-            "nonviscous",
+            "equat",
+            "fundament",
+            "three",
+            "dimension",
+            "equat",
+            "incompress",
+            "nonvisc",
             "flow"
         ]
     ],
     [
         [
             "flutter",
-            "characteristic",
-            "exposed",
+            "characterist",
+            "expos",
             "skin",
             "panel",
-            "x-15",
-            "vertical",
-            "stabilizer",
+            "x",
+            "vertic",
+            "stabil",
             "subject",
-            "aerodynamic",
-            "heating"
+            "aerodynam",
+            "heat"
         ]
     ],
     [
         [
             "agreement",
             "find",
-            "theoretical",
+            "theoret",
             "predict",
-            "inability",
+            "instabl",
             "time",
-            "experimentally",
-            "measure",
-            "collapse",
+            "experiment",
+            "measur",
+            "collaps",
             "time",
-            "compressed",
+            "compress",
             "column",
             "creep"
         ]
     ],
     [
         [
-            "theoretical",
-            "study",
+            "theoret",
+            "studi",
             "creep",
-            "suckling"
+            "buckl"
         ]
     ],
     [
         [
-            "experimental",
-            "study",
+            "experiment",
+            "studi",
             "creep",
-            "suckling"
+            "buckl"
         ]
     ],
     [
         [
-            "possible",
-            "correlate",
+            "possibl",
+            "correl",
             "result",
             "creep",
-            "suckling",
-            "widely",
-            "different",
-            "structure",
+            "buckl",
+            "wide",
+            "differ",
+            "structur",
             "within",
             "framework",
-            "single",
-            "theory"
+            "singl",
+            "theori"
         ]
     ],
     [
         [
-            "experimental",
+            "experiment",
             "result",
             "creep",
-            "suckling",
+            "buckl",
             "column"
         ]
     ],
@@ -1899,277 +1954,286 @@
         [
             "result",
             "creep",
-            "suckling",
+            "buckl",
             "round",
             "tube",
-            "external",
-            "pressure"
+            "extern",
+            "pressur"
         ]
     ],
     [
         [
-            "analytical",
-            "study",
+            "ani",
+            "analyt",
+            "studi",
             "conduct",
-            "time-to-failure",
-            "mechanism",
-            "associate",
+            "time",
+            "failur",
+            "mechan",
+            "associ",
             "creep",
-            "collapse",
+            "collaps",
             "long",
             "circular",
-            "cylindrical",
+            "cylindr",
             "shell",
             "exhibit",
-            "primary",
-            "secondary",
+            "primari",
+            "secondari",
             "creep",
             "well",
-            "elastic",
-            "decoration",
+            "elast",
+            "deform",
             "various",
-            "distributed",
-            "force",
+            "distribut",
+            "forc",
             "system"
         ]
     ],
     [
         [
             "effect",
-            "initial",
-            "tress",
-            "frequency",
-            "vibration",
+            "initi",
+            "stresses",
+            "frequenc",
+            "vibrat",
             "circular",
-            "cylindrical",
-            "shell",
-            "investigate"
+            "cylindr",
+            "shells",
+            "investig"
         ]
     ],
     [
         [
             "effect",
-            "change",
-            "initial",
-            "pressure",
+            "chang",
+            "initi",
+            "pressur",
             "due",
-            "reformation",
-            "frequency",
-            "vibration",
+            "deformation",
+            "frequenc",
+            "vibrat",
             "circular",
-            "cylindrical",
+            "cylindr",
             "shell",
-            "investigate"
+            "investig"
         ]
     ],
     [
         [
-            "discontinuity",
-            "tresses",
+            "discontinu",
+            "stress",
             "junction",
-            "pressurized",
-            "structure"
+            "pressur",
+            "structur"
         ]
     ],
     [
         [
-            "analytical",
-            "solution",
-            "available",
-            "tress",
-            "edge-loaded",
+            "analyt",
+            "solut",
+            "avail",
+            "stress",
+            "edge",
+            "load",
             "shell",
-            "revolution"
+            "revolut"
         ]
     ],
     [
         [
             "dome",
             "contour",
-            "minimize",
-            "discontinuity",
-            "tresses",
+            "minim",
+            "discontinu",
+            "stress",
             "use",
-            "closure",
-            "cylindrical",
-            "pressure",
+            "closur",
+            "cylindr",
+            "pressur",
             "vessel"
         ]
     ],
     [
         [
             "general",
-            "solution",
-            "tress",
-            "pressurized",
+            "solut",
+            "stress",
+            "pressur",
             "shell",
-            "revolution",
-            "available"
+            "revolut",
+            "avail"
         ]
     ],
     [
         [
-            "study",
+            "studi",
             "pure",
-            "membrane",
-            "cylinder",
+            "membran",
+            "cylind",
             "wall",
             "bend",
-            "stiffness",
+            "stiff",
             "maintain",
             "shape",
-            "virtue",
-            "internal",
-            "pressure",
-            "provide",
+            "virtu",
+            "intern",
+            "pressur",
+            "provid",
+            "ani",
             "insight",
             "behaviour",
-            "pressurized",
-            "cylinder",
-            "finite",
+            "pressur",
+            "cylind",
+            "finit",
             "wall",
-            "stiffness"
+            "stiff"
         ]
     ],
     [
         [
             "best",
-            "experimental",
+            "experiment",
             "data",
-            "classical",
+            "classic",
             "small",
-            "deflection",
-            "theory",
-            "analysis",
-            "available",
-            "pressurized",
-            "cylinder",
+            "deflect",
+            "theori",
+            "analys",
+            "avail",
+            "pressur",
+            "cylind",
             "bend"
         ]
     ],
     [
         [
-            "membrane",
-            "theory",
+            "membran",
+            "theori",
             "exist",
             "behaviour",
-            "pressurized",
-            "membrane",
-            "cylinder",
-            "bending",
+            "pressur",
+            "membran",
+            "cylind",
+            "bend",
             "predict"
         ]
     ],
     [
         [
-            "equation",
-            "define",
-            "stability",
-            "simply",
+            "equat",
+            "defin",
+            "stabil",
+            "simpli",
             "support",
-            "corrupt",
+            "corrug",
             "core",
             "sandwich",
-            "cylinder"
+            "cylind"
         ]
     ],
     [
         [
             "paper",
             "small",
-            "deflection",
-            "theory",
-            "suckle",
+            "deflect",
+            "theori",
+            "buckl",
             "sandwich",
-            "cylinder"
+            "cylind"
         ]
     ],
     [
         [
-            "anyone",
+            "anyon",
             "develop",
-            "analysis",
-            "accurately",
+            "analysi",
+            "accur",
             "establish",
-            "large",
-            "deflection",
+            "larg",
+            "deflect",
             "behaviour",
-            "conical",
+            "conic",
             "shell"
         ]
     ],
     [
         [
-            "magnitude",
-            "second-order",
-            "wing-body",
-            "interference",
+            "magnitud",
+            "second",
+            "ord",
+            "wing",
+            "bodi",
+            "interfer",
             "high",
-            "supersonic",
-            "much",
+            "superson",
+            "mach",
             "number"
         ]
     ],
     [
         [
             "best",
-            "theoretical",
+            "theoret",
             "method",
-            "calculate",
-            "pressure",
-            "surface",
+            "calcul",
+            "pressur",
+            "surfac",
             "wing",
-            "alone"
+            "alon"
         ]
     ],
     [
         [
             "effect",
-            "boundary-layer",
+            "boundary",
+            "lay",
             "wing",
-            "pressure",
-            "calculate",
-            "magnitude"
+            "pressur",
+            "calculated",
+            "magnitud"
         ]
     ],
     [
         [
-            "never-stores",
-            "difference",
-            "equation",
-            "solve"
+            "navier",
+            "stok",
+            "differ",
+            "equat",
+            "solv"
         ]
     ],
     [
         [
-            "operative",
+            "iter",
             "method",
-            "solve",
+            "solv",
             "linear",
-            "elliptical",
-            "difference",
-            "equation",
-            "rapidly",
-            "convenient"
+            "ellipt",
+            "differ",
+            "equat",
+            "rapid",
+            "converg"
         ]
     ],
     [
         [
-            "technical",
+            "technic",
             "report",
-            "measurement",
-            "relation",
+            "measur",
+            "ablat",
+            "dure",
             "flight"
         ]
     ],
     [
         [
-            "quantitative",
-            "quantitative",
-            "material",
-            "available",
-            "relation",
-            "material",
+            "qualit",
+            "quantit",
+            "materi",
+            "avail",
+            "ablat",
+            "materi",
             "research"
         ]
     ],
@@ -2177,88 +2241,90 @@
         [
             "flow",
             "field",
-            "calculate",
-            "blunt-nosed",
-            "body",
-            "compare",
-            "experiment",
+            "calcul",
+            "blunt",
+            "nos",
+            "bodi",
+            "compar",
+            "experi",
             "wide",
-            "range",
+            "rang",
             "free",
             "stream",
-            "condition",
-            "body",
+            "condit",
+            "bodi",
             "shape"
         ]
     ],
     [
         [
-            "available",
-            "property",
-            "high-temperature",
+            "avail",
+            "properti",
+            "high",
+            "temperatur",
             "air"
         ]
     ],
     [
         [
-            "magnitude",
-            "aerodynamic",
-            "damning",
-            "flexible",
-            "vibration",
+            "magnitud",
+            "aerodynam",
+            "damp",
+            "flexibl",
+            "vibrat",
             "mode",
             "slender",
-            "body",
-            "revolution",
-            "characteristic",
+            "bodi",
+            "revolut",
+            "characterist",
             "launch",
-            "vehicle"
+            "vehicl"
         ]
     ],
     [
         [
-            "compression",
-            "circumferential",
-            "tress",
-            "torispherical",
+            "compress",
+            "circumferenti",
+            "stress",
+            "torispher",
             "shell",
             "reveal",
-            "possibility",
-            "suckle",
-            "internal",
-            "pressure"
+            "possibl",
+            "buckl",
+            "intern",
+            "pressur"
         ],
         [
-            "anyone",
-            "investigate",
-            "range",
+            "anyon",
+            "investig",
+            "rang",
             "shell",
-            "parameter",
-            "tress",
-            "sufficiently",
-            "large",
-            "cause",
-            "elastic",
-            "suckling"
+            "paramet",
+            "stress",
+            "suffici",
+            "larg",
+            "caus",
+            "elast",
+            "buckl"
         ]
     ],
     [
         [
-            "integral",
+            "integr",
             "method",
             "give",
-            "single",
-            "sufficiently",
-            "accurate",
+            "singl",
+            "suffici",
+            "accur",
             "method",
-            "calculate",
-            "lamina",
-            "separate",
+            "calcul",
+            "laminar",
+            "separ",
             "point",
             "various",
-            "compressible",
-            "compressible",
-            "boundary",
+            "incompress",
+            "compress",
+            "boundari",
             "layer",
             "zero",
             "heat",
@@ -2267,56 +2333,58 @@
     ],
     [
         [
-            "accurate",
+            "accur",
             "exact",
-            "solution",
-            "lamina",
-            "separation",
+            "solut",
+            "laminar",
+            "separ",
             "point",
             "various",
-            "compressible",
-            "compressible",
-            "boundary",
+            "incompress",
+            "compress",
+            "boundari",
             "layer",
             "zero",
             "heat",
             "transfer",
-            "available"
+            "avail"
         ]
     ],
     [
         [
-            "hypersonic",
-            "similarity",
+            "hyperson",
+            "similar",
             "result",
-            "apply",
-            "technique",
-            "prediction",
-            "surface",
-            "pressure",
-            "give",
-            "somebody",
-            "angle",
+            "appli",
+            "techniqu",
+            "predict",
+            "surfac",
+            "pressur",
+            "ogiv",
+            "forebodi",
+            "angl",
             "attack"
         ]
     ],
     [
         [
-            "determine",
+            "determin",
             "onset",
-            "shock-induced",
-            "boundary-layer",
-            "separation"
+            "shock",
+            "induc",
+            "boundary",
+            "lay",
+            "separ"
         ]
     ],
     [
         [
-            "stable",
-            "profile",
-            "compressible",
-            "boundary",
+            "stabl",
+            "profil",
+            "compress",
+            "boundari",
             "layer",
-            "induce",
+            "induc",
             "move",
             "wave",
             "know"
@@ -2324,13 +2392,13 @@
     ],
     [
         [
-            "experimental",
+            "experiment",
             "result",
-            "stability",
-            "compressible",
-            "boundary",
+            "stabil",
+            "compress",
+            "boundari",
             "layer",
-            "induce",
+            "induc",
             "move",
             "wave"
         ]
@@ -2338,84 +2406,90 @@
     [
         [
             "exact",
-            "solution",
+            "solut",
             "method",
-            "calculate",
-            "relative",
+            "calcul",
+            "ablat",
             "mass",
             "loss",
-            "material",
-            "beating",
+            "materi",
+            "ablat",
             "high",
-            "temperature",
-            "hypersonic",
+            "temperatur",
+            "hyperson",
             "flight",
-            "environment"
+            "environ"
         ]
     ],
     [
         [
-            "approximate",
-            "solution",
+            "approxim",
+            "solut",
             "know",
             "direct",
             "problem",
-            "transonic",
+            "transon",
             "flow",
             "throat",
-            "noble",
-            "i.e"
+            "nozzle"
+        ],
+        [
+            "e"
         ],
         [
             "find",
             "flow",
             "give",
-            "noble"
+            "nozzl"
         ]
     ],
     [
         [
-            "approximate",
-            "solution",
+            "approxim",
+            "solut",
             "know",
             "indirect",
             "problem",
-            "transonic",
+            "transon",
             "flow",
             "throat",
-            "noble",
-            "i.e"
+            "nozzle"
+        ],
+        [
+            "e"
         ],
         [
             "find",
-            "noble",
+            "nozzl",
             "give",
-            "animal",
-            "velocity",
-            "distribution"
+            "axial",
+            "veloc",
+            "distribut"
         ]
     ],
     [
         [
+            "whi",
             "user",
             "orthodox",
-            "pitt-static",
+            "pitot",
+            "stat",
             "tube",
             "often",
             "find",
-            "celebration",
+            "calibr",
             "appear"
         ],
         [
-            "significantly",
-            "different",
-            "formerly",
-            "specify",
+            "signific",
+            "differ",
+            "former",
+            "specified",
             "b",
-            "wildly",
-            "variable",
+            "wild",
+            "variabl",
             "low",
-            "reynolds",
+            "reynold",
             "number"
         ]
     ],
@@ -2423,42 +2497,45 @@
         [
             "comparison",
             "make",
-            "interference-free",
+            "interference",
+            "fre",
             "drag",
-            "measurement",
+            "measur",
             "use",
-            "free-flight",
+            "free",
+            "flight",
             "model",
             "similar",
-            "measurement",
+            "measur",
             "make",
-            "low-blockade",
+            "low",
+            "blockag",
             "wind",
             "tunnel"
         ]
     ],
     [
         [
-            "solution",
+            "solut",
             "blasius",
             "problem",
-            "three-point",
-            "boundary",
-            "condition"
+            "three",
+            "point",
+            "boundari",
+            "condit"
         ]
     ],
     [
         [
-            "reference",
+            "refer",
             "lyapunov",
-            "'s",
             "method",
-            "stability",
+            "stabil",
             "linear",
-            "differential",
-            "equation",
-            "periodic",
-            "coefficient"
+            "differenti",
+            "equat",
+            "period",
+            "coeffici"
         ]
     ],
     [
@@ -2468,8 +2545,8 @@
             "report",
             "contain",
             "shock",
-            "detachment",
-            "distance",
+            "detach",
+            "distanc",
             "data"
         ]
     ],
@@ -2479,66 +2556,67 @@
             "flow",
             "channel",
             "low",
-            "reynolds",
+            "reynold",
             "number"
         ]
     ],
     [
         [
-            "approximate",
-            "analytical",
+            "approxim",
+            "analyt",
             "heat",
-            "condition",
-            "solution",
+            "conduct",
+            "solut",
             "use",
             "method",
-            "bit",
-            "'s",
-            "principle"
+            "biot",
+            "principl"
         ]
     ],
     [
         [
             "mode",
-            "stable",
+            "stall",
             "expect",
             "stage",
-            "animal",
-            "compression"
+            "axial",
+            "compressor"
         ]
     ],
     [
         [
             "criterion",
             "establish",
-            "determine",
-            "animal",
-            "compression",
+            "determin",
+            "axial",
+            "compressor",
             "choke",
             "line"
         ]
     ],
     [
         [
-            "theory",
-            "quasi-conical",
+            "theori",
+            "quasi",
+            "con",
             "flow",
-            "develop",
-            "supersonic",
-            "linearised",
+            "developed",
+            "superson",
+            "linearis",
             "theory",
-            "wash",
-            "distribution",
-            "lifting",
+            "upwash",
+            "distribut",
+            "lift",
             "surface",
             "apart",
-            "homogeneous",
+            "homogen",
             "function",
-            "co-ordinated",
+            "co",
+            "ordinate",
             "permit",
-            "quite",
+            "quit",
             "general",
-            "functional",
+            "function",
             "form"
         ]
     ],
@@ -2546,44 +2624,47 @@
         [
             "scale",
             "height",
-            "vary",
-            "attitude",
-            "atmosphere"
+            "vari",
+            "altitud",
+            "atmospher"
         ]
     ],
     [
         [
             "jet",
-            "interference",
-            "supersonic",
+            "interfer",
+            "superson",
             "flow",
-            "theoretical",
+            "theoret",
             "paper"
         ]
     ],
     [
         [
             "effect",
-            "leading-edge",
-            "bluntness",
+            "leading",
+            "edg",
+            "blunt",
             "flutter",
-            "characteristic",
-            "square-platform",
-            "double-wedge",
+            "characterist",
+            "square",
+            "planform",
+            "double",
+            "wedg",
             "airfoil",
-            "much",
+            "mach",
             "number",
-            "less",
-            "15.4"
-        ]
+            "less"
+        ],
+        []
     ],
     [
         [
             "factor",
             "show",
-            "primary",
-            "influence",
-            "tonic",
+            "primari",
+            "influenc",
+            "sonic",
             "boom",
             "strength"
         ]
@@ -2591,91 +2672,94 @@
     [
         [
             "work",
-            "small-oscillation",
-            "re-entry",
+            "small",
+            "oscil",
+            "entri",
             "motion"
         ]
     ],
     [
         [
-            "experimental",
-            "study",
+            "experiment",
+            "studi",
             "panel",
             "flutter"
         ]
     ],
     [
         [
-            "wing-body",
+            "wing",
+            "body",
             "flow",
             "field",
-            "interference",
+            "interfer",
             "effect",
-            "approximate",
-            "rationally"
+            "approxim",
+            "ration"
         ]
     ],
     [
         [
-            "anyone",
-            "analytical",
-            "experimentally",
-            "investigate",
+            "anyon",
+            "analyt",
+            "experiment",
+            "investig",
             "effect",
-            "internal",
-            "pressure",
-            "suckling",
-            "circular-cylindrical",
+            "intern",
+            "pressur",
+            "buckl",
+            "circular",
+            "cylindr",
             "shell",
             "bend"
         ]
     ],
     [
         [
-            "theoretical",
-            "experimental",
+            "theoret",
+            "experiment",
             "work",
-            "expiration",
-            "response",
-            "typical",
-            "structure",
-            "noise",
-            "environment"
+            "excit",
+            "respons",
+            "typic",
+            "structur",
+            "nois",
+            "environ"
         ]
     ],
     [
         [
             "design",
             "method",
-            "calculate",
+            "calcul",
             "thermal",
-            "fatigue",
-            "endurance",
-            "component",
+            "fatigu",
+            "endur",
+            "compon",
             "various",
             "type",
             "size",
-            "variety",
-            "circumstance"
+            "varieti",
+            "circumst"
         ]
     ],
     [
         [
-            "analysis",
+            "analysi",
             "panel",
             "flutter",
             "base",
-            "arbitrarily",
-            "assume",
+            "arbitrarili",
+            "assum",
             "mode",
-            "reformation",
+            "deform",
             "prove",
             "satisfactory",
             "minimum",
             "number",
             "mode",
             "need",
-            "consider"
+            "consid"
         ]
     ],
     [
@@ -2684,20 +2768,20 @@
             "true",
             "panel",
             "flutter",
-            "oppose",
+            "oppos",
             "small",
-            "aptitude",
-            "vibration",
-            "arise",
-            "caustic",
-            "disturbance"
+            "amplitud",
+            "vibrat",
+            "aris",
+            "acoust",
+            "disturb"
         ]
     ],
     [
         [
             "paper",
             "deal",
-            "uniformly",
+            "uniform",
             "load",
             "sector"
         ]
@@ -2706,212 +2790,219 @@
         [
             "general",
             "method",
-            "solve",
-            "clamped",
+            "solv",
+            "clamp",
             "plate",
             "problem"
         ]
     ],
     [
         [
-            "analytical",
-            "solution",
-            "suckling",
+            "analyt",
+            "solut",
+            "buckl",
             "strength",
             "uniform",
             "circular",
-            "cylinder",
+            "cylind",
             "load",
-            "animal",
-            "compression",
-            "refine",
+            "axial",
+            "compress",
+            "refin",
             "lower",
-            "suckling",
+            "buckl",
             "load"
         ]
     ],
     [
         [
             "problem",
-            "suckling",
+            "buckl",
             "strength",
             "uniform",
             "circular",
-            "cylinder",
+            "cylind",
             "load",
-            "animal",
+            "axial",
             "compression",
             "linear",
-            "solution",
+            "solut",
             "help",
-            "improve",
-            "non-linear",
+            "improv",
+            "non",
+            "linear",
             "one"
         ]
     ],
     [
         [
             "problem",
-            "similarity",
-            "representative",
-            "investigation",
-            "aeroelastic",
+            "similar",
+            "repres",
+            "investig",
+            "aeroelast",
             "effect",
             "flow",
-            "absence",
-            "heating",
+            "absenc",
+            "heat",
             "effect"
         ]
     ],
     [
         [
-            "fatigue",
-            "damage",
-            "estimate",
+            "fatigu",
+            "damag",
+            "estim",
             "use",
             "normal",
-            "long-hand",
+            "long",
+            "hand",
             "method"
         ]
     ],
     [
         [
-            "information",
-            "available",
-            "difference",
+            "ani",
+            "inform",
+            "avail",
+            "differ",
             "effect",
             "various",
-            "edge",
-            "condition",
-            "suckling",
-            "cylindrical",
+            "edg",
+            "condit",
+            "buckl",
+            "cylindr",
             "shell"
         ]
     ],
     [
         [
-            "non-linear",
-            "large",
-            "deflection",
-            "analysis",
+            "non",
+            "linear",
+            "larg",
+            "deflect",
+            "analysi",
             "conduct",
             "shell",
             "shape",
-            "conical"
+            "conic"
         ]
     ],
     [
         [
-            "asymptotic",
+            "asymptot",
             "method",
-            "sufficiently",
-            "accurate",
-            "determination",
-            "pre-suckling",
-            "tress",
-            "torispherical",
-            "shell",
+            "suffici",
+            "accur",
+            "determin",
+            "pre",
+            "buckl",
+            "stress",
+            "torispher",
+            "shells",
             "must",
             "resort",
-            "numerical",
+            "numer",
             "method"
         ]
     ],
     [
         [
             "nonequilibrium",
-            "chemical",
-            "constituent",
+            "chemic",
+            "constitu",
             "viscous",
             "shock",
             "layer",
             "ahead",
             "blunt",
-            "re-entry",
-            "vehicle"
+            "entri",
+            "vehicl"
         ]
     ],
     [
         [
-            "accurate",
+            "accur",
             "exist",
-            "analytical",
-            "theory",
-            "estimate",
-            "pressure",
-            "distribution",
-            "bone",
+            "analyt",
+            "theori",
+            "estim",
+            "pressur",
+            "distribut",
+            "cone",
             "incidence",
-            "hypersonic",
+            "hyperson",
             "speed"
         ]
     ],
     [
         [
-            "simple",
-            "empirical",
+            "simpl",
+            "empir",
             "method",
+            "ani",
             "use",
-            "estimate",
-            "pressure",
-            "distribution",
-            "bone"
+            "estim",
+            "pressur",
+            "distribut",
+            "cone"
         ]
     ],
     [
         [
             "viscous",
             "effect",
-            "seriously",
-            "modify",
-            "pressure",
-            "distribution"
+            "serious",
+            "modifi",
+            "pressur",
+            "distribut"
         ]
     ],
     [
         [
-            "anyone",
-            "investigate",
-            "theoretical",
+            "anyon",
+            "investig",
+            "theoret",
             "whether",
-            "surface",
-            "flexibility",
-            "stability",
-            "lamina",
-            "boundary",
+            "surfac",
+            "flexibl",
+            "stabil",
+            "laminar",
+            "boundari",
             "layer"
         ]
     ],
     [
         [
-            "bubonic",
-            "transonic",
+            "subson",
+            "transon",
             "flutter",
             "data",
-            "measure",
+            "measur",
             "new",
-            "angle",
-            "transonic",
-            "dynamic",
+            "langley",
+            "transon",
+            "dynam",
             "tunnel",
-            "compare",
+            "compar",
             "similar",
             "data",
             "obtain",
-            "facility"
+            "facil"
         ]
     ],
     [
         [
-            "large",
-            "change",
+            "larg",
+            "chang",
             "new",
             "mass",
             "ratio",
-            "quantitative",
+            "quantit",
             "affect",
-            "wing-flutter",
-            "boundary"
+            "wing",
+            "flutt",
+            "boundari"
         ]
     ],
     [
@@ -2920,146 +3011,151 @@
             "shape",
             "drag",
             "polar",
-            "lifting",
-            "statecraft",
+            "lift",
+            "spacecraft",
             "amount",
-            "reduction",
+            "reduct",
             "maximum",
-            "degeneration",
-            "obtainable",
-            "continuously",
-            "vary",
-            "aerodynamic",
-            "coefficient",
-            "re-entry"
+            "deceler",
+            "obtain",
+            "continu",
+            "vari",
+            "aerodynam",
+            "coeffici",
+            "dure",
+            "entri"
         ]
     ],
     [
         [
-            "physical",
-            "significance",
-            "characteristic",
-            "separated",
-            "lamina",
-            "turbulent",
-            "boundary",
+            "physic",
+            "signific",
+            "characterist",
+            "separ",
+            "laminar",
+            "turbul",
+            "boundari",
             "layer",
             "flow"
         ]
     ],
     [
         [
-            "anyone",
-            "analytical",
-            "investigate",
-            "stabilize",
-            "influence",
+            "anyon",
+            "analyt",
+            "investig",
+            "stabil",
+            "influenc",
             "soft",
-            "elastic",
-            "come",
-            "suckling",
+            "elast",
+            "core",
+            "buckl",
             "strength",
-            "cylindrical",
+            "cylindr",
             "shell",
             "subject",
-            "non-uniform",
-            "external",
-            "pressure"
+            "non",
+            "uniform",
+            "extern",
+            "pressur"
         ]
     ],
     [
         [
             "paper",
-            "available",
-            "suckling",
-            "empty",
-            "cylindrical",
+            "avail",
+            "buckl",
+            "empti",
+            "cylindr",
             "shell",
-            "non-uniform",
-            "pressure"
+            "non",
+            "uniform",
+            "pressur"
         ]
     ],
     [
         [
             "effect",
             "thermal",
-            "tress",
-            "compression",
-            "suckle",
+            "stress",
+            "compress",
+            "buckl",
             "strength",
-            "ring-stiffened",
-            "cylinder"
+            "ring",
+            "stiffen",
+            "cylind"
         ]
     ],
     [
         [
             "effect",
-            "cylinder",
-            "suckling",
-            "circumferential",
+            "cylind",
+            "buckl",
+            "circumferenti",
             "stress",
             "system",
-            "vary",
-            "animal",
-            "direction"
+            "vari",
+            "axial",
+            "direct"
         ]
     ],
     [
         [
-            "non-linear",
+            "non",
+            "linear",
             "shallow",
             "shell",
-            "analysis",
-            "reduce",
-            "engineering",
-            "technique",
+            "analysi",
+            "reduc",
+            "engin",
+            "techniqu",
             "use",
             "matrix"
         ]
     ],
     [
         [
-            "possible",
+            "possibl",
             "predict",
             "shape",
-            "stroud",
+            "shroud",
             "allow",
-            "stimulation",
+            "simul",
             "nose",
             "region",
             "flow",
             "field",
             "sphere",
-            "hypersonic",
+            "hyperson",
             "flow"
         ]
     ],
     [
         [
-            "investigation",
+            "investig",
             "make",
             "wave",
             "system",
-            "create",
+            "creat",
             "static",
-            "pressure",
-            "distribution",
+            "pressur",
+            "distribut",
             "liquid",
-            "surface"
+            "surfac"
         ]
     ],
     [
         [
-            "anyone",
-            "investigate",
+            "anyon",
+            "investig",
             "effect",
             "shock",
-            "generate",
-            "vorticity",
+            "generat",
+            "vortic",
             "heat",
             "transfer",
             "blunt",
-            "body"
+            "bodi"
         ]
     ],
     [
@@ -3067,9 +3163,9 @@
             "heat",
             "transfer",
             "blunt",
-            "body",
-            "absence",
-            "vorticity"
+            "bodi",
+            "absenc",
+            "vortic"
         ]
     ],
     [
@@ -3078,7 +3174,7 @@
             "effect",
             "flow",
             "field",
-            "reynolds",
+            "reynold",
             "number",
             "small"
         ]
@@ -3086,43 +3182,43 @@
     [
         [
             "find",
-            "calculation",
-            "procedure",
-            "applicable",
-            "compressible",
-            "lamina",
-            "boundary",
+            "calcul",
+            "procedur",
+            "applic",
+            "incompress",
+            "laminar",
+            "boundari",
             "layer",
             "flow",
             "problem",
             "good",
-            "accuracy",
-            "reasonable",
-            "amputation",
+            "accuraci",
+            "reason",
+            "comput",
             "time"
         ]
     ],
     [
         [
             "paper",
-            "applicable",
+            "applic",
             "problem",
-            "calculation",
-            "procedure",
-            "lamina",
-            "compressible",
+            "calcul",
+            "procedur",
+            "laminar",
+            "incompress",
             "flow",
-            "arbitrary",
-            "pressure",
-            "radiant"
+            "arbitrari",
+            "pressur",
+            "gradient"
         ]
     ],
     [
         [
-            "anyone",
-            "investigate",
-            "hear",
-            "suckling",
+            "anyon",
+            "investig",
+            "shear",
+            "buckl",
             "stiffen",
             "plate"
         ]
@@ -3130,28 +3226,29 @@
     [
         [
             "paper",
-            "hear",
-            "suckling",
-            "stiffened",
+            "shear",
+            "buckl",
+            "unstiffen",
             "rectangular",
             "plate",
-            "hear"
+            "shear"
         ]
     ],
     [
         [
             "practice",
             "close",
-            "reality",
-            "assumption",
+            "realiti",
+            "assumpt",
             "flow",
-            "hypersonic",
+            "hyperson",
             "shock",
             "tube",
             "use",
             "nitrogen",
-            "non-viscous",
-            "thermodynamic",
+            "non",
+            "visc",
+            "thermodynam",
             "equilibrium"
         ]
     ],
@@ -3161,10 +3258,12 @@
             "factor",
             "use",
             "control",
-            "lift-drag",
+            "lift",
+            "drag",
             "ratio",
-            "much",
-            "number"
+            "mach",
+            "number",
+            "abov"
         ]
     ]
 ]

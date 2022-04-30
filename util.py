@@ -37,7 +37,7 @@ def GetWordNetPOS(tag):
         return wordnet.NOUN
 
 # Information Retrieval
-def Vectorise_Docs(docs):
+def Vectorise_Docs_TFIDF(docs):
     """
     Vectorise the documents
     """
@@ -45,7 +45,7 @@ def Vectorise_Docs(docs):
     tfidf_matrix = tfidf_vectorizer.fit_transform(docs)
     return tfidf_vectorizer, tfidf_matrix
 
-def Vectorise_Query(vectorizer, merged_sentences):
+def Vectorise_Query_TFIDF(vectorizer, merged_sentences):
     """
     Vectorise the query
     """
@@ -213,6 +213,18 @@ def Word2Vec_GetSimilarWords(model, word, n=5):
     if n <= 0: return []
     return model.wv.most_similar(word, topn=n)
 
+def Word2Vec_GetWordVector(model, word):
+    '''
+    Get Word Vector using Word 2 Vec
+    '''
+    return model.wv[word]
+
+def Word2Vec_CleanText(model, text):
+    '''
+    Clean Text by removing words not in model vocabulary
+    '''
+    return " ".join([word for word in text.split() if word in model.wv.index_to_key])
+
 # Query Expansion
 def QueryExpansion(model, query, simWeight=0.1, n=5):
     '''
@@ -238,5 +250,26 @@ def QueryExpansion(model, query, simWeight=0.1, n=5):
     query_exp = [query_exp]
 
     return query_exp, sim
+
+# Dataset Cleaning
+def DatasetClean_RemoveEmptyDocs(docs, qrels):
+    '''
+    Remove Empty Documents
+    '''
+    # Remove doc if empty and remove in qrels also
+    docs_clean = []
+    qrels_clean = qrels
+    print("Before Cleaning: Docs: {}, Qrels: {}".format(len(docs), len(qrels)))
+    for i in range(len(docs)):
+        doc = docs[i]
+        if doc["title"].strip() == "" and doc["body"].strip() == "":
+            for qrel in qrels_clean:
+                if str(qrel["id"]) == str(doc["id"]):
+                    qrels_clean.remove(qrel)
+        else:
+            docs_clean.append(doc)
+    print("After Cleaning: Docs: {}, Qrels: {}".format(len(docs_clean), len(qrels_clean)))
+            
+    return docs_clean, qrels_clean
 
 # Main Vars

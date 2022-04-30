@@ -26,8 +26,20 @@ class StopwordRemoval():
 
 		stopwordRemovedText = None
 
-		#Fill in code here
+		#Fill in code here  boundarylayercontrol
+		# Remove Non alphabet charecters
+		alphaRegex = re.compile("[^a-zA-Z]")
+		stopwordRemovedText = [[alphaRegex.sub(" ", token).lower().strip() for token in sentence] for sentence in text]
+		stopwordRemovedTextOld = stopwordRemovedText
+		stopwordRemovedText = []
+		for sentence in stopwordRemovedTextOld:
+			sentenceRemoved = []
+			for token in sentence:
+				sentenceRemoved.extend(token.split())
+			stopwordRemovedText.append(sentenceRemoved)
+		stopwordRemovedText = [[token for token in sentence if not token == ""] for sentence in stopwordRemovedText]
+		# Remove Stop Word Tokens
 		ignoreTokens = set(stopwords.words('english')).union(set(string.punctuation)).union(set(string.octdigits))
-		stopwordRemovedText = [[token for token in sentence if not token.lower() in ignoreTokens] for sentence in text]
+		stopwordRemovedText = [[token for token in sentence if not token.lower().strip() in ignoreTokens] for sentence in stopwordRemovedText]
 
 		return stopwordRemovedText

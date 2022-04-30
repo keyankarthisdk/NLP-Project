@@ -60,6 +60,19 @@ def UI_Tokenizer():
     }
     return tokenizer, params
 
+def UI_RankParams():
+    col1, col2 = st, st # st.columns(2)
+    vector_types = ["TFIDF Stacking", "Word2Vec Without TFIDF", "Word2Vec With TFIDF"]
+    vector_type = col1.selectbox("Choose Vector Type", vector_types)
+    inv_index_reduce = [True, False, False][vector_types.index(vector_type)]
+    model_clean_text = [False, True, True][vector_types.index(vector_type)]
+    rank_params = {
+        "vector_type": vector_type,
+        "inv_index_reduce": inv_index_reduce,
+        "model_clean_text": model_clean_text
+    }
+    return rank_params
+
 def UI_CustomQuery():
     custom = st.checkbox("Custom Query?")
     query = ""
@@ -78,18 +91,21 @@ def app_main():
     
     # Inputs
     Steps = ["Sentence Segmentation", "Tokenization", "Inflection Reduction", "Stopword Removal", "NGram", "Query Expansion", "Search"]
-    Query_LoadStep = st.sidebar.selectbox("Load Query Step", Steps)
-    Doc_LoadStep = st.sidebar.selectbox("Load Document Step", Steps)
+    Query_LoadStep = st.sidebar.selectbox("Query Checkpoint", Steps)
+    Doc_LoadStep = st.sidebar.selectbox("Document Checkpoint", Steps)
     main.QUERY_LOAD_POINT = Steps.index(Query_LoadStep)
     main.DOC_LOAD_POINT = Steps.index(Doc_LoadStep)
 
+    other_params = {}
     dataset, out_folder = UI_Paths()
     col1, col2 = st.columns(2)
     main.TITLE_WEIGHTAGE = col1.number_input("Title Weightage", min_value=0, max_value=3, value=1, step=1)
     main.QUERY_EXPAND_N = col2.number_input("Query Expansion N", min_value=0, max_value=5, value=1, step=1)
     segmenter = UI_Segmenter()
     tokenizer, tokenizer_params = UI_Tokenizer()
-    reducer = st.selectbox("Choose Reducer", ["lemmatization", "stemming"])
+    reducer = st.selectbox("Choose Reducer", ["lemmatization", "stemming", "both"])
+    rank_params = UI_RankParams()
+    other_params["spell_check"] = st.checkbox("Spell Check")
     custom, query = UI_CustomQuery()
 
     # Print Obj
@@ -106,7 +122,7 @@ def app_main():
         }
         # Form args
         params = {}
-        for p in [tokenizer_params]: params.update(p)
+        for p in [tokenizer_params, rank_params, other_params]: params.update(p)
         args = NLP_ARGS(dataset, out_folder, segmenter, tokenizer, reducer, custom, params, printObj=printObj)
         searchEngine = main.SearchEngine(args)
         # Either handle query from user or evaluate on the complete dataset
@@ -116,7 +132,7 @@ def app_main():
             searchEngine.evaluateDataset()
             st.markdown("## Evaluation")
             st.image(os.path.join(out_folder, PATH_EVALPLOT), caption="Evaluation", use_column_width=True)
-        
+            st.plotly_chart(main.PLOT_OBJ)
 
 
 #############################################################################################################################

@@ -27,18 +27,23 @@ class InflectionReduction:
 		reducedText = None
 
 		#Fill in code here
-		if ReduceMethod == "stemming":
-			# Stemming
-			# stemmer = nltk.stem.PorterStemmer()
-			stemmer = nltk.stem.SnowballStemmer("english")
-			reducedText = [[stemmer.stem(token.lower()) for token in sentence] for sentence in text]
-		else:
-			# Lemmatization
-			pos_tags_sentences = [nltk.pos_tag(sentence) for sentence in text]
+		curText = text
+
+		# Lemmatization
+		if ReduceMethod == "lemmatization" or ReduceMethod == "both":
+			pos_tags_sentences = [nltk.pos_tag(sentence) for sentence in curText]
 			pos_tags_sentences = [[GetWordNetPOS(tag) for (token, tag) in sentence] for sentence in pos_tags_sentences]
 			lemmatizer = nltk.stem.WordNetLemmatizer()
-			reducedText = [[lemmatizer.lemmatize(token, pos_tag) 
+			curText = [[lemmatizer.lemmatize(token, pos_tag) 
 				for token, pos_tag in zip(sentence, pos_tags)] 
-				for sentence, pos_tags in zip(text, pos_tags_sentences)]
+				for sentence, pos_tags in zip(curText, pos_tags_sentences)]
+
+		# Stemming
+		if ReduceMethod == "stemming" or ReduceMethod == "both":
+			# stemmer = nltk.stem.PorterStemmer()
+			stemmer = nltk.stem.SnowballStemmer("english")
+			curText = [[stemmer.stem(token.lower()) for token in sentence] for sentence in curText]
+
+		reducedText = curText
 		
 		return reducedText
