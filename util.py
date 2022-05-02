@@ -142,10 +142,11 @@ def NDCG(relevant_docs_data, retrieved_docs, k):
     
     # Get Query Relevances
     query_scores = GetRelevanceScore(relevant_docs_data, retrieved_docs)
-    relevant_docs = []
-    for relevant_doc in relevant_docs_data:
-        relevant_docs.append(int(relevant_doc['id']))
-    ideal_scores = GetRelevanceScore(relevant_docs_data, relevant_docs)
+    # relevant_docs = []
+    # for relevant_doc in relevant_docs_data:
+    #     relevant_docs.append(int(relevant_doc['id']))
+    # ideal_scores = GetRelevanceScore(relevant_docs_data, relevant_docs)
+    ideal_scores = list(query_scores)
     # Calculate nDCG
     ideal_scores = sorted(ideal_scores, reverse=True)
     if not (ideal_scores[0] == 0):
@@ -162,15 +163,25 @@ def AveragePrecision(relevant_docs, retrieved_docs):
     retrieved_docs = list(retrieved_docs)
     if len(retrieved_docs) == 0 or len(relevant_docs)==0:
         return 0
-    found = [
-        int(retrieved_docs[i] in relevant_docs)
-            for i in range(len(retrieved_docs))
-        ]
-    precisions = [
-        Precision(relevant_docs, retrieved_docs[:i+1]) * found[i]
-            for i in range(len(retrieved_docs))
-        ]
-    return sum(precisions) / len(relevant_docs)
+    # found = [
+    #     int(retrieved_docs[i] in relevant_docs)
+    #         for i in range(len(retrieved_docs))
+    #     ]
+    # precisions = [
+    #     Precision(relevant_docs, retrieved_docs[:i+1]) * found[i]
+    #         for i in range(len(retrieved_docs))
+    #     ]
+    # return sum(precisions) / len(relevant_docs)
+
+    count = 0
+    precision_total = 0.0
+    for i in range(len(retrieved_docs)):
+        if retrieved_docs[i] in relevant_docs:
+            precision_total += ((count + 1) / (i + 1))
+            count += 1
+    if count > 0: precision_total = precision_total / count
+    
+    return precision_total
 
 # Spelling Correction
 def SpellCorrect(word):

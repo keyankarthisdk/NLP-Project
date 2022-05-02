@@ -148,7 +148,7 @@
         [
             "possibl",
             "find",
-            "analytical",
+            "analyt",
             "similar",
             "solut",
             "strong",
@@ -262,7 +262,7 @@
             "determin",
             "influenc",
             "joul",
-            "heating",
+            "heat",
             "produc",
             "induc",
             "current",
@@ -442,11 +442,11 @@
             "longitudin",
             "stabil",
             "measur",
-            "made",
+            "make",
             "use",
             "free",
             "flight",
-            "models",
+            "model",
             "compar",
             "similar",
             "measur",
@@ -593,7 +593,7 @@
         [
             "chapman",
             "enskog",
-            "theory"
+            "theori"
         ]
     ],
     [
@@ -653,10 +653,10 @@
             "blasius",
             "equat",
             "integr",
-            "numerically",
+            "numer",
             "use",
             "suitabl",
-            "transformations",
+            "transform",
             "without",
             "iter",
             "boundari",
@@ -690,9 +690,7 @@
             "bodi",
             "revolut",
             "continuum",
-            "flow"
-        ],
-        [
+            "flow",
             "transvers",
             "curvatur",
             "effect"
@@ -708,9 +706,7 @@
             "rarefact",
             "boundari",
             "layer",
-            "flow"
-        ],
-        [
+            "flow",
             "slip"
         ],
         [
@@ -725,7 +721,7 @@
             "field",
             "bodi",
             "move",
-            "rarefied",
+            "rarefi",
             "partial",
             "ioniz",
             "gas",
@@ -809,11 +805,11 @@
             "non",
             "circular",
             "cross",
-            "section",
+            "sect",
             "fluid",
             "flow",
             "along",
-            "generators"
+            "generat"
         ]
     ],
     [
@@ -832,15 +828,13 @@
     [
         [
             "ani",
-            "simple",
-            "practical",
+            "simpl",
+            "practic",
             "method",
             "numer",
             "integr",
             "mix",
-            "problem"
-        ],
-        [
+            "problem",
             "e"
         ],
         [
@@ -849,7 +843,7 @@
             "three",
             "point",
             "boundari",
-            "conditions"
+            "condit"
         ]
     ],
     [
@@ -873,6 +867,7 @@
             "cylind",
             "condit",
             "flow",
+            "ani",
             "veloc",
             "outsid",
             "boundari",
@@ -896,6 +891,8 @@
     ],
     [
         [
+            "ca",
+            "n",
             "static",
             "deflect",
             "shape",
@@ -1009,7 +1006,7 @@
             "low",
             "reynold",
             "number",
-            "flows",
+            "flow",
             "particular",
             "high",
             "mach",
@@ -1106,7 +1103,7 @@
             "reynold",
             "number",
             "merged",
-            "layer",
+            "lay",
             "regim"
         ]
     ],
@@ -1317,7 +1314,7 @@
             "complet",
             "freedom",
             "design",
-            "airplane",
+            "airplan",
             "procedur",
             "would",
             "use",
@@ -1325,7 +1322,7 @@
             "minim",
             "sonic",
             "boom",
-            "intensity",
+            "intens",
             "limit",
             "degre",
             "minim",
@@ -1345,7 +1342,7 @@
             "predict",
             "within",
             "experiment",
-            "accuracies",
+            "accuraci",
             "result",
             "obtain",
             "air"
@@ -1423,7 +1420,7 @@
             "vehicl",
             "tumbl",
             "enter",
-            "atmosphere",
+            "atmospher",
             "possibl",
             "predict",
             "stop",
@@ -1588,7 +1585,7 @@
             "problem",
             "classic",
             "theori",
-            "bending",
+            "bend",
             "reduc",
             "two",
             "success",
@@ -1708,7 +1705,7 @@
             "non",
             "linear",
             "large",
-            "deflection",
+            "deflect",
             "load",
             "deflect",
             "respons",
@@ -1782,12 +1779,12 @@
     ],
     [
         [
-            "areas",
+            "area",
             "low",
             "densiti",
             "wind",
             "tunnel",
-            "flows",
+            "flow",
             "viscous",
             "compress",
             "flow",
@@ -1994,12 +1991,12 @@
         [
             "effect",
             "initi",
-            "stresses",
+            "stress",
             "frequenc",
             "vibrat",
             "circular",
             "cylindr",
-            "shells",
+            "shell",
             "investig"
         ]
     ],
@@ -2010,7 +2007,7 @@
             "initi",
             "pressur",
             "due",
-            "deformation",
+            "deform",
             "frequenc",
             "vibrat",
             "circular",
@@ -2190,7 +2187,7 @@
             "lay",
             "wing",
             "pressur",
-            "calculated",
+            "calcul",
             "magnitud"
         ]
     ],
@@ -2431,9 +2428,7 @@
             "transon",
             "flow",
             "throat",
-            "nozzle"
-        ],
-        [
+            "nozzl",
             "e"
         ],
         [
@@ -2453,9 +2448,7 @@
             "transon",
             "flow",
             "throat",
-            "nozzle"
-        ],
-        [
+            "nozzl",
             "e"
         ],
         [
@@ -2484,7 +2477,7 @@
             "signific",
             "differ",
             "former",
-            "specified",
+            "specifi",
             "b",
             "wild",
             "variabl",
@@ -2600,19 +2593,19 @@
             "quasi",
             "con",
             "flow",
-            "developed",
+            "develop",
             "superson",
             "linearis",
-            "theory",
+            "theori",
             "upwash",
             "distribut",
             "lift",
-            "surface",
+            "surfac",
             "apart",
             "homogen",
             "function",
             "co",
-            "ordinate",
+            "ordin",
             "permit",
             "quit",
             "general",
@@ -2655,8 +2648,7 @@
             "mach",
             "number",
             "less"
-        ],
-        []
+        ]
     ],
     [
         [
@@ -2689,7 +2681,7 @@
     [
         [
             "wing",
-            "body",
+            "bodi",
             "flow",
             "field",
             "interfer",
@@ -2754,7 +2746,7 @@
             "mode",
             "deform",
             "prove",
-            "satisfactory",
+            "satisfactori",
             "minimum",
             "number",
             "mode",
@@ -2824,7 +2816,7 @@
             "cylind",
             "load",
             "axial",
-            "compression",
+            "compress",
             "linear",
             "solut",
             "help",
@@ -2899,7 +2891,7 @@
             "buckl",
             "stress",
             "torispher",
-            "shells",
+            "shell",
             "must",
             "resort",
             "numer",
@@ -2930,7 +2922,7 @@
             "pressur",
             "distribut",
             "cone",
-            "incidence",
+            "incid",
             "hyperson",
             "speed"
         ]
@@ -3236,7 +3228,7 @@
     ],
     [
         [
-            "practice",
+            "practic",
             "close",
             "realiti",
             "assumpt",
