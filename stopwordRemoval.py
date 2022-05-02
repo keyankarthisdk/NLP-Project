@@ -28,17 +28,18 @@ class StopwordRemoval():
 
 		#Fill in code here  boundarylayercontrol
 		if params["stopword_removal"]:
+			stopwordRemovedText = text
 			# Remove Non alphabet charecters
-			alphaRegex = re.compile("[^a-zA-Z]")
-			stopwordRemovedText = [[alphaRegex.sub(" ", token).lower().strip() for token in sentence] for sentence in text]
-			stopwordRemovedTextOld = stopwordRemovedText
-			stopwordRemovedText = []
-			for sentence in stopwordRemovedTextOld:
-				sentenceRemoved = []
-				for token in sentence:
-					sentenceRemoved.extend(token.split())
-				stopwordRemovedText.append(sentenceRemoved)
-			stopwordRemovedText = [[token for token in sentence if not token == ""] for sentence in stopwordRemovedText]
+			# alphaRegex = re.compile("[^a-zA-Z]")
+			# stopwordRemovedText = [[alphaRegex.sub(" ", token).lower().strip() for token in sentence] for sentence in text]
+			# stopwordRemovedTextOld = stopwordRemovedText
+			# stopwordRemovedText = []
+			# for sentence in stopwordRemovedTextOld:
+			# 	sentenceRemoved = []
+			# 	for token in sentence:
+			# 		sentenceRemoved.extend(token.split())
+			# 	stopwordRemovedText.append(sentenceRemoved)
+			# stopwordRemovedText = [[token for token in sentence if not token == ""] for sentence in stopwordRemovedText]
 			# Remove Stop Word Tokens
 			ignoreTokens = set(stopwords.words('english')).union(set(string.punctuation)).union(set(string.octdigits))
 			stopwordRemovedText = [[token for token in sentence if not token.lower().strip() in ignoreTokens] for sentence in stopwordRemovedText]

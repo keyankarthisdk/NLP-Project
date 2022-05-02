@@ -245,17 +245,21 @@ class InformationRetrieval():
 
 				elif params["vector_type"] == "Doc2Vec":
 					# Get doc embeddings - embeddings for all docs(optimize by pickling)
-					docs_final_matrix = params["Doc2Vec_doc_embeddings"]
+					# docs_final_matrix = params["Doc2Vec_doc_embeddings"]
 					doc2vec_model = params["Doc2Vec_MODEL"]
 					## MAYBE CHANGE HERE
-					query_final_vector = doc2vec_model.encode(merged_sentences)
+					#to find the vector of a Query
+					query_final_vector = doc2vec_model.infer_vector(word_tokenize(merged_sentences))
 					# Calculate Similarity
-					cosine_similarities = np.array(cosine_similarity([query_final_vector], docs_final_matrix))[0]
-
+					cosine_similarities = doc2vec_model.docvecs.most_similar([query_final_vector])
+					doc_ids = [int(sim_tuple[0]) + 1  for sim_tuple in cosine_similarities ]
+					doc_IDs_ordered.append(doc_ids)
+					
 				# Get Ranking
 				# print(cosine_similarities.shape)
-				query_rank = [x for _, x in sorted(zip(cosine_similarities, doc_IDs), reverse=True)]
-				doc_IDs_ordered.append(query_rank)
+				if params["vector_type"] not in ["Doc2Vec"]:
+					query_rank = [x for _, x in sorted(zip(cosine_similarities, doc_IDs), reverse=True)]
+					doc_IDs_ordered.append(query_rank)
 			else:
 				doc_IDs_ordered.append([])
 			

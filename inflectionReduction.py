@@ -31,6 +31,7 @@ class InflectionReduction:
 
 		# Lemmatization
 		if ReduceMethod == "lemmatization" or ReduceMethod == "both":
+			# print('inside lemm')
 			pos_tags_sentences = [nltk.pos_tag(sentence) for sentence in curText]
 			pos_tags_sentences = [[GetWordNetPOS(tag) for (token, tag) in sentence] for sentence in pos_tags_sentences]
 			lemmatizer = nltk.stem.WordNetLemmatizer()
@@ -40,9 +41,22 @@ class InflectionReduction:
 
 		# Stemming
 		if ReduceMethod == "stemming" or ReduceMethod == "both":
+			
+			# print('inside stem')
 			# stemmer = nltk.stem.PorterStemmer()
-			stemmer = nltk.stem.SnowballStemmer("english")
-			curText = [[stemmer.stem(token.lower()) for token in sentence] for sentence in curText]
+			stemmer = nltk.stem.SnowballStemmer("english",ignore_stopwords=True)
+			# print(stemmer.stem('experiment'.lower()))
+			# print('before stemming')
+			# for sentence in curText:
+			# 	if 'experiment' in sentence:
+			# 		print(sentence)
+			for i in range(5):
+				curText = [[stemmer.stem(token.lower()) for token in sentence] for sentence in curText]
+			# curText = [[stemmer.stem(token.lower()) for token in sentence] for sentence in curText]
+			# print('after stemming')
+			# for sentence in curText:
+			# 	if 'experiment' in sentence:
+			# 		print(sentence)
 
 		reducedText = curText
 		

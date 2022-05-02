@@ -73,7 +73,7 @@
     [
         [
             "theoret",
-            "experiment",
+            "experi",
             "guid",
             "turbul",
             "couett",
@@ -96,7 +96,7 @@
             "low",
             "surfac",
             "pressur",
-            "equival",
+            "equiv",
             "ogiv",
             "forebodi",
             "angl",
@@ -133,7 +133,7 @@
     [
         [
             "real",
-            "ga",
+            "gas",
             "transport",
             "properti",
             "air",
@@ -199,7 +199,7 @@
     ],
     [
         [
-            "transvers",
+            "transver",
             "potenti",
             "flow",
             "bodi",
@@ -213,22 +213,22 @@
     [
         [
             "three",
-            "dimension",
+            "dimen",
             "problem",
-            "transvers",
+            "transver",
             "potenti",
             "flow",
             "bodi",
             "revolut",
             "reduc",
             "two",
-            "dimension",
+            "dimen",
             "problem"
         ]
     ],
     [
         [
-            "experiment",
+            "experi",
             "pressur",
             "distribut",
             "bodi",
@@ -247,7 +247,7 @@
             "dynam",
             "entri",
             "combin",
-            "consider",
+            "consid",
             "realist",
             "effect",
             "relat",
@@ -276,7 +276,6 @@
     ],
     [
         [
-            "whi",
             "compress",
             "transform",
             "fail",
@@ -291,7 +290,7 @@
     [
         [
             "anyon",
-            "els",
+            "el",
             "discov",
             "turbul",
             "skin",
@@ -299,7 +298,7 @@
             "sensit",
             "natur",
             "variat",
-            "viscos",
+            "visco",
             "temperatur"
         ]
     ],
@@ -412,7 +411,7 @@
             "use",
             "simul",
             "two",
-            "dimension",
+            "dimen",
             "flow",
             "condit",
             "bluff",
@@ -431,14 +430,14 @@
             "thick",
             "slender",
             "thin",
-            "w",
+            "wing",
             "theori"
         ]
     ],
     [
         [
-            "interference",
-            "fre",
+            "interf",
+            "free",
             "longitudin",
             "stabil",
             "measur",
@@ -461,7 +460,7 @@
         [
             "wind",
             "tunnel",
-            "interfer",
+            "interf",
             "effect",
             "investig",
             "systemat",
@@ -470,7 +469,6 @@
     ],
     [
         [
-            "ani",
             "paper",
             "deal",
             "acoust",
@@ -496,7 +494,6 @@
     ],
     [
         [
-            "ani",
             "theoret",
             "method",
             "predict",
@@ -576,7 +573,7 @@
             "smooth",
             "thin",
             "airfoil",
-            "analys",
+            "anali",
             "simpl",
             "approxim",
             "way"
@@ -636,7 +633,7 @@
     [
         [
             "control",
-            "leading",
+            "lead",
             "edg",
             "attach",
             "transon",
@@ -647,7 +644,7 @@
         [
             "three",
             "point",
-            "boundary",
+            "boundari",
             "valu",
             "problem",
             "blasius",
@@ -685,13 +682,12 @@
             "pertain",
             "boundari",
             "layer",
-            "veri",
             "slender",
             "bodi",
             "revolut",
             "continuum",
             "flow",
-            "transvers",
+            "transver",
             "curvatur",
             "effect"
         ]
@@ -766,13 +762,13 @@
             "extent",
             "readili",
             "avail",
-            "steady",
-            "st",
+            "steadi",
+            "state",
             "aerodynam",
             "data",
             "util",
             "predict",
-            "lifting",
+            "lift",
             "surfac",
             "flutter",
             "characterist"
@@ -780,7 +776,7 @@
     ],
     [
         [
-            "signific",
+            "signif",
             "steadi",
             "non",
             "steadi",
@@ -805,7 +801,7 @@
             "non",
             "circular",
             "cross",
-            "sect",
+            "section",
             "fluid",
             "flow",
             "along",
@@ -827,7 +823,6 @@
     ],
     [
         [
-            "ani",
             "simpl",
             "practic",
             "method",
@@ -849,7 +844,7 @@
     [
         [
             "exist",
-            "closed",
+            "close",
             "form",
             "express",
             "local",
@@ -867,7 +862,6 @@
             "cylind",
             "condit",
             "flow",
-            "ani",
             "veloc",
             "outsid",
             "boundari",
@@ -942,7 +936,7 @@
     [
         [
             "seri",
-            "expans",
+            "expan",
             "find",
             "boundari",
             "layer",
@@ -964,7 +958,7 @@
             "isotherm",
             "transpir",
             "cool",
-            "hemispher"
+            "hemisph"
         ]
     ],
     [
@@ -991,7 +985,7 @@
     ],
     [
         [
-            "experiment",
+            "experi",
             "result",
             "hyperson",
             "viscous",
@@ -1034,14 +1028,14 @@
     ],
     [
         [
-            "signific",
+            "signif",
             "possibl",
             "pressur",
             "dissoci",
             "free",
             "stream",
             "respect",
-            "realize",
+            "realiz",
             "hyperson",
             "simul",
             "high",
@@ -1058,14 +1052,14 @@
             "analysi",
             "vortic",
             "effect",
-            "stagnation",
+            "stagnat",
             "point",
             "heat",
             "transfer",
             "result",
             "primarili",
             "differ",
-            "viscosity",
+            "visco",
             "temperatur",
             "law",
             "assum"
@@ -1077,7 +1071,7 @@
             "one",
             "trust",
             "linear",
-            "viscosity",
+            "visco",
             "temperatur",
             "solut",
             "assum",
@@ -1102,8 +1096,8 @@
             "low",
             "reynold",
             "number",
-            "merged",
-            "lay",
+            "merg",
+            "layer",
             "regim"
         ]
     ],
@@ -1115,14 +1109,13 @@
             "surg",
             "line",
             "multi",
-            "stag",
+            "stage",
             "axial",
             "compressor"
         ]
     ],
     [
         [
-            "ani",
             "aerodynam",
             "deriv",
             "measur",
@@ -1157,7 +1150,7 @@
             "tunnel",
             "correct",
             "two",
-            "dimension",
+            "dimen",
             "aerofoil",
             "mount",
             "centr",
@@ -1186,7 +1179,7 @@
             "state",
             "theori",
             "quasi",
-            "con",
+            "conic",
             "flow"
         ]
     ],
@@ -1225,7 +1218,7 @@
     [
         [
             "satisfactori",
-            "experiment",
+            "experi",
             "techniqu",
             "develop",
             "measur",
@@ -1266,7 +1259,7 @@
             "action",
             "air",
             "drag",
-            "atmospher",
+            "atmosph",
             "scale",
             "height",
             "vari",
@@ -1281,8 +1274,8 @@
             "delta",
             "wing",
             "differ",
-            "closely",
-            "rel",
+            "close",
+            "relat",
             "taper",
             "sweptback",
             "wing"
@@ -1294,14 +1287,14 @@
             "data",
             "shock",
             "induc",
-            "boundary",
-            "lay",
+            "boundari",
+            "layer",
             "separ"
         ]
     ],
     [
         [
-            "interfer",
+            "interf",
             "effect",
             "like",
             "transon",
@@ -1322,16 +1315,16 @@
             "minim",
             "sonic",
             "boom",
-            "intens",
+            "inten",
             "limit",
-            "degre",
+            "degr",
             "minim",
             "accomplish"
         ]
     ],
     [
         [
-            "methane",
+            "methan",
             "air",
             "combust",
             "product",
@@ -1341,7 +1334,7 @@
             "medium",
             "predict",
             "within",
-            "experiment",
+            "experi",
             "accuraci",
             "result",
             "obtain",
@@ -1367,7 +1360,7 @@
             "transfer",
             "distribut",
             "around",
-            "hemispher"
+            "hemisph"
         ]
     ],
     [
@@ -1388,7 +1381,7 @@
             "inform",
             "avail",
             "dynam",
-            "respons",
+            "respon",
             "airplan",
             "gust",
             "blast",
@@ -1408,7 +1401,7 @@
             "speed",
             "compar",
             "convent",
-            "trailing",
+            "trail",
             "edg",
             "flap"
         ]
@@ -1420,7 +1413,7 @@
             "vehicl",
             "tumbl",
             "enter",
-            "atmospher",
+            "atmosph",
             "possibl",
             "predict",
             "stop",
@@ -1444,7 +1437,6 @@
     ],
     [
         [
-            "whi",
             "increment",
             "theori",
             "deform",
@@ -1508,7 +1500,7 @@
     ],
     [
         [
-            "experiment",
+            "experi",
             "techniqu",
             "shell",
             "vibrat"
@@ -1518,13 +1510,13 @@
         [
             "summar",
             "theoret",
-            "experiment",
+            "experi",
             "work",
             "behaviour",
             "typic",
             "aircraft",
             "structur",
-            "nois",
+            "noi",
             "environ",
             "possibl",
             "develop",
@@ -1551,7 +1543,7 @@
     ],
     [
         [
-            "increas",
+            "increa",
             "edg",
             "load",
             "plate",
@@ -1640,7 +1632,7 @@
         [
             "problem",
             "similar",
-            "repres",
+            "repr",
             "investig",
             "aeroelast",
             "effect",
@@ -1667,7 +1659,6 @@
     ],
     [
         [
-            "ani",
             "inform",
             "addit",
             "boat",
@@ -1684,7 +1675,7 @@
     [
         [
             "aerodynam",
-            "interfer",
+            "interf",
             "effect",
             "fin",
             "lift",
@@ -1704,11 +1695,11 @@
             "circular",
             "non",
             "linear",
-            "large",
+            "larg",
             "deflect",
             "load",
             "deflect",
-            "respons",
+            "respon",
             "cylind",
             "hydrostat",
             "pressur"
@@ -1766,7 +1757,6 @@
     ],
     [
         [
-            "ani",
             "work",
             "determin",
             "natur",
@@ -1809,11 +1799,11 @@
     [
         [
             "jet",
-            "interfer",
+            "interf",
             "superson",
             "flow",
             "dash",
-            "experiment",
+            "experi",
             "paper"
         ]
     ],
@@ -1852,7 +1842,7 @@
             "design",
             "method",
             "high",
-            "spe",
+            "speed",
             "digit",
             "comput"
         ]
@@ -1867,7 +1857,7 @@
             "equat",
             "fundament",
             "three",
-            "dimension",
+            "dimen",
             "equat",
             "incompress",
             "nonvisc",
@@ -1878,7 +1868,7 @@
         [
             "flutter",
             "characterist",
-            "expos",
+            "expo",
             "skin",
             "panel",
             "x",
@@ -1897,9 +1887,9 @@
             "predict",
             "instabl",
             "time",
-            "experiment",
+            "experi",
             "measur",
-            "collaps",
+            "collap",
             "time",
             "compress",
             "column",
@@ -1916,7 +1906,7 @@
     ],
     [
         [
-            "experiment",
+            "experi",
             "studi",
             "creep",
             "buckl"
@@ -1940,7 +1930,7 @@
     ],
     [
         [
-            "experiment",
+            "experi",
             "result",
             "creep",
             "buckl",
@@ -1960,7 +1950,6 @@
     ],
     [
         [
-            "ani",
             "analyt",
             "studi",
             "conduct",
@@ -1969,7 +1958,7 @@
             "mechan",
             "associ",
             "creep",
-            "collaps",
+            "collap",
             "long",
             "circular",
             "cylindr",
@@ -2031,7 +2020,7 @@
             "solut",
             "avail",
             "stress",
-            "edge",
+            "edg",
             "load",
             "shell",
             "revolut"
@@ -2077,7 +2066,6 @@
             "intern",
             "pressur",
             "provid",
-            "ani",
             "insight",
             "behaviour",
             "pressur",
@@ -2090,13 +2078,13 @@
     [
         [
             "best",
-            "experiment",
+            "experi",
             "data",
             "classic",
             "small",
             "deflect",
             "theori",
-            "analys",
+            "anali",
             "avail",
             "pressur",
             "cylind",
@@ -2158,10 +2146,10 @@
         [
             "magnitud",
             "second",
-            "ord",
+            "order",
             "wing",
             "bodi",
-            "interfer",
+            "interf",
             "high",
             "superson",
             "mach",
@@ -2183,8 +2171,8 @@
     [
         [
             "effect",
-            "boundary",
-            "lay",
+            "boundari",
+            "layer",
             "wing",
             "pressur",
             "calcul",
@@ -2194,7 +2182,7 @@
     [
         [
             "navier",
-            "stok",
+            "stoke",
             "differ",
             "equat",
             "solv"
@@ -2219,7 +2207,6 @@
             "report",
             "measur",
             "ablat",
-            "dure",
             "flight"
         ]
     ],
@@ -2240,7 +2227,7 @@
             "field",
             "calcul",
             "blunt",
-            "nos",
+            "nose",
             "bodi",
             "compar",
             "experi",
@@ -2283,7 +2270,7 @@
             "compress",
             "circumferenti",
             "stress",
-            "torispher",
+            "torisph",
             "shell",
             "reveal",
             "possibl",
@@ -2369,8 +2356,8 @@
             "onset",
             "shock",
             "induc",
-            "boundary",
-            "lay",
+            "boundari",
+            "layer",
             "separ"
         ]
     ],
@@ -2389,7 +2376,7 @@
     ],
     [
         [
-            "experiment",
+            "experi",
             "result",
             "stabil",
             "compress",
@@ -2462,11 +2449,10 @@
     ],
     [
         [
-            "whi",
             "user",
             "orthodox",
             "pitot",
-            "stat",
+            "static",
             "tube",
             "often",
             "find",
@@ -2474,7 +2460,7 @@
             "appear"
         ],
         [
-            "signific",
+            "signif",
             "differ",
             "former",
             "specifi",
@@ -2490,8 +2476,8 @@
         [
             "comparison",
             "make",
-            "interference",
-            "fre",
+            "interf",
+            "free",
             "drag",
             "measur",
             "use",
@@ -2591,11 +2577,11 @@
         [
             "theori",
             "quasi",
-            "con",
+            "conic",
             "flow",
             "develop",
             "superson",
-            "linearis",
+            "lineari",
             "theori",
             "upwash",
             "distribut",
@@ -2619,13 +2605,13 @@
             "height",
             "vari",
             "altitud",
-            "atmospher"
+            "atmosph"
         ]
     ],
     [
         [
             "jet",
-            "interfer",
+            "interf",
             "superson",
             "flow",
             "theoret",
@@ -2635,14 +2621,14 @@
     [
         [
             "effect",
-            "leading",
+            "lead",
             "edg",
             "blunt",
             "flutter",
             "characterist",
-            "square",
+            "squar",
             "planform",
-            "double",
+            "doubl",
             "wedg",
             "airfoil",
             "mach",
@@ -2672,7 +2658,7 @@
     ],
     [
         [
-            "experiment",
+            "experi",
             "studi",
             "panel",
             "flutter"
@@ -2684,7 +2670,7 @@
             "bodi",
             "flow",
             "field",
-            "interfer",
+            "interf",
             "effect",
             "approxim",
             "ration"
@@ -2694,7 +2680,7 @@
         [
             "anyon",
             "analyt",
-            "experiment",
+            "experi",
             "investig",
             "effect",
             "intern",
@@ -2709,13 +2695,13 @@
     [
         [
             "theoret",
-            "experiment",
+            "experi",
             "work",
             "excit",
-            "respons",
+            "respon",
             "typic",
             "structur",
-            "nois",
+            "noi",
             "environ"
         ]
     ],
@@ -2760,11 +2746,11 @@
             "true",
             "panel",
             "flutter",
-            "oppos",
+            "oppo",
             "small",
             "amplitud",
             "vibrat",
-            "aris",
+            "ari",
             "acoust",
             "disturb"
         ]
@@ -2830,7 +2816,7 @@
         [
             "problem",
             "similar",
-            "repres",
+            "repr",
             "investig",
             "aeroelast",
             "effect",
@@ -2854,7 +2840,6 @@
     ],
     [
         [
-            "ani",
             "inform",
             "avail",
             "differ",
@@ -2890,7 +2875,7 @@
             "pre",
             "buckl",
             "stress",
-            "torispher",
+            "torisph",
             "shell",
             "must",
             "resort",
@@ -2932,7 +2917,6 @@
             "simpl",
             "empir",
             "method",
-            "ani",
             "use",
             "estim",
             "pressur",
@@ -2993,7 +2977,7 @@
             "quantit",
             "affect",
             "wing",
-            "flutt",
+            "flutter",
             "boundari"
         ]
     ],
@@ -3008,20 +2992,19 @@
             "amount",
             "reduct",
             "maximum",
-            "deceler",
+            "decel",
             "obtain",
             "continu",
             "vari",
             "aerodynam",
             "coeffici",
-            "dure",
             "entri"
         ]
     ],
     [
         [
             "physic",
-            "signific",
+            "signif",
             "characterist",
             "separ",
             "laminar",
@@ -3239,7 +3222,7 @@
             "use",
             "nitrogen",
             "non",
-            "visc",
+            "viscous",
             "thermodynam",
             "equilibrium"
         ]
@@ -3254,8 +3237,7 @@
             "drag",
             "ratio",
             "mach",
-            "number",
-            "abov"
+            "number"
         ]
     ]
 ]

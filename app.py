@@ -64,8 +64,8 @@ def UI_RankParams():
     col1, col2 = st, st # st.columns(2)
     vector_types = ["TFIDF Stacking", "Word2Vec Without TFIDF", "Word2Vec With TFIDF", "BERT", "LSA", "Doc2Vec"]
     vector_type = col1.selectbox("Choose Vector Type", vector_types)
-    inv_index_reduce = [False, False, False, False, False][vector_types.index(vector_type)]
-    model_clean_text = [False, True, True, False, False][vector_types.index(vector_type)]
+    inv_index_reduce = [False, False, False, False, False,False][vector_types.index(vector_type)]
+    model_clean_text = [False, True, True, False, False,False][vector_types.index(vector_type)]
     rank_params = {
         "vector_type": vector_type,
         "inv_index_reduce": inv_index_reduce,

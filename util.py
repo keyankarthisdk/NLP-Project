@@ -6,7 +6,7 @@ import string
 import numpy as np
 import matplotlib.pyplot as plt
 import nltk
-from nltk.tokenize import TreebankWordTokenizer
+from nltk.tokenize import TreebankWordTokenizer,word_tokenize
 from nltk.tokenize.punkt import PunktSentenceTokenizer, PunktParameters
 from nltk.corpus import wordnet, stopwords
 nltk.download('stopwords')
@@ -28,6 +28,12 @@ from gensim import corpora
 from gensim.models import LsiModel
 from gensim.models.coherencemodel import CoherenceModel
 
+#Doc2Vec
+from gensim.models.doc2vec import Doc2Vec, TaggedDocument
+#Set Seed for DOc2Vec to remove randomization
+hashseed = os.getenv('PYTHONHASHSEED')
+if not hashseed:
+    os.environ['PYTHONHASHSEED'] = '0'
 # Add any utility functions here
 # Inflection Reduction
 def GetWordNetPOS(tag):
@@ -302,23 +308,47 @@ def Doc2Vec_BuildModel(docs, model_dir="output/models/"):
     Build Doc2Vec Model
     '''
     MODEL_NAME = "Doc2Vec"
-    path_model = os.path.join(model_dir, MODEL_NAME + ".pkl")
-    path_doc = os.path.join(model_dir, MODEL_NAME + "_" + "doc_embeddings_doc2vec.pkl")
-    # Check if already present
-    if os.path.exists(path_doc) and os.path.exists(path_model):
-        print("Loading BERT Model")
-        with open(path_doc, "rb") as f: doc_embeddings = pickle.load(f)
-        with open(path_model, "rb") as f: model = pickle.load(f)
-        return model, doc_embeddings
+    path_model = os.path.join(model_dir, MODEL_NAME + ".model")
+    # Check if model is already present
+    if os.path.exists(path_model):
+        print("     Loading Doc2Vec Model")
+        model = Doc2Vec.load(path_model)
+        return model
 
     ## CHANGE HERE
+    # processeddocs
+    doc_list = []
+    for doc in docs:
+        merged_sentences = ""
+        for sentence in doc:
+            merged_sentences = merged_sentences + " " + " ".join(sentence)
+        doc_list.append(merged_sentences.strip())
     # Else Load Model and Train
-    model = SentenceTransformer(MODEL_NAME)
-    doc_embeddings = model.encode(docs)
+    tagged_data = [TaggedDocument(words=word_tokenize(_d.lower()), tags=[str(i)]) for i, _d in enumerate(doc_list)]
+    vec_size = 1024
+    model = Doc2Vec(size=vec_size,
+    workers = 1,seed = 1 ,
+                    # alpha=alpha, 
+                    # min_alpha=0.00025,
+                    min_count=1,
+                    dm =0 )
+    #build model vocabulary
+    model.build_vocab(tagged_data)
+    #Train model on Docs
+    # for epoch in range(max_epochs):
+    #     print('iteration {0}'.format(epoch))
+    model.train(tagged_data,
+                    total_examples=model.corpus_count,
+                    epochs=50)
+        # decrease the learning rate
+        # model.alpha -= 0.0002
+        # fix the learning rate, no decay
+        # model.min_alpha = model.alpha
 
-    with open(path_doc, "wb") as f: pickle.dump(doc_embeddings, f)
-    with open(path_model, "wb") as f: pickle.dump(model, f)
-    return model, doc_embeddings
+    # model.save("d2v.model")
+    # print("Model Saved")
+    model.save(path_model)
+    return model
 
 # Dataset Cleaning
 def DatasetClean_RemoveEmptyDocs(docs, qrels):

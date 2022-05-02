@@ -264,6 +264,8 @@ class SearchEngine:
 				finalDocs.append(finalDoc)
 				i += 1
 				Util_ProgressUpdate("Doc: Additional (NGram)", i / len(stopwordRemovedDocs))
+			print("final_docss")
+			print(finalDocs)
 			json.dump(finalDocs, open(self.args.out_folder + "final_docs.json", 'w'), indent=4)
 		else:
 			finalDocs = json.load(open(self.args.out_folder + "final_docs.json", 'r'))
@@ -287,9 +289,9 @@ class SearchEngine:
 			model_params["BERT_doc_embeddings"] = docEmbeddings
 		if self.args.params["vector_type"] in ["Doc2Vec"]:
 			model_dir = os.path.join(self.args.out_folder, "models/")
-			self.models["Doc2Vec_MODEL"], docEmbeddings = Doc2Vec_BuildModel(docs, model_dir)
+			self.models["Doc2Vec_MODEL"] = Doc2Vec_BuildModel(processedDocs, model_dir)
 			model_params["Doc2Vec_MODEL"] = self.models["Doc2Vec_MODEL"]
-			model_params["Doc2Vec_doc_embeddings"] = docEmbeddings
+			# model_params["Doc2Vec_doc_embeddings"] = docEmbeddings
 		
 		return model_params
 
