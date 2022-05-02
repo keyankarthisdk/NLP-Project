@@ -1,8 +1,10 @@
 # Add your import statements here
+import os
 import re
 import math
 import string
 import numpy as np
+import matplotlib.pyplot as plt
 import nltk
 from nltk.tokenize import TreebankWordTokenizer
 from nltk.tokenize.punkt import PunktSentenceTokenizer, PunktParameters
@@ -14,6 +16,13 @@ from sklearn.metrics.pairwise import cosine_similarity
 from textblob import TextBlob
 from tqdm import tqdm
 
+# BERT
+from sentence_transformers import SentenceTransformer, util
+import pickle
+from  gensim.models import TfidfModel
+from gensim.models import LsiModel
+from gensim.similarities import MatrixSimilarity
+# Word2Vec
 from gensim.models import Word2Vec
 from gensim import corpora
 from gensim.models import LsiModel
@@ -142,10 +151,12 @@ def NDCG(relevant_docs_data, retrieved_docs, k):
     
     # Get Query Relevances
     query_scores = GetRelevanceScore(relevant_docs_data, retrieved_docs)
+
     # relevant_docs = []
     # for relevant_doc in relevant_docs_data:
     #     relevant_docs.append(int(relevant_doc['id']))
     # ideal_scores = GetRelevanceScore(relevant_docs_data, relevant_docs)
+
     ideal_scores = list(query_scores)
     # Calculate nDCG
     ideal_scores = sorted(ideal_scores, reverse=True)
@@ -261,6 +272,53 @@ def QueryExpansion(model, query, simWeight=0.1, n=5):
     query_exp = [query_exp]
 
     return query_exp, sim
+
+# BERT
+def BERT_BuildModel(docs, model_dir="output/models/"):
+    '''
+    Build BERT Model
+    Multi QA Mini: multi-qa-MiniLM-L6-cos-v1
+    Multi QA Base: multi-qa-mpnet-base-cos-v1
+    '''
+    MODEL_NAME = "multi-qa-mpnet-base-cos-v1"
+    path_model = os.path.join(model_dir, MODEL_NAME + ".pkl")
+    path_doc = os.path.join(model_dir, MODEL_NAME + "_" + "doc_embeddings_bert.pkl")
+    # Check if already present
+    if os.path.exists(path_doc) and os.path.exists(path_model):
+        print("Loading BERT Model")
+        with open(path_doc, "rb") as f: doc_embeddings = pickle.load(f)
+        with open(path_model, "rb") as f: model = pickle.load(f)
+        return model, doc_embeddings
+    # Else Load Model and Train
+    model = SentenceTransformer(MODEL_NAME)
+    doc_embeddings = model.encode(docs)
+    with open(path_doc, "wb") as f: pickle.dump(doc_embeddings, f)
+    with open(path_model, "wb") as f: pickle.dump(model, f)
+    return model, doc_embeddings
+
+# Doc2Vec
+def Doc2Vec_BuildModel(docs, model_dir="output/models/"):
+    '''
+    Build Doc2Vec Model
+    '''
+    MODEL_NAME = "Doc2Vec"
+    path_model = os.path.join(model_dir, MODEL_NAME + ".pkl")
+    path_doc = os.path.join(model_dir, MODEL_NAME + "_" + "doc_embeddings_doc2vec.pkl")
+    # Check if already present
+    if os.path.exists(path_doc) and os.path.exists(path_model):
+        print("Loading BERT Model")
+        with open(path_doc, "rb") as f: doc_embeddings = pickle.load(f)
+        with open(path_model, "rb") as f: model = pickle.load(f)
+        return model, doc_embeddings
+
+    ## CHANGE HERE
+    # Else Load Model and Train
+    model = SentenceTransformer(MODEL_NAME)
+    doc_embeddings = model.encode(docs)
+
+    with open(path_doc, "wb") as f: pickle.dump(doc_embeddings, f)
+    with open(path_model, "wb") as f: pickle.dump(model, f)
+    return model, doc_embeddings
 
 # Dataset Cleaning
 def DatasetClean_RemoveEmptyDocs(docs, qrels):

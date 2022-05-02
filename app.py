@@ -62,10 +62,10 @@ def UI_Tokenizer():
 
 def UI_RankParams():
     col1, col2 = st, st # st.columns(2)
-    vector_types = ["TFIDF Stacking", "Word2Vec Without TFIDF", "Word2Vec With TFIDF"]
+    vector_types = ["TFIDF Stacking", "Word2Vec Without TFIDF", "Word2Vec With TFIDF", "BERT", "LSA", "Doc2Vec"]
     vector_type = col1.selectbox("Choose Vector Type", vector_types)
-    inv_index_reduce = [True, False, False][vector_types.index(vector_type)]
-    model_clean_text = [False, True, True][vector_types.index(vector_type)]
+    inv_index_reduce = [False, False, False, False, False][vector_types.index(vector_type)]
+    model_clean_text = [False, True, True, False, False][vector_types.index(vector_type)]
     rank_params = {
         "vector_type": vector_type,
         "inv_index_reduce": inv_index_reduce,
@@ -103,7 +103,8 @@ def app_main():
     main.QUERY_EXPAND_N = col2.number_input("Query Expansion N", min_value=0, max_value=5, value=1, step=1)
     segmenter = UI_Segmenter()
     tokenizer, tokenizer_params = UI_Tokenizer()
-    reducer = st.selectbox("Choose Reducer", ["lemmatization", "stemming", "both"])
+    reducer = st.selectbox("Choose Reducer", ["lemmatization", "stemming", "both", "none"])
+    other_params["stopword_removal"] = st.checkbox("Remove Stopwords")
     rank_params = UI_RankParams()
     other_params["spell_check"] = st.checkbox("Spell Check")
     custom, query = UI_CustomQuery()

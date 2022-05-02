@@ -51,6 +51,7 @@ class SearchEngine:
 
 	def __init__(self, args):
 		self.args = args
+		self.models = {}
 
 		self.tokenizer = Tokenization()
 		self.sentenceSegmenter = SentenceSegmentation()
@@ -91,7 +92,7 @@ class SearchEngine:
 		"""
 		Call the required stopword remover
 		"""
-		return self.stopwordRemover.fromList(text)
+		return self.stopwordRemover.fromList(text, stopword_removal=self.args.params["stopword_removal"])
 
 	def additionalPreprocessing(self, text):
 		"""
@@ -177,7 +178,13 @@ class SearchEngine:
 			expandedWeights = []
 			i = 0
 			for query in finalQueries:
-				expandedQuery, sim = QueryExpansion(params["Word2Vec_MODEL"], query, 0.1, n=QUERY_EXPAND_N)
+				if QUERY_EXPAND_N > 0:
+					expandedQuery, sim = QueryExpansion(params["Word2Vec_MODEL"], query, 0.1, n=QUERY_EXPAND_N)
+				else:
+					expandedQuery = query
+					sim = {word: 1.0 for sentence in query for word in sentence}
+					# for sentence in query:
+					# 	for word in sentence: sim[word] = 1
 				expandedQueries.append(expandedQuery)
 				expandedWeights.append(sim)
 				i += 1
@@ -264,6 +271,27 @@ class SearchEngine:
 		preprocessedDocs = finalDocs
 		return preprocessedDocs
 
+	def buildModels(self, processedDocs, docs):
+		"""
+		Build Models
+		"""
+		model_params = {}
+		if self.args.params["vector_type"] in ["Word2Vec Without TFIDF", "Word2Vec With TFIDF"] or \
+				QUERY_EXPAND_N > 0:
+			self.models["Word2Vec_MODEL"] = Word2Vec_BuildModel(processedDocs)
+			model_params["Word2Vec_MODEL"] = self.models["Word2Vec_MODEL"]
+		if self.args.params["vector_type"] in ["BERT"]:
+			model_dir = os.path.join(self.args.out_folder, "models/")
+			self.models["BERT_MODEL"], docEmbeddings = BERT_BuildModel(docs, model_dir)
+			model_params["BERT_MODEL"] = self.models["BERT_MODEL"]
+			model_params["BERT_doc_embeddings"] = docEmbeddings
+		if self.args.params["vector_type"] in ["Doc2Vec"]:
+			model_dir = os.path.join(self.args.out_folder, "models/")
+			self.models["Doc2Vec_MODEL"], docEmbeddings = Doc2Vec_BuildModel(docs, model_dir)
+			model_params["Doc2Vec_MODEL"] = self.models["Doc2Vec_MODEL"]
+			model_params["Doc2Vec_doc_embeddings"] = docEmbeddings
+		
+		return model_params
 
 	def evaluateDataset(self):
 		"""
@@ -296,12 +324,17 @@ class SearchEngine:
 		queries_json = json.load(open(self.args.dataset + "cran_queries.json", 'r'))[:]
 		query_ids, queries = [item["query number"] for item in queries_json], \
 								[item["query"] for item in queries_json]
-		# Build Word2Vec Model
-		Word2Vec_MODEL = Word2Vec_BuildModel(processedDocs)
+
+		# Build Models
+		Util_ProgressUpdate("Model: Building Start", 0.0)
+		model_params = self.buildModels(processedDocs, docs)
+		Util_ProgressUpdate("Model: Building End", 1.0)
+		
 		# Process queries
 		processParams = self.args.params
+		processParams.update(model_params)
 		processParams.update({
-			"Word2Vec_MODEL": Word2Vec_MODEL
+			
 		})
 		processedQueries, queryData = self.preprocessQueries(queries, **processParams)
 
@@ -310,9 +343,9 @@ class SearchEngine:
 		self.informationRetriever.buildIndex(processedDocs, doc_ids)
 		# Rank the documents for each query
 		rankParams = self.args.params
+		rankParams.update(model_params)
 		rankParams.update({
-			"sim_weights": queryData["weights"], 
-			"model_word2vec": Word2Vec_MODEL, 
+			"sim_weights": queryData["weights"],
 			"progress_obj": Util_ProgressUpdate
 		})
 		doc_IDs_ordered = self.informationRetriever.rank(processedQueries, **rankParams)
@@ -387,23 +420,30 @@ class SearchEngine:
 		if query is None:
 			print("Enter query below")
 			query = input()
-		# Build Word2Vec Model
-		Word2Vec_MODEL = Word2Vec_BuildModel(processedDocs)
+
+		# Build Models
+		Util_ProgressUpdate("Model: Building Start", 0.0)
+		model_params = self.buildModels(processedDocs, docs)
+		Util_ProgressUpdate("Model: Building End", 1.0)
+
 		# Process query
 		processParams = self.args.params
+		processParams.update(model_params)
 		processParams.update({
-			"Word2Vec_MODEL": Word2Vec_MODEL
+			
 		})
-		processedQuery, queryData = self.preprocessQueries([query], **processParams)[0]
+		processedQuery, queryData = self.preprocessQueries([query], **processParams)
+		processedQuery = processedQuery[0]
 
 		# Build document index
 		Util_ProgressUpdate("Ranking: Started", 0.0)
 		self.informationRetriever.buildIndex(processedDocs, doc_ids)
 		# Rank the documents for the query
 		rankParams = self.args.params
+		rankParams.update(model_params)
 		rankParams.update({
-			"sim_weights": queryData["weights"], 
-			"model_word2vec": Word2Vec_MODEL
+			"sim_weights": queryData["weights"],
+			"progress_obj": Util_ProgressUpdate
 		})
 		doc_IDs_ordered = self.informationRetriever.rank([processedQuery], **rankParams)[0]
 		Util_ProgressUpdate("Ranking: Done", 1.0)
