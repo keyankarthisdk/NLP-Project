@@ -151,10 +151,12 @@
         "what are the effects of small amounts of gas rarefaction on the characteristics of the boundary layers on slender bodies of revolution"
     ],
     [
-        "what is the available information pertaining to boundary layers on very slender bodies of revolution in continuum flow (the ?transverse curvature  effect)"
+        "what is the available information pertaining to boundary layers on very slender bodies of revolution in continuum flow (the",
+        "transverse curvature  effect)"
     ],
     [
-        "what is the available information pertaining to the effect of slight rarefaction on boundary layer flows (the ?slip",
+        "what is the available information pertaining to the effect of slight rarefaction on boundary layer flows (the",
+        "slip",
         "effect)"
     ],
     [
@@ -179,7 +181,8 @@
         "how much is known about boundary layer flows along non-circular cylinders"
     ],
     [
-        "is there any simple, but practical, method for numerical integration of the mixing problem (i.e",
+        "is there any simple, but practical, method for numerical integration of the mixing problem (i",
+        "e",
         "the blasius problem with three-point boundary conditions)"
     ],
     [
@@ -510,11 +513,13 @@
         "exact solution methods for calculating the ablative mass loss of a material ablating at high temperatures in a hypersonic flight environment"
     ],
     [
-        "what approximate solutions are known to the direct problem of transonic flow in the throat of a nozzle,  i.e",
+        "what approximate solutions are known to the direct problem of transonic flow in the throat of a nozzle,  i",
+        "e",
         "finding the flow in a given nozzle"
     ],
     [
-        "what approximate solutions are known to the indirect problem of transonic flow in the throat of a nozzle,  i.e",
+        "what approximate solutions are known to the indirect problem of transonic flow in the throat of a nozzle,  i",
+        "e",
         "finding a nozzle which has a given axial velocity distribution"
     ],
     [
@@ -555,7 +560,8 @@
         "jet interference with supersonic flows theoretical papers"
     ],
     [
-        "effects of leading-edge bluntness on the flutter characteristics of some square-planform double-wedge airfoils at mach numbers less than 15.4"
+        "effects of leading-edge bluntness on the flutter characteristics of some square-planform double-wedge airfoils at mach numbers less than 15",
+        "4"
     ],
     [
         "what factors have been shown to have a primary influence on sonic boom strength"

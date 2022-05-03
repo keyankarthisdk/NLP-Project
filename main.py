@@ -14,6 +14,7 @@ import matplotlib.pyplot as plt
 
 # Main Vars
 PRINT_OBJ = print
+OUTPUT_DISPLAY_OBJ = None
 PROGRESS_OBJ = None
 PLOT_OBJ = None
 
@@ -34,6 +35,12 @@ def Util_ProgressUpdate(text, progress):
     Progress Update
     '''
     if PROGRESS_OBJ is not None: PROGRESS_OBJ(text, progress)
+
+def Util_OutputDisplayUpdate(key, data):
+	'''
+	Output Display Update
+	'''
+	if OUTPUT_DISPLAY_OBJ is not None: OUTPUT_DISPLAY_OBJ(key, data)
 
 # Input compatibility for Python 2 and Python 3
 if version_info.major == 3:
@@ -264,8 +271,6 @@ class SearchEngine:
 				finalDocs.append(finalDoc)
 				i += 1
 				Util_ProgressUpdate("Doc: Additional (NGram)", i / len(stopwordRemovedDocs))
-			print("final_docss")
-			print(finalDocs)
 			json.dump(finalDocs, open(self.args.out_folder + "final_docs.json", 'w'), indent=4)
 		else:
 			finalDocs = json.load(open(self.args.out_folder + "final_docs.json", 'r'))
@@ -291,7 +296,6 @@ class SearchEngine:
 			model_dir = os.path.join(self.args.out_folder, "models/")
 			self.models["Doc2Vec_MODEL"] = Doc2Vec_BuildModel(processedDocs, model_dir)
 			model_params["Doc2Vec_MODEL"] = self.models["Doc2Vec_MODEL"]
-			# model_params["Doc2Vec_doc_embeddings"] = docEmbeddings
 		
 		return model_params
 
@@ -347,6 +351,7 @@ class SearchEngine:
 		rankParams = self.args.params
 		rankParams.update(model_params)
 		rankParams.update({
+			"output_dir": self.args.out_folder,
 			"sim_weights": queryData["weights"],
 			"progress_obj": Util_ProgressUpdate
 		})
@@ -376,6 +381,17 @@ class SearchEngine:
 			nDCGs.append(nDCG)
 			PRINT_OBJ("MAP, nDCG @ " +  
 				str(k) + " : " + str(MAP) + ", " + str(nDCG))
+
+		# Tabulate the evaluations
+		tableData = {
+			"k": [i for i in range(1, len(precisions) + 1)],
+			"Precision": precisions,
+			"Recall": recalls,
+			"F-score": fscores,
+			"MAP": MAPs,
+			"nDCG": nDCGs
+		}
+		Util_OutputDisplayUpdate("Evaluations", tableData)
 
 		# Plot the metrics and save plot
 		# Setup
@@ -444,6 +460,7 @@ class SearchEngine:
 		rankParams = self.args.params
 		rankParams.update(model_params)
 		rankParams.update({
+			"output_dir": self.args.out_folder,
 			"sim_weights": queryData["weights"],
 			"progress_obj": Util_ProgressUpdate
 		})
@@ -454,6 +471,16 @@ class SearchEngine:
 		PRINT_OBJ("\nTop five document IDs : ")
 		for id_ in doc_IDs_ordered[:5]:
 			PRINT_OBJ(id_)
+		# Show the top five documents
+		topDocs = []
+		for i in doc_IDs_ordered[:5]:
+			topDoc = {
+				"id": i,
+				"title": docs_json[doc_ids.index(i)]["title"],
+				"body": docs_json[doc_ids.index(i)]["body"]
+			}
+			topDocs.append(topDoc)
+		Util_OutputDisplayUpdate("Documents", topDocs)
 
 
 

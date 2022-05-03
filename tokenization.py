@@ -24,6 +24,8 @@ class Tokenization():
 		for sentence in text:
 			sentence_tokens = sentence.split()
 			tokenizedText.append(sentence_tokens)
+
+		# Remove Punctuations and Split
 		alphaRegex = re.compile("[^a-zA-Z]")
 		tokenizedText = [[alphaRegex.sub(" ", token).lower().strip() for token in sentence] for sentence in tokenizedText]
 		tokenizedTextOld = tokenizedText
@@ -61,6 +63,8 @@ class Tokenization():
 		for sentence in text:
 			sentence_tokens = tokenizer.tokenize(sentence)
 			tokenizedText.append(sentence_tokens)
+
+		# Remove Punctuations and Split
 		alphaRegex = re.compile("[^a-zA-Z]")
 		tokenizedText = [[alphaRegex.sub(" ", token).lower().strip() for token in sentence] for sentence in tokenizedText]
 		tokenizedTextOld = tokenizedText

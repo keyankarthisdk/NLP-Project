@@ -17,6 +17,10 @@ ProgressWidget = {
     "title": None,
     "progress": None
 }
+OutputDisplayWidget = {
+    "title": None,
+    "output": []
+}
 
 # Main Classes
 class NLP_ARGS:
@@ -36,12 +40,25 @@ def printObj(text):
         global LOGS
         global PrintWidget
         LOGS.append(str(text))
-        PrintWidget.text_area("Logs", "\n".join(LOGS), height=500)
+        # Disabled as we display output better (table)
+        # PrintWidget.text_area("Logs", "\n".join(LOGS), height=500)
 
 def progressObj(key, value):
     global ProgressWidget
     ProgressWidget["title"].markdown(key)
     ProgressWidget["progress"].progress(value)
+
+def outputDisplayObj(title, data):
+    global OutputDisplayWidget
+    OutputDisplayWidget["title"].markdown("## " + title)
+
+    if title == "Evaluations":
+        OutputDisplayWidget["output"][0].table(data)
+        
+    elif title == "Documents":
+        for i in range(len(data)):
+            with OutputDisplayWidget["output"][i].expander(data[i]["title"]):
+                st.info(data[i]["body"])
 
 # Params Functions
 def UI_Paths():
@@ -64,8 +81,8 @@ def UI_RankParams():
     col1, col2 = st, st # st.columns(2)
     vector_types = ["TFIDF Stacking", "Word2Vec Without TFIDF", "Word2Vec With TFIDF", "BERT", "LSA", "Doc2Vec"]
     vector_type = col1.selectbox("Choose Vector Type", vector_types)
-    inv_index_reduce = [False, False, False, False, False,False][vector_types.index(vector_type)]
-    model_clean_text = [False, True, True, False, False,False][vector_types.index(vector_type)]
+    inv_index_reduce = [False, False, False, False, False, False][vector_types.index(vector_type)]
+    model_clean_text = [False, True, True, False, False, False][vector_types.index(vector_type)]
     rank_params = {
         "vector_type": vector_type,
         "inv_index_reduce": inv_index_reduce,
@@ -85,16 +102,18 @@ def app_main():
     global LOGS
     global PrintWidget
     global ProgressWidget
+    global OutputDisplayWidget
     # Titles
     st.title("NLP Project")
-    st.markdown("## Group 10")
+    st.markdown("## Group 16")
     
     # Inputs
-    Steps = ["Sentence Segmentation", "Tokenization", "Inflection Reduction", "Stopword Removal", "NGram", "Query Expansion", "Search"]
-    Query_LoadStep = st.sidebar.selectbox("Query Checkpoint", Steps)
-    Doc_LoadStep = st.sidebar.selectbox("Document Checkpoint", Steps)
-    main.QUERY_LOAD_POINT = Steps.index(Query_LoadStep)
-    main.DOC_LOAD_POINT = Steps.index(Doc_LoadStep)
+    Checkpoints = ["Sentence Segmentation", "Tokenization", "Inflection Reduction", "Stopword Removal", 
+            "NGram", "Query Expansion", "Ranking"]
+    Query_LoadCheckpoint = st.sidebar.selectbox("Query Checkpoint", Checkpoints)
+    Doc_LoadCheckpoint = st.sidebar.selectbox("Document Checkpoint", Checkpoints)
+    main.QUERY_LOAD_POINT = Checkpoints.index(Query_LoadCheckpoint)
+    main.DOC_LOAD_POINT = Checkpoints.index(Doc_LoadCheckpoint)
 
     other_params = {}
     dataset, out_folder = UI_Paths()
@@ -121,6 +140,11 @@ def app_main():
             "title": st.sidebar.empty(),
             "progress": st.sidebar.progress(0)
         }
+        OutputDisplayWidget = {
+            "title": st.empty(),
+            "output": []
+        }
+        for i in range(5): OutputDisplayWidget["output"].append(st.empty())
         # Form args
         params = {}
         for p in [tokenizer_params, rank_params, other_params]: params.update(p)
@@ -132,8 +156,8 @@ def app_main():
         else:
             searchEngine.evaluateDataset()
             st.markdown("## Evaluation")
-            st.image(os.path.join(out_folder, PATH_EVALPLOT), caption="Evaluation", use_column_width=True)
-            st.plotly_chart(main.PLOT_OBJ)
+            # st.image(os.path.join(out_folder, PATH_EVALPLOT), caption="Evaluation", use_column_width=True)
+            st.plotly_chart(main.PLOT_OBJ, use_container_width=True)
 
 
 #############################################################################################################################
@@ -142,5 +166,6 @@ if __name__ == "__main__":
     # Assign Objects
     main.PRINT_OBJ = printObj
     main.PROGRESS_OBJ = progressObj
+    main.OUTPUT_DISPLAY_OBJ = outputDisplayObj
     # Run Main
     app_main()

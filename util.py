@@ -27,13 +27,13 @@ from gensim.models import Word2Vec
 from gensim import corpora
 from gensim.models import LsiModel
 from gensim.models.coherencemodel import CoherenceModel
-
-#Doc2Vec
+# Doc2Vec
 from gensim.models.doc2vec import Doc2Vec, TaggedDocument
-#Set Seed for DOc2Vec to remove randomization
-hashseed = os.getenv('PYTHONHASHSEED')
+# Set Seed for Doc2Vec to remove randomization
+hashseed = os.getenv("PYTHONHASHSEED")
 if not hashseed:
-    os.environ['PYTHONHASHSEED'] = '0'
+    os.environ["PYTHONHASHSEED"] = "0"
+
 # Add any utility functions here
 # Inflection Reduction
 def GetWordNetPOS(tag):
@@ -168,8 +168,6 @@ def NDCG(relevant_docs_data, retrieved_docs, k):
     ideal_scores = sorted(ideal_scores, reverse=True)
     if not (ideal_scores[0] == 0):
         nDCG = DCG(query_scores) / DCG(ideal_scores[:k])
-    else:
-        print()
 
     return nDCG
 
@@ -291,7 +289,7 @@ def BERT_BuildModel(docs, model_dir="output/models/"):
     path_doc = os.path.join(model_dir, MODEL_NAME + "_" + "doc_embeddings_bert.pkl")
     # Check if already present
     if os.path.exists(path_doc) and os.path.exists(path_model):
-        print("Loading BERT Model")
+        print("Loading BERT Model...")
         with open(path_doc, "rb") as f: doc_embeddings = pickle.load(f)
         with open(path_model, "rb") as f: model = pickle.load(f)
         return model, doc_embeddings
@@ -311,12 +309,11 @@ def Doc2Vec_BuildModel(docs, model_dir="output/models/"):
     path_model = os.path.join(model_dir, MODEL_NAME + ".model")
     # Check if model is already present
     if os.path.exists(path_model):
-        print("     Loading Doc2Vec Model")
+        print("Loading Doc2Vec Model...")
         model = Doc2Vec.load(path_model)
         return model
 
-    ## CHANGE HERE
-    # processeddocs
+    # Processed Docs
     doc_list = []
     for doc in docs:
         merged_sentences = ""
@@ -326,28 +323,16 @@ def Doc2Vec_BuildModel(docs, model_dir="output/models/"):
     # Else Load Model and Train
     tagged_data = [TaggedDocument(words=word_tokenize(_d.lower()), tags=[str(i)]) for i, _d in enumerate(doc_list)]
     vec_size = 1024
-    model = Doc2Vec(size=vec_size,
-    workers = 1,seed = 1 ,
-                    # alpha=alpha, 
-                    # min_alpha=0.00025,
-                    min_count=1,
-                    dm =0 )
-    #build model vocabulary
+    model = Doc2Vec(vector_size=vec_size, workers=1, seed=1, min_count=1, dm=0)
+    # Build Model Vocabulary
     model.build_vocab(tagged_data)
-    #Train model on Docs
-    # for epoch in range(max_epochs):
-    #     print('iteration {0}'.format(epoch))
+    # Train model on Docs
     model.train(tagged_data,
                     total_examples=model.corpus_count,
                     epochs=50)
-        # decrease the learning rate
-        # model.alpha -= 0.0002
-        # fix the learning rate, no decay
-        # model.min_alpha = model.alpha
-
-    # model.save("d2v.model")
-    # print("Model Saved")
+    # Save Model
     model.save(path_model)
+    
     return model
 
 # Dataset Cleaning

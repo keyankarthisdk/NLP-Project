@@ -220,17 +220,18 @@ class InformationRetrieval():
 					# Apply LSA
 					if params["inv_index_reduce"] or not DOCS_PROCESSED:
 						U, S, VT = np.linalg.svd(docs_tfidf_matrix)
-						# eigvals = S**2 / np.sum(S**2)
+						eigvals = S**2 / np.sum(S**2)
 						# Plot
-						# fig = plt.figure(figsize=(8,5))
-						# sing_vals = np.arange(docs_tfidf_matrix.shape[0]) + 1
-						# plt.plot(sing_vals, eigvals, 'ro-', linewidth=2)
-						# plt.title('Scree Plot')
-						# plt.xlabel('Principal Component')
-						# plt.ylabel('Eigenvalue')
-						# leg = plt.legend(['Eigenvalues from SVD'], loc='best')
-						# leg.get_frame().set_alpha(0.4)
-						# plt.savefig("output/scree_plot.png")
+						fig = plt.figure(figsize=(8,5))
+						sing_vals = np.arange(docs_tfidf_matrix.shape[0]) + 1
+						plt.plot(sing_vals, eigvals, "ro-", linewidth=2)
+						plt.title("LSA Eigenvalues Plot")
+						plt.xlabel("Principal Component")
+						plt.ylabel("Eigenvalue")
+						leg = plt.legend(["Eigenvalues from SVD"], loc="best")
+						leg.get_frame().set_alpha(0.4)
+						plt.savefig(os.path.join(params["output_dir"], "lsa_plot.png"))
+						plt.close(fig)
 						# plt.show()
 						# Find Inverses and Project Query
 						VT_inv = np.linalg.pinv(VT)
@@ -244,19 +245,15 @@ class InformationRetrieval():
 					cosine_similarities = GetSimilarity(query_final_vector, docs_final_matrix)
 
 				elif params["vector_type"] == "Doc2Vec":
-					# Get doc embeddings - embeddings for all docs(optimize by pickling)
-					# docs_final_matrix = params["Doc2Vec_doc_embeddings"]
 					doc2vec_model = params["Doc2Vec_MODEL"]
-					## MAYBE CHANGE HERE
-					#to find the vector of a Query
+					# Find the vector of a Query
 					query_final_vector = doc2vec_model.infer_vector(word_tokenize(merged_sentences))
 					# Calculate Similarity
 					cosine_similarities = doc2vec_model.docvecs.most_similar([query_final_vector])
-					doc_ids = [int(sim_tuple[0]) + 1  for sim_tuple in cosine_similarities ]
+					doc_ids = [int(sim_tuple[0]) + 1  for sim_tuple in cosine_similarities]
 					doc_IDs_ordered.append(doc_ids)
 					
 				# Get Ranking
-				# print(cosine_similarities.shape)
 				if params["vector_type"] not in ["Doc2Vec"]:
 					query_rank = [x for _, x in sorted(zip(cosine_similarities, doc_IDs), reverse=True)]
 					doc_IDs_ordered.append(query_rank)
@@ -264,50 +261,8 @@ class InformationRetrieval():
 				doc_IDs_ordered.append([])
 			
 			# Update Progress
-			# print(qi, "of", len(queries))
 			params["progress_obj"]("Ranking: ", qi / len(queries))
 
 			DOCS_PROCESSED = True
 	
 		return doc_IDs_ordered
-
-
-	def doc_term_mat(data):
-		"""
-		Generating term dictinoary of the dataset and document term matrix
-
-		Parameters
-		----------
-		arg1 : 
-		
-
-		Returns
-		-------
-		Term dictionary and document term matrix
-		"""
-		# generate term dictionary
-		_dict = corpora.Dictionary(data)
-		# convert tokenized documents into a document corpus
-		doc_term_matrix = [dictionary.doc2bow(doc) for doc in data]
-
-		return _dict, doc_term_matrix
-
-
-
-	def LSA(doc_term_matrix):
-		"""
-		Applying LSA on the document term matrix
-
-		Parameters
-		----------
-		arg1 : 
-		
-
-		Returns
-		-------
-		LSA model
-
-		"""
-		# generate LSA model
-		lsa_model = LsiModel(doc_term_matrix, num_topics=2, id2word=dictionary)
-		return lsa_model
