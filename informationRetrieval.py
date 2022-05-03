@@ -232,7 +232,6 @@ class InformationRetrieval():
 						leg.get_frame().set_alpha(0.4)
 						plt.savefig(os.path.join(params["output_dir"], "lsa_plot.png"))
 						plt.close(fig)
-						# plt.show()
 						# Find Inverses and Project Query
 						VT_inv = np.linalg.pinv(VT)
 						S_inv = np.diag(np.reciprocal(S))
@@ -240,7 +239,6 @@ class InformationRetrieval():
 					
 					query_final_vector = np.dot(query_tfidf_vector, np.dot(VT_inv[:,:N_SINGULAR], S_inv[:N_SINGULAR,:N_SINGULAR]))
 					query_final_vector = np.reshape(query_final_vector, (1, -1))
-					# print(query_final_vector.shape, docs_final_matrix.shape)
 					# Calculate Similarity
 					cosine_similarities = GetSimilarity(query_final_vector, docs_final_matrix)
 

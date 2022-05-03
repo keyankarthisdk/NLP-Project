@@ -41,22 +41,11 @@ class InflectionReduction:
 
 		# Stemming
 		if ReduceMethod == "stemming" or ReduceMethod == "both":
-			
-			# print('inside stem')
 			# stemmer = nltk.stem.PorterStemmer()
 			stemmer = nltk.stem.SnowballStemmer("english",ignore_stopwords=True)
-			# print(stemmer.stem('experiment'.lower()))
-			# print('before stemming')
-			# for sentence in curText:
-			# 	if 'experiment' in sentence:
-			# 		print(sentence)
 			for i in range(2):
 				curText = [[stemmer.stem(token.lower()) for token in sentence] for sentence in curText]
-			# curText = [[stemmer.stem(token.lower()) for token in sentence] for sentence in curText]
-			# print('after stemming')
-			# for sentence in curText:
-			# 	if 'experiment' in sentence:
-			# 		print(sentence)
+
 
 		reducedText = curText
 		

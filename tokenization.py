@@ -25,18 +25,6 @@ class Tokenization():
 			sentence_tokens = sentence.split()
 			tokenizedText.append(sentence_tokens)
 
-		# Remove Punctuations and Split - Dont do for naive
-		# alphaRegex = re.compile("[^a-zA-Z]")
-		# tokenizedText = [[alphaRegex.sub(" ", token).lower().strip() for token in sentence] for sentence in tokenizedText]
-		# tokenizedTextOld = tokenizedText
-		# tokenizedText = []
-		# for sentence in tokenizedTextOld:
-		# 	sentenceRemoved = []
-		# 	for token in sentence:
-		# 		sentenceRemoved.extend(token.split())
-		# 	tokenizedText.append(sentenceRemoved)
-		# tokenizedText = [[token for token in sentence if not token == ""] for sentence in tokenizedText]
-
 		return tokenizedText
 
 

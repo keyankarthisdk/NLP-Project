@@ -190,8 +190,6 @@ class SearchEngine:
 				else:
 					expandedQuery = query
 					sim = {word: 1.0 for sentence in query for word in sentence}
-					# for sentence in query:
-					# 	for word in sentence: sim[word] = 1
 				expandedQueries.append(expandedQuery)
 				expandedWeights.append(sim)
 				i += 1

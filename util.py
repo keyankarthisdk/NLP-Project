@@ -159,12 +159,10 @@ def NDCG(relevant_docs_data, retrieved_docs, k):
     
     # Get Query Relevances
     query_scores = GetRelevanceScore(relevant_docs_data, retrieved_docs)
-
     # relevant_docs = []
     # for relevant_doc in relevant_docs_data:
     #     relevant_docs.append(int(relevant_doc['id']))
     # ideal_scores = GetRelevanceScore(relevant_docs_data, relevant_docs)
-
     ideal_scores = list(query_scores)
     # Calculate nDCG
     ideal_scores = sorted(ideal_scores, reverse=True)
@@ -342,14 +340,6 @@ def Autocomplete_BuildModel(docs, model_dir="output/models/"):
     '''
     Build Autocomplete Model
     '''
-    # MODEL_NAME = "Autocomplete"
-    # path_model = os.path.join(model_dir, MODEL_NAME + ".pkl")
-    # Check if model is already present
-    # if os.path.exists(path_model):
-    #     print("Loading Autocomplete Model...")
-    #     with open(path_model, "rb") as f: model = pickle.load(f)
-    #     return model
-
     # Docs
     words = [w for doc in docs for sentence in doc for w in sentence]
     wordsDict = {}
@@ -357,8 +347,6 @@ def Autocomplete_BuildModel(docs, model_dir="output/models/"):
         wordsDict[w] = {}
     # Load Model and Train
     model = AutoComplete(words=wordsDict)
-    # Save Model
-    # with open(path_model, "wb") as f: pickle.dump(model, f)
     
     return model
 

@@ -95,15 +95,11 @@ def UI_CustomQuery():
     custom = st.checkbox("Custom Query?")
     query = ""
     if custom:
-        # customQueryBox = st.empty()
         query = st.text_input("(Click outside to autocorrect)")
         # Correct Query
         correctedQuery = main.SpellCorrect(query)
         st.info("Auto-corrected query: " + correctedQuery)
-        # Autocomplete Query
-        # if main.MODEL_AUTOCOMPLETE is not None:
-        #     completedWord = main.MODEL_AUTOCOMPLETE.search(query.split()[-1])
-        #     st.info("Auto-completed word: " + completedWord)
+
     return custom, query
 
 # Runner Functions

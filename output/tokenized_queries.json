@@ -157,11 +157,11 @@
         [
             "what",
             "methods",
-            "-dash",
+            "dash",
             "exact",
             "or",
             "approximate",
-            "-dash",
+            "dash",
             "are",
             "presently",
             "available",
@@ -180,8 +180,8 @@
             "papers",
             "on",
             "internal",
-            "/slip",
-            "flow/",
+            "slip",
+            "flow",
             "heat",
             "transfer",
             "studies"
@@ -190,7 +190,8 @@
     [
         [
             "are",
-            "real-gas",
+            "real",
+            "gas",
             "transport",
             "properties",
             "for",
@@ -214,7 +215,7 @@
             "to",
             "find",
             "an",
-            "analytical,",
+            "analytical",
             "similar",
             "solution",
             "of",
@@ -264,7 +265,8 @@
         [
             "papers",
             "on",
-            "shock-sound",
+            "shock",
+            "sound",
             "wave",
             "interaction"
         ]
@@ -303,7 +305,8 @@
         [
             "can",
             "the",
-            "three-dimensional",
+            "three",
+            "dimensional",
             "problem",
             "of",
             "a",
@@ -319,7 +322,8 @@
             "reduced",
             "to",
             "a",
-            "two-dimensional",
+            "two",
+            "dimensional",
             "problem"
         ]
     ],
@@ -353,7 +357,8 @@
             "the",
             "dynamics",
             "of",
-            "re-entry",
+            "re",
+            "entry",
             "combining",
             "consideration",
             "of",
@@ -376,12 +381,12 @@
             "influence",
             "of",
             "joule",
-            "heating,",
+            "heating",
             "produced",
             "by",
             "the",
             "induced",
-            "current,",
+            "current",
             "in",
             "magnetohydrodynamic",
             "free",
@@ -603,7 +608,8 @@
             "used",
             "to",
             "simulate",
-            "two-dimensional",
+            "two",
+            "dimensional",
             "flow",
             "conditions",
             "over",
@@ -628,7 +634,8 @@
             "thickness",
             "in",
             "slender",
-            "thin-wing",
+            "thin",
+            "wing",
             "theory"
         ]
     ],
@@ -636,14 +643,16 @@
         [
             "how",
             "do",
-            "interference-free",
+            "interference",
+            "free",
             "longitudinal",
             "stability",
             "measurements",
-            "(made",
+            "made",
             "using",
-            "free-flight",
-            "models)",
+            "free",
+            "flight",
+            "models",
             "compare",
             "with",
             "similar",
@@ -651,7 +660,8 @@
             "made",
             "in",
             "a",
-            "low-blockage",
+            "low",
+            "blockage",
             "wind",
             "tunnel"
         ]
@@ -845,8 +855,9 @@
             "gases"
         ],
         [
-            "(chapman-enskog",
-            "theory)"
+            "chapman",
+            "enskog",
+            "theory"
         ]
     ],
     [
@@ -906,7 +917,8 @@
         [
             "what",
             "controls",
-            "leading-edge",
+            "leading",
+            "edge",
             "attachment",
             "at",
             "transonic",
@@ -917,8 +929,10 @@
         [
             "can",
             "the",
-            "three-point",
-            "boundary-value",
+            "three",
+            "point",
+            "boundary",
+            "value",
             "problem",
             "for",
             "the",
@@ -926,10 +940,10 @@
             "equation",
             "be",
             "integrated",
-            "numerically,",
+            "numerically",
             "using",
             "suitable",
-            "transformations,",
+            "transformations",
             "without",
             "iteration",
             "on",
@@ -984,12 +998,10 @@
             "in",
             "continuum",
             "flow",
-            "(the"
-        ],
-        [
+            "the",
             "transverse",
             "curvature",
-            "effect)"
+            "effect"
         ]
     ],
     [
@@ -1010,13 +1022,11 @@
             "boundary",
             "layer",
             "flows",
-            "(the"
-        ],
-        [
+            "the",
             "slip"
         ],
         [
-            "effect)"
+            "effect"
         ]
     ],
     [
@@ -1036,7 +1046,7 @@
             "moving",
             "through",
             "a",
-            "rarefied,",
+            "rarefied",
             "partially",
             "ionized",
             "gas",
@@ -1105,14 +1115,16 @@
             "can",
             "readily",
             "available",
-            "steady-state",
+            "steady",
+            "state",
             "aerodynamic",
             "data",
             "be",
             "utilized",
             "to",
             "predict",
-            "lifting-surface",
+            "lifting",
+            "surface",
             "flutter",
             "characteristics"
         ]
@@ -1125,7 +1137,8 @@
             "significant",
             "steady",
             "and",
-            "non-steady",
+            "non",
+            "steady",
             "flow",
             "characteristics",
             "which",
@@ -1152,15 +1165,17 @@
             "heated",
             "cylinders",
             "of",
-            "non-circular",
-            "cross-section,",
-            "(the",
+            "non",
+            "circular",
+            "cross",
+            "section",
+            "the",
             "fluid",
             "flow",
             "being",
             "along",
             "the",
-            "generators)"
+            "generators"
         ]
     ],
     [
@@ -1174,7 +1189,8 @@
             "layer",
             "flows",
             "along",
-            "non-circular",
+            "non",
+            "circular",
             "cylinders"
         ]
     ],
@@ -1183,9 +1199,9 @@
             "is",
             "there",
             "any",
-            "simple,",
+            "simple",
             "but",
-            "practical,",
+            "practical",
             "method",
             "for",
             "numerical",
@@ -1194,9 +1210,7 @@
             "the",
             "mixing",
             "problem",
-            "(i"
-        ],
-        [
+            "i",
             "e"
         ],
         [
@@ -1204,9 +1218,10 @@
             "blasius",
             "problem",
             "with",
-            "three-point",
+            "three",
+            "point",
             "boundary",
-            "conditions)"
+            "conditions"
         ]
     ],
     [
@@ -1215,7 +1230,8 @@
             "there",
             "exist",
             "a",
-            "closed-form",
+            "closed",
+            "form",
             "expression",
             "for",
             "the",
@@ -1240,9 +1256,9 @@
             "what",
             "conditions",
             "of",
-            "flow,",
+            "flow",
             "if",
-            "any,",
+            "any",
             "is",
             "the",
             "velocity",
@@ -1280,7 +1296,9 @@
     ],
     [
         [
-            "can't",
+            "ca",
+            "n",
+            "t",
             "the",
             "static",
             "deflection",
@@ -1298,7 +1316,7 @@
         ],
         [
             "if",
-            "so,",
+            "so",
             "can",
             "we",
             "provide",
@@ -1453,7 +1471,7 @@
             "low",
             "reynolds",
             "number",
-            "flows,",
+            "flows",
             "particularly",
             "at",
             "high",
@@ -1471,11 +1489,11 @@
             "of",
             "chemical",
             "reaction",
-            "(particularly",
+            "particularly",
             "when",
             "out",
             "of",
-            "equilibrium)",
+            "equilibrium",
             "play",
             "in",
             "the",
@@ -1531,7 +1549,8 @@
             "vorticity",
             "effect",
             "on",
-            "stagnation-point",
+            "stagnation",
+            "point",
             "heat",
             "transfer",
             "result",
@@ -1541,7 +1560,8 @@
             "differences",
             "in",
             "the",
-            "viscosity-temperature",
+            "viscosity",
+            "temperature",
             "law",
             "assumed"
         ]
@@ -1555,7 +1575,8 @@
             "trust",
             "the",
             "linear",
-            "viscosity-temperature",
+            "viscosity",
+            "temperature",
             "solution",
             "assumed",
             "in",
@@ -1593,7 +1614,8 @@
             "low",
             "reynolds",
             "number",
-            "(merged-layer)",
+            "merged",
+            "layer",
             "regime"
         ]
     ],
@@ -1610,7 +1632,8 @@
             "line",
             "of",
             "a",
-            "multi-stage",
+            "multi",
+            "stage",
             "axial",
             "compressor"
         ]
@@ -1662,14 +1685,17 @@
         [
             "what",
             "are",
-            "wind-tunnel",
+            "wind",
+            "tunnel",
             "corrections",
             "for",
             "a",
-            "two-dimensional",
+            "two",
+            "dimensional",
             "aerofoil",
             "mounted",
-            "off-centre",
+            "off",
+            "centre",
             "in",
             "a",
             "tunnel"
@@ -1679,9 +1705,11 @@
         [
             "how",
             "do",
-            "kuchemann's",
+            "kuchemann",
+            "s",
             "and",
-            "multhopp's",
+            "multhopp",
+            "s",
             "methods",
             "for",
             "calculating",
@@ -1713,7 +1741,8 @@
             "the",
             "theory",
             "of",
-            "quasi-conical",
+            "quasi",
+            "conical",
             "flows"
         ]
     ],
@@ -1779,7 +1808,8 @@
             "derivatives",
             "on",
             "slender",
-            "sting-mounted",
+            "sting",
+            "mounted",
             "models",
             "in",
             "supersonic",
@@ -1803,7 +1833,7 @@
             "flow",
             "behind",
             "the",
-            "shock,",
+            "shock",
             "neglecting",
             "effects",
             "of",
@@ -1858,7 +1888,8 @@
             "that",
             "on",
             "a",
-            "closely-related",
+            "closely",
+            "related",
             "tapered",
             "sweptback",
             "wing"
@@ -1869,8 +1900,10 @@
             "recent",
             "data",
             "on",
-            "shock-induced",
-            "boundary-layer",
+            "shock",
+            "induced",
+            "boundary",
+            "layer",
             "separation"
         ]
     ],
@@ -1896,7 +1929,7 @@
             "design",
             "of",
             "an",
-            "airplane,",
+            "airplane",
             "what",
             "procedure",
             "would",
@@ -1908,7 +1941,7 @@
             "minimize",
             "sonic",
             "boom",
-            "intensity,",
+            "intensity",
             "and",
             "is",
             "there",
@@ -1928,7 +1961,8 @@
     [
         [
             "can",
-            "methane-air",
+            "methane",
+            "air",
             "combustion",
             "product",
             "be",
@@ -1939,10 +1973,10 @@
             "test",
             "medium",
             "and",
-            "predict,",
+            "predict",
             "within",
             "experimental",
-            "accuracies,",
+            "accuracies",
             "the",
             "results",
             "obtained",
@@ -2042,7 +2076,8 @@
             "compare",
             "with",
             "conventional",
-            "trailing-edge",
+            "trailing",
+            "edge",
             "flaps"
         ]
     ],
@@ -2059,7 +2094,7 @@
             "it",
             "enters",
             "an",
-            "atmosphere,",
+            "atmosphere",
             "is",
             "it",
             "possible",
@@ -2112,7 +2147,8 @@
             "theory",
             "of",
             "plastic",
-            "stress-strain",
+            "stress",
+            "strain",
             "relationship",
             "differ",
             "greatly",
@@ -2311,13 +2347,13 @@
             "the",
             "clamped",
             "plate",
-            "problem,",
+            "problem",
             "in",
             "the",
             "classical",
             "theory",
             "of",
-            "bending,",
+            "bending",
             "been",
             "reduced",
             "to",
@@ -2386,7 +2422,7 @@
             "a",
             "single",
             "particular",
-            "planform,",
+            "planform",
             "such",
             "as",
             "the",
@@ -2440,7 +2476,8 @@
             "portion",
             "of",
             "a",
-            "cone-cylinder",
+            "cone",
+            "cylinder",
             "configuration"
         ]
     ],
@@ -2456,7 +2493,8 @@
             "addition",
             "of",
             "a",
-            "/boat-tail/",
+            "boat",
+            "tail",
             "affects",
             "the",
             "normal",
@@ -2488,7 +2526,8 @@
             "lift",
             "of",
             "a",
-            "fin-body",
+            "fin",
+            "body",
             "combination"
         ]
     ],
@@ -2508,8 +2547,10 @@
             "the",
             "non",
             "linear",
-            "(large-deflection)",
-            "load-deflection",
+            "large",
+            "deflection",
+            "load",
+            "deflection",
             "response",
             "of",
             "cylinders",
@@ -2616,14 +2657,14 @@
         [
             "in",
             "what",
-            "areas,",
+            "areas",
             "other",
             "than",
             "low",
             "density",
             "wind",
             "tunnel",
-            "flows,",
+            "flows",
             "is",
             "viscous",
             "compressible",
@@ -2665,7 +2706,7 @@
             "with",
             "supersonic",
             "flow",
-            "-dash",
+            "dash",
             "experimental",
             "papers"
         ]
@@ -2678,7 +2719,7 @@
             "by",
             "fluid",
             "injection",
-            "-dash",
+            "dash",
             "papers"
         ]
     ],
@@ -2701,8 +2742,8 @@
             "for",
             "an",
             "exponential",
-            "(in",
-            "time)",
+            "in",
+            "time",
             "heat",
             "input"
         ]
@@ -2718,7 +2759,8 @@
             "method",
             "for",
             "a",
-            "high-speed",
+            "high",
+            "speed",
             "digital",
             "computer"
         ]
@@ -2735,7 +2777,8 @@
             "from",
             "the",
             "fundamental",
-            "three-dimensional",
+            "three",
+            "dimensional",
             "equations",
             "for",
             "incompressible",
@@ -2757,7 +2800,7 @@
             "panels",
             "of",
             "the",
-            "x-15",
+            "x",
             "vertical",
             "stabilizer",
             "when",
@@ -2877,7 +2920,9 @@
             "conducted",
             "on",
             "the",
-            "time-to-failure",
+            "time",
+            "to",
+            "failure",
             "mechanism",
             "associated",
             "with",
@@ -2915,7 +2960,7 @@
             "effect",
             "of",
             "initial",
-            "stresses,",
+            "stresses",
             "on",
             "the",
             "frequencies",
@@ -2924,7 +2969,7 @@
             "of",
             "circular",
             "cylindrical",
-            "shells,",
+            "shells",
             "been",
             "investigated"
         ]
@@ -2942,7 +2987,7 @@
             "pressure",
             "due",
             "to",
-            "deformation,",
+            "deformation",
             "on",
             "the",
             "frequencies",
@@ -2980,7 +3025,8 @@
             "for",
             "stresses",
             "in",
-            "edge-loaded",
+            "edge",
+            "loaded",
             "shells",
             "of",
             "revolution"
@@ -3161,8 +3207,10 @@
             "the",
             "magnitude",
             "of",
-            "second-order",
-            "wing-body",
+            "second",
+            "order",
+            "wing",
+            "body",
             "interference",
             "at",
             "high",
@@ -3199,12 +3247,13 @@
             "effect",
             "of",
             "the",
-            "boundary-layer",
+            "boundary",
+            "layer",
             "on",
             "wing",
             "pressure",
             "be",
-            "calculated,",
+            "calculated",
             "and",
             "what",
             "is",
@@ -3217,7 +3266,8 @@
             "how",
             "should",
             "the",
-            "navier-stokes",
+            "navier",
+            "stokes",
             "difference",
             "equations",
             "be",
@@ -3276,7 +3326,8 @@
             "been",
             "calculated",
             "for",
-            "blunt-nosed",
+            "blunt",
+            "nosed",
             "bodies",
             "and",
             "compared",
@@ -3303,7 +3354,8 @@
             "available",
             "properties",
             "of",
-            "high-temperature",
+            "high",
+            "temperature",
             "air"
         ]
     ],
@@ -3465,8 +3517,10 @@
             "the",
             "onset",
             "of",
-            "shock-induced",
-            "boundary-layer",
+            "shock",
+            "induced",
+            "boundary",
+            "layer",
             "separation"
         ]
     ],
@@ -3554,10 +3608,8 @@
             "throat",
             "of",
             "a",
-            "nozzle,",
-            "i"
-        ],
-        [
+            "nozzle",
+            "i",
             "e"
         ],
         [
@@ -3589,10 +3641,8 @@
             "throat",
             "of",
             "a",
-            "nozzle,",
-            "i"
-        ],
-        [
+            "nozzle",
+            "i",
             "e"
         ],
         [
@@ -3615,7 +3665,8 @@
             "users",
             "of",
             "orthodox",
-            "pitot-static",
+            "pitot",
+            "static",
             "tubes",
             "often",
             "find",
@@ -3624,18 +3675,17 @@
             "calibrations",
             "appear",
             "to",
-            "be,"
+            "be"
         ],
         [
-            "-",
-            "(a)",
+            "a",
             "significantly",
             "different",
             "from",
             "those",
             "formerly",
-            "specified,",
-            "(b)",
+            "specified",
+            "b",
             "wildly",
             "variable",
             "at",
@@ -3652,11 +3702,13 @@
             "been",
             "made",
             "between",
-            "interference-free",
+            "interference",
+            "free",
             "drag",
             "measurements",
             "using",
-            "free-flight",
+            "free",
+            "flight",
             "models",
             "and",
             "similar",
@@ -3664,7 +3716,8 @@
             "made",
             "in",
             "a",
-            "low-blockage",
+            "low",
+            "blockage",
             "wind",
             "tunnel"
         ]
@@ -3677,7 +3730,8 @@
             "blasius",
             "problem",
             "with",
-            "three-point",
+            "three",
+            "point",
             "boundary",
             "conditions"
         ]
@@ -3686,7 +3740,8 @@
         [
             "references",
             "on",
-            "lyapunov's",
+            "lyapunov",
+            "s",
             "method",
             "on",
             "the",
@@ -3740,7 +3795,8 @@
             "methods",
             "other",
             "than",
-            "biot's",
+            "biot",
+            "s",
             "principle"
         ]
     ],
@@ -3784,14 +3840,15 @@
             "a",
             "theory",
             "of",
-            "quasi-conical",
+            "quasi",
+            "conical",
             "flows",
             "been",
-            "developed,",
+            "developed",
             "in",
             "supersonic",
             "linearised",
-            "theory,",
+            "theory",
             "for",
             "which",
             "the",
@@ -3800,7 +3857,7 @@
             "on",
             "the",
             "lifting",
-            "surface,",
+            "surface",
             "apart",
             "from",
             "being",
@@ -3809,7 +3866,8 @@
             "function",
             "in",
             "the",
-            "co-ordinate,",
+            "co",
+            "ordinate",
             "is",
             "permitted",
             "to",
@@ -3850,7 +3908,8 @@
         [
             "effects",
             "of",
-            "leading-edge",
+            "leading",
+            "edge",
             "bluntness",
             "on",
             "the",
@@ -3858,18 +3917,16 @@
             "characteristics",
             "of",
             "some",
-            "square-planform",
-            "double-wedge",
+            "square",
+            "planform",
+            "double",
+            "wedge",
             "airfoils",
             "at",
             "mach",
             "numbers",
             "less",
-            "than",
-            "15"
-        ],
-        [
-            "4"
+            "than"
         ]
     ],
     [
@@ -3894,8 +3951,10 @@
         [
             "work",
             "on",
-            "small-oscillation",
-            "re-entry",
+            "small",
+            "oscillation",
+            "re",
+            "entry",
             "motions"
         ]
     ],
@@ -3912,7 +3971,8 @@
         [
             "how",
             "can",
-            "wing-body,",
+            "wing",
+            "body",
             "flow",
             "field",
             "interference",
@@ -3939,7 +3999,8 @@
             "the",
             "buckling",
             "of",
-            "circular-cylindrical",
+            "circular",
+            "cylindrical",
             "shells",
             "under",
             "bending"
@@ -4011,10 +4072,10 @@
             "of",
             "deformation",
             "prove",
-            "satisfactory,",
+            "satisfactory",
             "and",
             "if",
-            "so,",
+            "so",
             "what",
             "is",
             "the",
@@ -4037,7 +4098,7 @@
             "for",
             "true",
             "panel",
-            "flutter,",
+            "flutter",
             "as",
             "opposed",
             "to",
@@ -4118,7 +4179,7 @@
             "loaded",
             "in",
             "axial",
-            "compression,",
+            "compression",
             "does",
             "the",
             "linear",
@@ -4127,7 +4188,8 @@
             "with",
             "improving",
             "the",
-            "non-linear",
+            "non",
+            "linear",
             "one"
         ]
     ],
@@ -4164,7 +4226,8 @@
             "using",
             "the",
             "normal",
-            "long-hand",
+            "long",
+            "hand",
             "method"
         ]
     ],
@@ -4196,7 +4259,8 @@
     [
         [
             "have",
-            "non-linear",
+            "non",
+            "linear",
             "large",
             "deflection",
             "analyses",
@@ -4221,11 +4285,12 @@
             "the",
             "determination",
             "of",
-            "pre-buckling",
+            "pre",
+            "buckling",
             "stresses",
             "in",
             "torispherical",
-            "shells,",
+            "shells",
             "or",
             "must",
             "we",
@@ -4252,7 +4317,8 @@
             "of",
             "a",
             "blunt",
-            "re-entry",
+            "re",
+            "entry",
             "vehicle"
         ]
     ],
@@ -4271,7 +4337,7 @@
             "on",
             "cones",
             "at",
-            "incidence,",
+            "incidence",
             "at",
             "hypersonic",
             "speeds"
@@ -4361,7 +4427,8 @@
             "ratio",
             "quantitatively",
             "affect",
-            "wing-flutter",
+            "wing",
+            "flutter",
             "boundaries"
         ]
     ],
@@ -4398,7 +4465,8 @@
             "aerodynamic",
             "coefficients",
             "during",
-            "re-entry"
+            "re",
+            "entry"
         ]
     ],
     [
@@ -4442,7 +4510,8 @@
             "shells",
             "subjected",
             "to",
-            "non-uniform",
+            "non",
+            "uniform",
             "external",
             "pressure"
         ]
@@ -4461,7 +4530,8 @@
             "cylindrical",
             "shells",
             "under",
-            "non-uniform",
+            "non",
+            "uniform",
             "pressure"
         ]
     ],
@@ -4479,7 +4549,8 @@
             "buckling",
             "strength",
             "of",
-            "ring-stiffened",
+            "ring",
+            "stiffened",
             "cylinders"
         ]
     ],
@@ -4508,7 +4579,8 @@
     [
         [
             "can",
-            "non-linear",
+            "non",
+            "linear",
             "shallow",
             "shell",
             "analysis",
@@ -4665,7 +4737,7 @@
             "to",
             "this",
             "problem",
-            "(calculation",
+            "calculation",
             "procedures",
             "for",
             "laminar",
@@ -4674,7 +4746,7 @@
             "with",
             "arbitrary",
             "pressure",
-            "gradient)"
+            "gradient"
         ]
     ],
     [
@@ -4707,7 +4779,7 @@
     [
         [
             "in",
-            "practice,",
+            "practice",
             "how",
             "close",
             "to",
@@ -4726,7 +4798,8 @@
             "using",
             "nitrogen",
             "is",
-            "non-viscous",
+            "non",
+            "viscous",
             "and",
             "in",
             "thermodynamic",
@@ -4743,13 +4816,13 @@
             "used",
             "to",
             "control",
-            "lift-drag",
+            "lift",
+            "drag",
             "ratios",
             "at",
             "mach",
             "numbers",
-            "above",
-            "5"
+            "above"
         ]
     ]
 ]
