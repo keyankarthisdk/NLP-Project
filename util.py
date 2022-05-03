@@ -33,6 +33,8 @@ from gensim.models.doc2vec import Doc2Vec, TaggedDocument
 hashseed = os.getenv("PYTHONHASHSEED")
 if not hashseed:
     os.environ["PYTHONHASHSEED"] = "0"
+# Autocomplete
+from fast_autocomplete import AutoComplete
 
 # Add any utility functions here
 # Inflection Reduction
@@ -320,7 +322,7 @@ def Doc2Vec_BuildModel(docs, model_dir="output/models/"):
         for sentence in doc:
             merged_sentences = merged_sentences + " " + " ".join(sentence)
         doc_list.append(merged_sentences.strip())
-    # Else Load Model and Train
+    # Load Model and Train
     tagged_data = [TaggedDocument(words=word_tokenize(_d.lower()), tags=[str(i)]) for i, _d in enumerate(doc_list)]
     vec_size = 1024
     model = Doc2Vec(vector_size=vec_size, workers=1, seed=1, min_count=1, dm=0)
@@ -332,6 +334,31 @@ def Doc2Vec_BuildModel(docs, model_dir="output/models/"):
                     epochs=50)
     # Save Model
     model.save(path_model)
+    
+    return model
+
+# Autocomplete
+def Autocomplete_BuildModel(docs, model_dir="output/models/"):
+    '''
+    Build Autocomplete Model
+    '''
+    # MODEL_NAME = "Autocomplete"
+    # path_model = os.path.join(model_dir, MODEL_NAME + ".pkl")
+    # Check if model is already present
+    # if os.path.exists(path_model):
+    #     print("Loading Autocomplete Model...")
+    #     with open(path_model, "rb") as f: model = pickle.load(f)
+    #     return model
+
+    # Docs
+    words = [w for doc in docs for sentence in doc for w in sentence]
+    wordsDict = {}
+    for w in words:
+        wordsDict[w] = {}
+    # Load Model and Train
+    model = AutoComplete(words=wordsDict)
+    # Save Model
+    # with open(path_model, "wb") as f: pickle.dump(model, f)
     
     return model
 

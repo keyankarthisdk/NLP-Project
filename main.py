@@ -278,10 +278,15 @@ class SearchEngine:
 		preprocessedDocs = finalDocs
 		return preprocessedDocs
 
-	def buildModels(self, processedDocs, docs):
+	def buildModels(self, docsData):
 		"""
 		Build Models
 		"""
+		# Load Docs
+		processedDocs = docsData["docs_processed"]
+		docs = docsData["docs"]
+		docs_tokenized = docsData["docs_tokenized"]
+		# Load Models
 		model_params = {}
 		if self.args.params["vector_type"] in ["Word2Vec Without TFIDF", "Word2Vec With TFIDF"] or \
 				QUERY_EXPAND_N > 0:
@@ -296,7 +301,11 @@ class SearchEngine:
 			model_dir = os.path.join(self.args.out_folder, "models/")
 			self.models["Doc2Vec_MODEL"] = Doc2Vec_BuildModel(processedDocs, model_dir)
 			model_params["Doc2Vec_MODEL"] = self.models["Doc2Vec_MODEL"]
-		
+		if self.args.params["autocomplete"]:
+			model_dir = os.path.join(self.args.out_folder, "models/")
+			self.models["Autocomplete_MODEL"] = Autocomplete_BuildModel(docs_tokenized, model_dir)
+			model_params["Autocomplete_MODEL"] = self.models["Autocomplete_MODEL"]
+
 		return model_params
 
 	def evaluateDataset(self):
@@ -333,7 +342,12 @@ class SearchEngine:
 
 		# Build Models
 		Util_ProgressUpdate("Model: Building Start", 0.0)
-		model_params = self.buildModels(processedDocs, docs)
+		docsData = {
+			"docs": docs,
+			"docs_processed": processedDocs,
+			"docs_tokenized": json.load(open(self.args.out_folder + "tokenized_docs.json", 'r'))
+		}
+		model_params = self.buildModels(docsData)
 		Util_ProgressUpdate("Model: Building End", 1.0)
 		
 		# Process queries
@@ -392,6 +406,13 @@ class SearchEngine:
 			"nDCG": nDCGs
 		}
 		Util_OutputDisplayUpdate("Evaluations", tableData)
+		print("@1")
+		print("nDCG: ", nDCGs[0], "MAP: ", MAPs[0])
+		print("@10")
+		print("nDCG: ", nDCGs[-1], "MAP: ", MAPs[-1])
+		print("Max")
+		print("nDCG: ", max(nDCGs), "MAP: ", max(MAPs))
+		print()
 
 		# Plot the metrics and save plot
 		# Setup
@@ -441,7 +462,12 @@ class SearchEngine:
 
 		# Build Models
 		Util_ProgressUpdate("Model: Building Start", 0.0)
-		model_params = self.buildModels(processedDocs, docs)
+		docsData = {
+			"docs": docs,
+			"docs_processed": processedDocs,
+			"docs_tokenized": json.load(open(self.args.out_folder + "tokenized_docs.json", 'r'))
+		}
+		model_params = self.buildModels(docsData)
 		Util_ProgressUpdate("Model: Building End", 1.0)
 
 		# Process query

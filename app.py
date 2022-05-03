@@ -67,11 +67,11 @@ def UI_Paths():
     return dataset, out_folder
 
 def UI_Segmenter():
-    segmenter = st.selectbox("Choose Segmenter", ["naive", "punkt"])
+    segmenter = st.selectbox("Choose Segmenter", ["punkt", "naive"])
     return segmenter
 
 def UI_Tokenizer():
-    tokenizer = st.selectbox("Choose Tokenizer", ["naive", "ptb"])
+    tokenizer = st.selectbox("Choose Tokenizer", ["ptb", "naive"])
     params = {
         "ngram_n": st.number_input("Ngram N (1 for default unigram)", min_value=1, max_value=3, value=1, step=1)
     }
@@ -86,7 +86,8 @@ def UI_RankParams():
     rank_params = {
         "vector_type": vector_type,
         "inv_index_reduce": inv_index_reduce,
-        "model_clean_text": model_clean_text
+        "model_clean_text": model_clean_text,
+        "autocomplete": True
     }
     return rank_params
 
@@ -94,7 +95,15 @@ def UI_CustomQuery():
     custom = st.checkbox("Custom Query?")
     query = ""
     if custom:
-        query = st.text_input("")
+        # customQueryBox = st.empty()
+        query = st.text_input("(Click outside to autocorrect)")
+        # Correct Query
+        correctedQuery = main.SpellCorrect(query)
+        st.info("Auto-corrected query: " + correctedQuery)
+        # Autocomplete Query
+        # if main.MODEL_AUTOCOMPLETE is not None:
+        #     completedWord = main.MODEL_AUTOCOMPLETE.search(query.split()[-1])
+        #     st.info("Auto-completed word: " + completedWord)
     return custom, query
 
 # Runner Functions
@@ -118,12 +127,12 @@ def app_main():
     other_params = {}
     dataset, out_folder = UI_Paths()
     col1, col2 = st.columns(2)
-    main.TITLE_WEIGHTAGE = col1.number_input("Title Weightage", min_value=0, max_value=3, value=1, step=1)
+    main.TITLE_WEIGHTAGE = col1.number_input("Title Weightage", min_value=0, max_value=3, value=2, step=1)
     main.QUERY_EXPAND_N = col2.number_input("Query Expansion N", min_value=0, max_value=5, value=1, step=1)
     segmenter = UI_Segmenter()
     tokenizer, tokenizer_params = UI_Tokenizer()
-    reducer = st.selectbox("Choose Reducer", ["lemmatization", "stemming", "both", "none"])
-    other_params["stopword_removal"] = st.checkbox("Remove Stopwords")
+    reducer = st.selectbox("Choose Reducer", ["both", "lemmatization", "stemming", "none"])
+    other_params["stopword_removal"] = st.checkbox("Remove Stopwords", value=True)
     rank_params = UI_RankParams()
     other_params["spell_check"] = st.checkbox("Spell Check")
     custom, query = UI_CustomQuery()
